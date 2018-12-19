@@ -1,0 +1,539 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?kd5gpr');
+  src:  url('../fonts/icomoon.eot?kd5gpr#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?kd5gpr') format('truetype'),
+    url('../fonts/icomoon.woff?kd5gpr') format('woff'),
+    url('../fonts/icomoon.svg?kd5gpr#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-menu:before {
+  content: "\e900";
+}
+
+body{
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  /*font-family: 'Pacifico', cursive;*/
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Pacifico', cursive;
+}
+
+h1{
+  font-size: 2.5em;
+  line-height: 1.4; /*en porcentaje 1 = 100%*/
+  font-weight: normal;
+}
+
+ol,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+figure{
+  margin: 0;
+}
+
+
+
+#logo-hide-respo{
+  display: none;
+}
+
+.main-button{
+  border-radius: 10px;
+  color: white;
+  background: -moz-linear-gradient(left, #d33800 0%, #fa6900 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, #d33800 0%,#fa6900 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, #d33800 0%,#fa6900 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d33800', endColorstr='#fa6900',GradientType=1 ); /* IE6-9 */
+}
+
+.header{
+  height: 90px;
+}
+
+.menu-normal, .menu-responsive {
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-normal .menu, .menu-responsive .menu{
+  height: inherit;
+}
+
+.menu-normal .menu ol, .menu-responsive .menu ol {
+  height: inherit;
+  display: flex; 
+}
+
+.menu-normal .menu ol li, .menu-responsive .menu ol li{
+  height: inherit;
+}
+
+.menu-normal .menu ol li a, .menu-responsive .menu ol li a {
+  color: black;
+  text-decoration: none;
+  height: inherit;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.menu-responsive{
+  display: none;
+}
+
+.background {
+  background: url('../img/hero-3.jpg');
+  background-size: cover;
+  background-position: bottom;
+}
+
+.hero {
+  height: 450px;
+  color: white;
+  padding: 20px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .7);
+  display: flex;
+  flex: 1;
+  align-items: center;
+}
+
+.container{
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  flex: 1;
+  /* width: 100%; */
+}
+
+.category-courses-title {
+  text-align: center;
+  font-size: 1.8em;
+  font-weight: normal;
+  margin: 1em 0;
+}
+
+.category-courses{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+/* .course{
+  margin-bottom: 2em;
+  /* border: 1px solid gray; */
+  /* width: 48%; */
+  /* position: relative; */
+  /* background: url('../img/drop-background.png');
+  background-size: cover;
+  background-position: center; */
+  /* background-color: #EEEBEB;
+  border-radius: 15px;
+  overflow: hidden;
+  padding-bottom: 2em;
+} */ 
+
+.course{
+  width: 48%;
+  height: 400px;
+  background-color: #EEEBEB;
+  border-radius: 15px;
+  overflow: hidden;
+  margin-bottom: 2em;
+}
+
+.course-details{
+  padding: 1em 2em;
+  width: 70%;
+  height: 300px; 
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, .8);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 15px;
+}
+
+.img-course-background{
+  background-image: url('../img/java-course-background.jpg');
+  background-size: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+}
+
+.img-course-background.course-img-2{
+  background-image: url('../img/frontend-course-background.jpg');
+}
+
+.img-course-background.course-img-3{
+  background-image: url('../img/design-course-background.jpg');
+}
+
+.img-course-background.course-img-4{
+  background-image: url('../img/general-course-background.jpg');
+}
+
+/* .course .img-hero{
+  width: 100%;
+  height: 250px;
+} */
+
+/* 
+-- Hacer efecto de hoja doblada
+
+.course:before{
+  border-color: gray gray #FFFFFF #FFFFFF;
+  border-style: solid;
+  border-width: 20px 0 0 20px;
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+} */
+
+/* .course-details{
+  padding: 2em;
+  width: 70%;
+  /* height: 250px; */
+  /* margin: 0 auto;
+  background-color: rgba(255, 255, 255, .8);
+  margin-top: -120px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 15px; */
+  /* font-size: 16px; */
+/* } */ 
+
+
+.course-details a{
+  text-decoration: none;
+  padding: 5px 20px;
+  align-self: center;
+}
+
+.course-details h3{
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.4em;
+}
+
+.contact{
+  height: 300px;
+  background-image: url('../img/simon-abrams-286276-unsplash.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.contact-details.container{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  height: inherit;
+}
+
+.form-email .text-field{
+  padding: 8px 15px 8px 35px;  
+  width: 70%;
+  background-image: url('../img/logos/envelope.svg'); 
+  background-repeat: no-repeat;
+  background-position: left;
+  background-position-x: 8px;
+  background-size: 20px;
+  border: 0;
+}
+
+.form-email .form-button{
+  padding: 8px 15px; 
+  border: none;
+}
+
+.form-email .form-button:hover{
+  cursor: pointer;
+}
+
+.form-email h2{
+  color: white;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, .7);
+  font-size: 3em;
+  font-weight: normal;
+  margin: 0 0 .5em 0;
+}
+
+.social-link{
+  height: 60px;
+  margin: 0 15px;
+  width: 60px;
+  display: inline-block;
+  background-size: 60px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.social-link.facebook {
+  background-image: url('../img/logos/facebook.svg');
+}
+
+.social-link.instagram {
+  background-image: url('../img/logos/instagram.svg');
+}
+
+.social-link.github {
+  background-image: url('../img/logos/github.svg');
+}
+
+.social-link.platzi {
+  background-image: url('../img/logos/platzi.svg');
+}
+
+.footer{
+  height: 90px;
+  background-color: black;
+  color: white;
+}
+
+.footer-container{
+  height: 90px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-container p:before {
+  content: '©';
+  margin-right: 5px;
+}
+
+.burger-button{
+  display: none;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(250, 105, 0, .8);
+  /* background: -webkit-linear-gradient(left, #d33800 0%, #fa6900 100%); */
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: fixed;
+  top: 15px;
+  left: 10px;
+  z-index: 10;
+}
+
+
+@media screen and (max-width: 1024px){
+  .container{
+    padding: 0 1em;
+  }
+}
+
+@media screen and (max-width: 830px){
+  .contact{
+    height: auto;
+  }
+
+  .contact-details.container{
+    flex-direction: column;
+    padding: 1.5em 0;
+  }
+
+  .social-container{
+    margin-top: 2em;
+  }
+}
+
+/*Menor que un ipad*/
+@media screen and (max-width: 767px){
+  
+  .burger-button{
+    display: flex;
+  }
+/* 
+  .menu{
+    position: fixed;
+    width: 100vw;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, .6);
+  } */
+
+  .header {
+    height: auto;
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .menu-normal{
+    display: none;
+  }
+
+  .header .menu-responsive{
+    display: flex;
+    justify-content: center;
+  }
+
+  .header .menu-responsive .menu{
+    position: fixed;
+    width: 100vw;
+    height: auto;
+    top: 0;
+    left: -100vw;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, .9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* padding: 0 1em; */
+  }
+
+  .header .menu-responsive .menu.isActive{
+    left: 0;
+    transition: .5s;
+  }
+
+  .header .menu-responsive .menu ol{
+    /* justify-content: space-between; */
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header .menu-responsive .menu ol li {
+    border-bottom: 1px solid rgba(0, 0, 0, .5);
+    margin: 0 3em;
+  }
+
+  .header .menu-responsive .menu ol li a {
+    flex-direction: column;
+    padding: .5em 0;
+    font-size: 1.5em;
+    font-weight: 600;
+    /* padding: 10px 0; */
+  }
+
+  .category-courses{
+    flex-direction: column;
+  }
+
+  .course{
+    width: auto;
+    height: 300px;
+    /* margin: 0 1em 2em; */
+  }
+
+  /* .course .img-hero {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  } */
+
+  .course-details {
+    height: auto;
+    background-color: rgba(255, 255, 255, .9);
+  }
+
+}
+
+@media screen and (max-width: 480px){
+  h1{
+    font-size: 1.6em;
+  }
+
+  .category-courses-title {
+    font-size: 1.5em;
+  }
+
+  .hero {
+    height: auto;
+  }
+
+  .course-details{
+    font-size: 14px;
+  }
+
+.course-details a {
+    align-self: initial;
+    text-align: center;
+  }
+
+  .form-email{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .form-email .text-field{
+    width: auto;
+    margin-bottom: .4em;
+  }
+
+  .form-email h2 {
+    font-size: 2em;
+  }
+  
+  .social-container {
+    margin-top: 1em;
+  }
+
+  .social-link {
+    background-size: 2.5em;
+    width: 2.5em;
+  }
+
+  .footer, .footer-container{
+    height: auto;
+  }
+
+  .footer-container{
+    flex-direction: column;
+    padding: 1em 0;
+  }
+
+}
+
+@media screen and (max-width: 320px){
+
+}
