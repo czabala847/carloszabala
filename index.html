@@ -44,10 +44,10 @@
       <nav class="menu menu-rs">
         <!--Menú de navegación-->
         <ol>
-          <li class="menu-link"><a href="index.html">Inicio</a></li>
-          <li class="menu-link"><a href="#proyecto">Proyectos</a></li>
-          <li class="menu-link"><a href="#experiencia">Experiencia</a></li>
-          <li class="menu-link"><a href="#contacto">Contactame</a></li>
+          <li class="menu-link link-rs"><a href="index.html">Inicio</a></li>
+          <li class="menu-link link-rs"><a href="#proyecto">Proyectos</a></li>
+          <li class="menu-link link-rs"><a href="#experiencia">Experiencia</a></li>
+          <li class="menu-link link-rs"><a href="#contacto">Contactame</a></li>
         </ol>
       </nav>
     </div>
@@ -153,7 +153,7 @@
 <script>
 
   const ipad = window.matchMedia('screen and (max-width: 767px)');
-
+  const links = document.querySelectorAll('.link-rs') 
 
   const menu = document.querySelector('.menu-rs');
   const burgerButton = document.querySelector('#burgerMenu');
@@ -165,6 +165,10 @@
   function validation(event){
     if(event.matches){
       burgerButton.addEventListener('click', showHideMenu);
+      //lineas agregadas para recorrer los objetos y agregar un listener
+      Array.from(links).forEach( link=> { 
+          link.addEventListener('click',showHideMenu)
+        })    
     }
     else{
       burgerButton.removeEventListener('click', showHideMenu);
