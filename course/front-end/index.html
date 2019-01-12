@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--En español-->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Arquitecto Frontend - Carlos Zabala</title>
+  <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/estilos.css" />
+</head>
+
+<body>
+  <i class="icon-menu burger-button" id="burgerMenu"></i>
+  <div class="main">
+    <div class="main-container">
+      <header class="header main-container">
+        <!--Cabecera-->
+        <nav class="main-menu menu menu-left">
+          <!--Menú de navegación-->
+          <ol>
+            <li class="menu-link"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link"><a href="#study-plan">Plan de estudio</a></li>
+          </ol>
+        </nav>
+        <figure class="logo-imageContainer">
+          <!--Logo-->
+          <a href="index.html"><img class="logo-image" src="../../img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
+        </figure>
+        <nav class="main-menu menu menu-right">
+          <!--Menú de navegación-->
+          <ol>
+            <li class="menu-link"><a href="#experiencia">Experiencia</a></li>
+            <li class="menu-link"><a href="#contacto">Contactame</a></li>
+          </ol>
+        </nav>
+        <nav class="menu-responsive">
+          <ol>
+            <li class="menu-link link-rs"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link link-rs"><a href="#study-plan">Plan de estudio</a></li>
+            <li class="menu-link link-rs"><a href="#experiencia">Experiencia</a></li>
+            <li class="menu-link link-rs"><a href="#contacto">Contactame</a></li>
+          </ol>
+        </nav>
+      </header>
+    </div>
+
+
+    <section class="hero main-background">
+      <div class="main-container title-container">
+        <h1>Carrera de Arquitectura Frontend.</h1>
+      </div>
+    </section>
+
+    <h2 id="study-plan" class="category-title">Plan de estudio</h2>
+
+    <div class="main-container">
+      <section class="category-courses plan">
+        <!--Cursos-->
+        <article class="course-plan">
+          <!--Curso #1-->
+          <div class="course-plan-img course-img-1">
+            <a href="../front-end/desarrollo-web.html"></a>
+          </div>
+          <h3>Diseño Web</h3>
+          <!-- <img class="img-hero" src="img/java-course-background.jpg" alt="background java course">  -->
+        </article>
+        <article class="course-plan">
+          <!--Curso #2-->
+          <div class="course-plan-img course-img-2">
+            <a href=""></a>
+            <!-- <div class="course-details">
+              <h3>Responsive Design</h3>
+              <p>Responsive Web Design consiste en utilizar HTML y CSS para redimensionar, ocultar, reducir o ampliar automáticamente un sitio web, para que se vea bien en todos los dispositivos (equipos de escritorio, tabletas y teléfonos). </p>
+              <a class="main-button" href="">Ver más</a>
+            </div> -->
+          </div>
+          <h3>Responsive Design</h3>
+        </article>
+        <article class="course-plan">
+          <!--Curso #3-->
+          <div class="course-plan-img course-img-3">
+            <a href=""></a>
+            <!-- <div class="course-details">
+              <h3>CSS Grid Layout</h3>
+              <p>El módulo CSS Grid Layout nos permite generar distribuciones del contenido en nuestros sitios web de forma eficiente. Controla esta estructura bidimensional de filas y columnas fácilmente con propiedades de CSS logrando un mejor flujo que el que se tiene al utilizando otras propiedades de CSS.</p>
+              <a class="main-button" href="">Ver más</a>
+            </div> -->
+          </div>
+          <h3>CSS Grid Layout</h3>
+        </article>
+        <article class="course-plan">
+          <!--Curso #3-->
+          <div class="course-plan-img course-img-4">
+            <a href=""></a>
+            <!-- <div class="course-details">
+              <h3>Animaciones para la web</h3>
+              <p>Crea animaciones de interfaces, maneja fotográmas en la web, aplica transiciones, transformaciones, timing y composición. Logra que tus sitios sean más dinámicos.</p>
+              <a class="main-button" href="course/general/general.html">Ver más</a>
+            </div> -->
+          </div>
+          <h3>Animaciones para la web</h3>
+        </article>
+      </section>
+    </div>
+    <footer class="footer">
+      <div class="main-container">
+        <div class="footer-container">
+          <p>Carlos Zabala Roqueme - 2018</p>
+          <figure>
+            <a href="index.html"><img class="logo-image" src="../../img/logos/logo-white.png" alt="Logo Carlos Zabala" /></a>
+          </figure>
+        </div>
+      </div>
+    </footer>
+    <!--Pie de página-->
+  </div>
+</body>
+<script>
+
+  const movil = window.matchMedia('screen and (max-width: 480px)');
+  const links = document.querySelectorAll('.link-rs')
+
+  const menu = document.querySelector('.menu-responsive');
+  const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+  movil.addListener(validation);
+
+  function validation(event) {
+
+    if (event.matches) {
+      console.log('Hello');
+      burgerButton.addEventListener('click', showHideMenu);
+      //lineas agregadas para recorrer los objetos y agregar un listener
+      Array.from(links).forEach(link => {
+        link.addEventListener('click', showHideMenu)
+      })
+    }
+    else {
+      burgerButton.removeEventListener('click', showHideMenu);
+    }
+
+  }
+
+  validation(movil);
+
+  function showHideMenu() {
+    console.log('clicc');
+    if (menu.classList.contains('isActive')) {
+      menu.classList.remove('isActive');
+
+    }
+    else {
+      menu.classList.add('isActive');
+    }
+  }
+
+  // console.log(menu, ' ' ,burgerButton);
+</script>
+
+</html>

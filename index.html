@@ -18,29 +18,29 @@
     <div class="main-container">
       <header class="header main-container">
         <!--Cabecera-->
-        <nav class="menu menu-left">
+        <nav class="main-menu menu menu-left">
           <!--Menú de navegación-->
           <ol>
             <li class="menu-link"><a href="index.html">Inicio</a></li>
-            <li class="menu-link"><a href="#proyecto">Proyectos</a></li>
+            <li class="menu-link"><a href="#projects">Proyectos</a></li>
           </ol>
         </nav>
         <figure class="logo-imageContainer">
           <!--Logo-->
           <a href="index.html"><img class="logo-image" src="img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
         </figure>
-        <nav class="menu menu-right">
+        <nav class="main-menu menu menu-right">
           <!--Menú de navegación-->
           <ol>
-            <li class="menu-link"><a href="#experiencia">Experiencia</a></li>
+            <li class="menu-link"><a href="#experience">Experiencia</a></li>
             <li class="menu-link"><a href="#contacto">Contactame</a></li>
           </ol>
         </nav>
         <nav class="menu-responsive">
           <ol>
             <li class="menu-link link-rs"><a href="index.html">Inicio</a></li>
-            <li class="menu-link link-rs"><a href="#proyecto">Proyectos</a></li>
-            <li class="menu-link link-rs"><a href="#experiencia">Experiencia</a></li>
+            <li class="menu-link link-rs"><a href="#projects">Proyectos</a></li>
+            <li class="menu-link link-rs"><a href="#experience">Experiencia</a></li>
             <li class="menu-link link-rs"><a href="#contacto">Contactame</a></li>
           </ol>
         </nav>
@@ -48,7 +48,7 @@
     </div>
 
 
-    <section class="hero">
+    <section class="hero main-background">
       <div class="main-container title-container">
         <h1>Hola! soy Carlos Zabala<br /> Ingeniero de sistemas en formación. Bienvenido a mi web personal.</h1>
       </div>
@@ -64,12 +64,9 @@
           <div class="course-img-background course-img-1">
             <div class="course-details">
               <h3>Desarrollo Java SE</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus deserunt qui, odit quasi rerum
-                praesentium labore sunt earum maxime ea architecto
-                iste perspiciatis corrupti hic velit neque? Quaerat, veniam cumque.
-                ZT0NP-2CY7P-2ZXCZ
+              <p>Repaso y notas de lo visto sobre <strong>Java SE</strong> tanto en platzi como la universidad, además de otras fuentes de investigación sobre este lenguaje de programación.
               </p>
-              <a class="main-button" href="">Ver más</a>
+              <a class="main-button" href="course/java/index.html">Ver más</a>
             </div>
           </div>
           <!-- <img class="img-hero" src="img/java-course-background.jpg" alt="background java course">  -->
@@ -79,10 +76,8 @@
           <div class="course-img-background course-img-2">
             <div class="course-details">
               <h3>Front-end</h3>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus deserunt qui, odit quasi rerum
-                praesentium labore sunt earum maxime ea architecto
-                iste perspiciatis corrupti hic velit neque? Quaerat, veniam cumque. RN0V9-RWT95-J04R4</p>
-              <a class="main-button" href="">Ver más</a>
+              <p>Cursos para la formación de un arquitecto front-end, se empieza con HTML, CSS y javascript, también se encontrara tecnicas más avanzadas con CSS como lo es CSS Grid Layout y muchas más herramientas y frameworks para ser un experto en el mundo del desarrollo y diseño web</p>
+              <a class="main-button" href="course/front-end/index.html">Ver más</a>
             </div>
           </div>
         </article>
@@ -113,7 +108,7 @@
       </section>
     </div>
 
-    <div class="project-container">
+    <div class="project-container" id="projects">
       <div class="main-container">
         <h2 class="category-title">Proyectos realizados</h2>
         <h3>Platzi</h3>
@@ -160,7 +155,7 @@
       </div>
     </div>
 
-    <section class="skills">
+    <section class="skills" id="experience">
       <div class="main-container">
         <p>
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro a possimus obcaecati officiis ea quis sequi
@@ -229,7 +224,7 @@
 </body>
 <script>
 
-  const ipad = window.matchMedia('screen and (max-width: 480px)');
+  const movil = window.matchMedia('screen and (max-width: 480px)');
   const links = document.querySelectorAll('.link-rs')
 
   const menu = document.querySelector('.menu-responsive');
@@ -237,7 +232,7 @@
 
 
 
-  ipad.addListener(validation);
+  movil.addListener(validation);
 
   function validation(event) {
     
@@ -255,7 +250,7 @@
 
   }
 
-  validation(ipad);
+  validation(movil);
 
   function showHideMenu() {
     console.log('clicc');
