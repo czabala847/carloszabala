@@ -180,6 +180,8 @@ figure{
 .category-courses.plan{
   grid-template-columns: repeat(2, minmax(auto, 150px));
   justify-content: center;
+  grid-row-gap: 0;
+  grid-column-gap: 1em;
 }
 
 .course, .project{
