@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--En español-->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Recomendaciones Responsive Design - Carlos Zabala</title>
+  <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/estilos.css" />
+</head>
+
+<body>
+  <!-- <i class="icon-menu burger-button" id="burgerMenu"></i> -->
+  <i class="icon-menu button-course-menu" id="burgerMenu"></i>
+  <div class="main">
+    <div class="main-container">
+      <header class="header main-container">
+        <!--Cabecera-->
+        <nav class="menu-gn-courses menu menu-left">
+          <ol>
+            <li class="menu-link"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link"><a href="responsiveDesign.html">Teoría</a></li>
+          </ol>
+        </nav>
+        <figure class="logo-imageContainer">
+          <!--Logo-->
+          <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
+        </figure>
+        <nav class="menu-gn-courses menu menu-right">
+          <ol>
+            <li class="menu-link"><a href="recomendacionesResponsiveDesign.html">Recomendaciones</a></li>
+            <li class="menu-link"><a href="codigoResponsiveDesign.html">Codigos</a></li>
+          </ol>
+        </nav>
+      </header>
+    </div>
+
+    <section class="hero res-hero-background">
+      <div class="main-container title-container">
+        <h1>Recomendaciones Responsive Design</h1>
+      </div>
+    </section>
+
+    <!-- <div class="main-container"> -->
+    <section class="general-course-container">
+      <aside class="general-content-menu">
+        <nav class="general-course-menu">
+          <ol>
+            <li class="link-course"><a href="responsiveDesign.html">Ver teoría</a></li>
+            <li class="link-course"><a href="#web-content-media">Media queries</a></li>
+            <li class="link-course"><a href="#web-content-width">Max-width</a></li>
+            <li class="link-course"><a href="#web-content-img">Imagenes responsivas</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <div class="general-content">
+        <article id="web-content-media">
+          <h3>Media Querias más usados</h3>
+          <ul>
+            <li>1024px</li>
+            <li>768px</li>
+            <li>480px</li>
+            <li>320px</li>
+          </ul>
+          <p>
+            <ul>
+              <li>Móviles: entre 320 y 480 píxeles.</li>
+              <li>Tablets: entre 768 y 1024 píxeles.</li>
+              <li>Pantallas grandes: más de 1024 píxeles o más.</li>
+            </ul>
+          </p>
+        </article>
+        <article id="web-content-width">
+          <h3>Max-width</h3>
+          <p>El max-width, depende de sus hijos, si le colocamos a un contenedor un tamaño máximo de 1000px pero sus
+            hijos no llegan a cumplir o sobre pasar ese ancho, el contenedor no va a tener los 1000px de ancho, esto
+            causa que los hijos de ese contenedor se alineen al centro.</p>
+          <figure class="courses-images big-img"><img src="../../img/frontend/max-width.png" alt="Error al usuar max-width"
+              width="700" /></figure>
+          <p>Un truco para corregir esto es colocarle un tamaño de 100%, del tamaño máximo que debe tener.</p>
+          <figure class="courses-images"><img src="../../img/frontend/max-width_2.png" alt="Ejemplo max-width en código"
+              width="400" /></figure>
+          <p>Esto también pasa cuando esta activo el display flex, otra forma alternativa del width del 100% es usar
+            propiedades del flex.</p>
+          <figure class="courses-images"><img src="../../img/frontend/flex-1.png" alt="Uso de flex:1" /></figure>
+          <p>Esto quiere decir que el elemento toma todo el ancho que tiene disponible
+            El problema del width 100%, es que si le agregamos un padding, el ancho va a ser mayor al 100%.
+          </p>
+        </article>
+        <article id="web-content-img">
+          <h3>Imagenes responsivas</h3>
+          <figure class="courses-images"><img src="../../img/frontend/responsive-img.png" alt="Ejemplo en código de como hacer imagenes responsivas" width="400"/></figure>
+        </article>
+      </div>
+    </section>
+
+    <!-- </div> -->
+
+    <!-- <section class="contact" id="contacto">
+      Contacto
+      <div class="main-container">
+        <div class="contact-details">
+          <form action="" class="form-email">
+            <h2 class="form-title">¿Creamos algo junto?</h2>
+            <input class="form-txtEmail" type="email" placeholder="Deja tu email :)" required />
+            <input class="main-button form-button" type="submit" value="Enviar">
+          </form>
+
+          <div class="social-container">
+
+            <a href="#" target="_blank"><i class="social-icon icon-facebook"></i></a>
+            <a href="https://www.instagram.com/czabala16/" target="_blank"><i class="social-icon icon-instagram"></i></a>
+            <a href="https://github.com/czabala847" target="_blank"><i class="social-icon icon-github"></i></a>
+            <a href="https://platzi.com/@czabala847/" target="_blank"><i class="social-icon icon-platzi"></i></a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <footer class="footer">
+      <div class="main-container">
+        <div class="footer-container">
+          <p>Carlos Zabala Roqueme - 2018</p>
+          <figure>
+            <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-white.png" alt="Logo Carlos Zabala" /></a>
+          </figure>
+        </div>
+      </div>
+    </footer>
+    <!--Pie de página-->
+  </div>
+</body>
+
+
+<script>
+
+  const ipad = window.matchMedia('screen and (max-width: 767px)');
+  const links = document.querySelectorAll('.link-course')
+
+  const menu = document.querySelector('.general-content-menu');
+  const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+  ipad.addListener(validation);
+
+  function validation(event) {
+
+    if (event.matches) {
+      // console.log('Hello');
+      burgerButton.addEventListener('click', showHideMenu);
+      //lineas agregadas para recorrer los objetos y agregar un listener
+      Array.from(links).forEach(link => {
+        link.addEventListener('click', showHideMenu)
+      })
+    }
+    else {
+      burgerButton.removeEventListener('click', showHideMenu);
+    }
+
+  }
+
+  validation(ipad);
+
+  function showHideMenu() {
+    // console.log('clicc');
+    if (menu.classList.contains('isActive')) {
+      menu.classList.remove('isActive');
+
+    }
+    else {
+      menu.classList.add('isActive');
+    }
+  }
+
+  // console.log(menu, ' ' ,burgerButton);
+</script>
+
+</html>

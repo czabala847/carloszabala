@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--En español-->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Desarrollo web - Carlos Zabala</title>
+  <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/estilos.css" />
+</head>
+
+<body>
+  <!-- <i class="icon-menu burger-button" id="burgerMenu"></i> -->
+  <i class="icon-menu button-course-menu" id="burgerMenu"></i>
+  <div class="main">
+    <div class="main-container">
+      <header class="header main-container">
+        <!--Cabecera-->
+        <nav class="menu-gn-courses menu menu-left">
+          <ol>
+            <li class="menu-link"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link"><a href="../frontend.html">Carrera</a></li>
+          </ol>
+        </nav>
+        <figure class="logo-imageContainer">
+          <!--Logo-->
+          <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
+        </figure>
+        <nav class="menu-gn-courses menu menu-right">
+          <ol>
+            <li class="menu-link"><a href="recomendaciones.html">Recomendaciones</a></li>
+            <li class="menu-link"><a href="#">Codigos</a></li>
+          </ol>
+        </nav>
+      </header>
+    </div>
+
+    <section class="hero web-hero-background">
+      <div class="main-container title-container">
+        <h1>Desarrollo Web</h1>
+      </div>
+    </section>
+
+    <!-- <div class="main-container"> -->
+    <section class="general-course-container">
+      <aside class="general-content-menu">
+        <nav class="general-course-menu">
+          <ol>
+            <li class="link-course"><a href="#web-content-origin">Introducción</a></li>
+            <!-- <li class="link-course link-upper"><a href="#web-content-html">html</a></li>
+            <li class="link-course link-upper"><a href="#web-content-css">css</a></li> -->
+            <li class="link-course"><a href="#web-content-flow">Flujo de estudio</a></li>
+            <li class="link-course link-upper"><a href="#web-content-dom">dom</a></li>
+            <li class="link-course"><a href="#web-content-label">Etiqueta</a></li>
+            <li class="link-course"><a href="#web-content-attribute">Atributos</a></li>
+            <li class="link-course"><a href="#web-content-form">Formularios</a></li>
+            <li class="link-course"><a href="#web-content-rules">Reglas <span class="link-upper">css</span> </a></li>
+            <li class="link-course"><a href="#web-content-class">Clases</a></li>
+            <li class="link-course"><a href="#web-content-color">Unidades de medida y colores</a></li>
+            <li class="link-course"><a href="#web-content-text">Textos</a></li>
+            <li class="link-course"><a href="#web-content-background">Backgrounds</a></li>
+            <li class="link-course"><a href="#web-content-box">Bordes, Márgenes y Rellenos</a></li>
+            <li class="link-course"><a href="#web-content-modelBox">Modelos de cajas</a></li>
+            <li class="link-course"><a href="#web-content-display">Tipos de display</a></li>
+            <li class="link-course"><a href="#web-content-flex">Propiedad flexbox</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <div class="general-content">
+        <article class="web-content-origin" id="web-content-origin">
+          <h3>Introducción al desarrollo web</h3>
+          <p>
+            El desarrollo web tiene que ver con todo lo que percibimos a través del navegador: páginas, aplicaciones y
+            sitios web como Facebook, Instagram y Twitter.
+          </p>
+          <p>Para comprender cómo funciona internet necesitamos conocer tres grandes conceptos:</p>
+          <ul>
+            <li><span class="n-bold">Clients</span> (clientes): son los dispositivos a través de los cuales accedemos a
+              los sitios
+              web: un computador desktop, un teléfono, una laptop, etc.</li>
+            <li><span class="n-bold">Internet:</span> es toda la red formada por servidores y clientes que proveen y
+              consumen
+              contenidos web y se comunican entre sí a nivel global.</li>
+            <li><span class="n-bold">Server</span> (servidor): es un computador, ubicado en alguna parte de la red, que
+              está
+              prendido todo el tiempo, en el que se alojan o almacenan sitios web y sus recursos y al cual se accede a
+              través de nombres de dominio (.com, .net, .pe, etc.). También se les conoce como hosting.</li>
+          </ul>
+          <p>Profesiones dentro del Desarrollo Web:</p>
+          <ul>
+            <li><span class="n-bold">Frontend:</span> son los encargados de cuidar toda la apariencia y experiencia de
+              usuario. Su
+              misión es pasar todo el diseño gráfico de un sitio o aplicación web, a código, y proveer toda la
+              interactividad a los clientes. Esta rama se puede subdividir en algunas especializaciones como:
+              Arquitecto Frontend, Desarrollador JavaScript (frontend), etc.</li>
+            <li><span class="n-bold">Backend:</span> resguardan los datos y la seguridad de las aplicaciones y sitios
+              web. Su
+              misión es crear y mantener toda la parte del sitio web que sucede en los servidores. Pueden
+              especializarse aún más en: SysAdmis, DevOps, Desarrollador JavaScript (backend), entre otros.</li>
+          </ul>
+          <p>Las tres tecnologías básicas que debe conocer y manejar un <span class="n-bold">Frontend</span> son:</p>
+          <ul>
+            <li><span class="n-bold link-upper">html:</span> es el lenguaje de marcado para hacer websites.</li>
+            <li><span class="n-bold link-upper">css:</span> hojas de estilos cascada, el diseño hecho código.</li>
+            <li><span class="n-bold">JavaScript:</span> es el único lenguaje que funciona actualmente dentro de los
+              navegadores de
+              manera nativa.</li>
+          </ul>
+          <h3>Como funciona internet</h3>
+          <figure class="courses-images">
+            <img src="../../img/frontend/internet.png" alt="Como funciona internet" width="450" />
+          </figure>
+        </article>
+        <article class="web-content-html" id="web-content-html">
+          <h3>Hypertext Markup Language</h3>
+          <p>Languaje de marcado para hacer websites. Determinar el contenido: texto, imágenes, videos, enlaces, etc.</p>
+        </article>
+        <article class="web-content-css" id="web-content-css">
+          <h3>Cascade Style Sheet</h3>
+          <p>Lenguaje para definir la presentación de documentos <span class="link-upper">html</span>. </p>
+        </article>
+        <article class="web-content-flow" id="web-content-flow">
+          <h3>Flujo de estudio de un Arquitecto Frontend</h3>
+          <figure class="courses-images"><img src="../../img/frontend/flujo-frontend-leonidas.jpg" alt="Flujo de estudio recomendado por Leonidas(Tutor platzi)."
+              width="500" /><br /><span>Recomendado por Leonidas (tutor de platzi)</span></figure>
+          <!-- <figure class="courses-images"><img src="../../img/frontend/flujo-frontend.jpg" alt="Flujo de estudio recomendado" width="450"/><br/><span>Otro flujo de estudio recomendado.</span></figure> -->
+          <p>La herramienta fundamental para el desarrollo web es el Editor de Código. Existen varias opciones entre
+            las que destacan: <a class="link-normal" href="https://www.sublimetext.com/3" target="_blank">SublimeText
+            </a>, <a class="link-normal" href="https://atom.io/" target="_blank">Atom</a> y <a class="link-normal" href="https://code.visualstudio.com/"
+              target="_blank">Visual Studio Code</a>.
+            Los editores de código se pueden configurar y personalizar para ofrecer una mejor experiencia al
+            desarrollador.
+          </p>
+        </article>
+        <article id="web-content-dom">
+          <h3>Document Object Model <span class="link-upper">(dom)</span> </h3>
+          <p>Modelo de documento es español, es la manera en que se representa el contenido del documento, de manera
+            similar a un árbol de nodos.</p>
+          <p>A continuación, un ejemplo sencillo de la estructura del <span class="link-upper">DOM:</span> </p>
+          <ul>
+            <li>html</li>
+            <li>head</li>
+            <li>title</li>
+            <li>meta</li>
+            <li>body</li>
+            <li>header</li>
+            <li>nav</li>
+            <li>section</li>
+            <li>article</li>
+            <li>footer</li>
+          </ul>
+          <p><span class="n-bold">Nota:</span> El <span class="link-upper">BOM</span> se enfoca en el navegador
+            mientras que el <span class="link-upper">DOM</span>
+            en el <span class="link-upper">HTML</span> .</p>
+          <figure class="courses-images"><img src="../../img/frontend/bom.gif" alt="Estructura del bom" width="450" /><br /><span>Estructua
+              del <span class="link-upper">bom.</span> </span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/dom.gif" alt="Estructura del dom" width="450" /><br /><span>Estructua
+              del <span class="link-upper">dom.</span> </span></figure>
+        </article>
+        <article id="web-content-label">
+          <h3>Etiquetas</h3>
+          <p>Cada etiqueta tiene una determina función.</p>
+          <p>Las etiquetas son la representación básica de la información en un documento html. Sirven para crear y
+            organizar el contenido.</p>
+          <p>La sintaxis general de una etiqueta es:</p>
+          <span class="code-style">&ltnombre&gt</span>contenido<span class="code-style">&lt/nombre&gt</span>
+          <p>Algunas de las etiquetas más conocidas y usadas son:</p>
+          <ul>
+            <li>
+              Etiquetas del cuerpo del documento (body).
+              <ul>
+                <li><span class="n-bold">doctype:</span> indica al navegador el tipo de documento que se está
+                  mostrando.</li>
+                <li><span class="n-bold">html:</span> es la etiqueta que envuelve todo el documento.</li>
+                <li><span class="n-bold">head:</span> es la cabecera del documento y contiene sub etiquetas que
+                  describen al documento o incluyen
+                  recursos adicionales</li>
+              </ul>
+            </li>
+            <li>
+              Etiquetas de cabecera (head).
+              <ul>
+                <li><span class="n-bold">article:</span> diferencia partes del contenido que pueden vivir por sí
+                  mismas.</li>
+                <li><span class="n-bold">nav:</span> para hacer menús de navegación.</li>
+                <li><span class="n-bold">aside:</span> contenido menos relevante, como publicidad, etc.</li>
+                <li><span class="n-bold">section:</span> sirve para diferenciar las secciones principales del
+                  contenido.</li>
+                <li><span class="n-bold">header:</span> cabecera del documento.</li>
+                <li><span class="n-bold">footer:</span> pie de página del documento.</li>
+                <li><span class="n-bold">h1 - h6:</span> títulos de nuestro sitio web.</li>
+                <li><span class="n-bold">table:</span> tablas de contenidos, similar a la estructura de las hojas de
+                  cálculo.</li>
+                <li><span class="n-bold">ul y ol:</span> listas de items.</li>
+                <li><span class="n-bold">div:</span> cualquier división para organizar el contenido.</li>
+                <li><span class="n-bold">article:</span> es la parte de nuestro contenido que puede vivir por sí mismo.
+                  Pueden haber tantos artícle
+                  como proyectos o eventos tenga nuestro portafolio.</li>
+                <li><span class="n-bold">p:</span> define el texto de un párrafo.</li>
+                <li><span class="n-bold">small:</span> aplica una apariencia de texto reducido en tamaño.</li>
+                <li><span class="n-bold">strong:</span> aplica al texto un formato de negritas.</li>
+                <li><span class="n-bold">a:</span> corresponde a un ancla o enlace a una url interna o externa del
+                  documento.</li>
+                <li><span class="n-bold">img:</span> con esta etiqueta podemos enlazar imágenes en el documento.</li>
+                <li><span class="n-bold">figure: </span> le da un contexto semántico a las imágenes.</li>
+              </ul>
+            </li>
+
+          </ul>
+          <p><span class="n-bold">Notas:</span> div(personalizar secciones de elementos) span(personalizar líneas de
+            texto).</p>
+        </article>
+        <article class="web-content-attribute" id="web-content-attribute">
+          <h3>Atributos en <span class="link-upper">html.</span> </h3>
+          <p>Los atributos son valores agregados a las etiquetas (tags) html que extienden su habilidad o funcionalidad
+            con información específica.</p>
+          <p>A continuación, un ejemplo de los atributos más comunes y usados en algunas etiquetas:</p>
+          <p>Para <span class="n-bold">img:</span></p>
+          <ul>
+            <li><span class="n-bold">src:</span> específica la ruta de la imagen que será mostrada a través de esta
+              etiqueta. La
+              ruta puede ser absoluta (cunado especifica una dirección exacta, incluyendo el prefijo http(s) ) o
+              relativa (cuando la referencia a la ubicación de la imagen parte de la ubicación del archivo actual).</li>
+            <li><span class="n-bold">alt:</span> indica un texto alternativo que será mostrado en lugar de la imagen
+              cuando ésta
+              no pueda ser mostrada.</li>
+            <li><span class="n-bold">width:</span> ancho de la imagen en pixeles.</li>
+            <li><span class="n-bold">height:</span> alto de la imagen en pixeles.</li>
+          </ul>
+          <p>Para <span class="n-bold">link</span>, en la cabecera head del documento:</p>
+          <ul>
+            <li><span class="n-bold">rel:</span> indica la relación del recurso con el contenido.</li>
+            <li><span class="n-bold">type:</span> indica el tipo de recurso / formato.</li>
+            <li><span class="n-bold">href:</span> indica la ubicación (url) del recurso enlazado.</li>
+          </ul>
+          <p>Para <span class="n-bold">meta</span> , ambién en la cabecera head del documento:</p>
+          <ul>
+            <li><span class="n-bold">charset:</span> indica la tabla de caracteres (utf-8 para caracteres latinos)
+              usada en el
+              documento.</li>
+          </ul>
+          <p>Para <span class="n-bold">a:</span> </p>
+          <ul>
+            <li><span class="n-bold">href:</span> la ubicación o ruta a la que enlaza esta etiqueta de ancla. En el
+              caso de querer
+              enlazar a elementos que se encuentran dentro del mismo documento, este atributo debe indicar el valor del
+              atributo "id" de ese elemento destino del enlace.</li>
+          </ul>
+        </article>
+        <article id="web-content-form">
+          <h3>Formularios</h3>
+          <p>Los Formularios en html son unidades de información que nos permiten recolectar información para enviarlos
+            al propietario del website o a un servicio externo. Está formado por dos partes o contextos: una parte
+            donde se hace el ingreso y modelación de esos datos (en el frontend), y otra parte que se encarga de
+            enviar, procesar y almacenar esos datos (en el backend).
+            Los formularios se crean con la etiqueta <span class="n-bold">form</span> . El atributo principal de un
+            formulario es
+            <i>action</i>, ya que
+            contiene la ruta a la que serán enviados los datos recolectados.
+            Hay diversos elementos html que permiten la captura o recolección de datos, aunque generalmente se usan los
+            elementos creados con la etiqueta <i>input</i>. Los inputs también sirven para crear botones, aunque existe
+            una
+            etiqueta especial para ésto llamada <i>button</i>. El atributo principal de los inputs es <i>type</i>, que
+            indica el tipo
+            de comportamiento o dato que se espera recibir.
+            Los elementos creados con la etiqueta <i>label</i> muestran un texto que se puede asociar con un input para
+            darle
+            mayor significado al campo, principalmente cuando no se usa el atributo <i>placeholder</i>.
+          </p>
+        </article>
+        <article id="web-content-style">
+          <h3>Formas de agregar estilos a <span class="link-upper">html</span></h3>
+          <p>Hay tres opciones para incluir estilos que definan la apariencia de tu html:</p>
+          <ul>
+            <li><span class="n-bold">Estilos en línea:</span> se definen directamente en el elemento html que quieres
+              estilizar, se agregan con el atributo <span class="n-bold">style</span> .</li>
+            <li><span class="n-bold">Estilos con el tag Style:</span> regularmente este tag se incluye dentro de la
+              etiqueta head del html.</li>
+            <li><span class="n-bold">Estilos enlazados desde un archivo css externo:</span> utilizando la etiqueta
+              <span class="n-bold">link</span> que nos permite enlazar recursos externos.</li>
+          </ul>
+          <p>A <span class="n-bold">CSS</span> , se le llama <span class="n-bold">hojas de estilos en cascada</span>
+            porque los estilos que se definen para una página se van
+            aplicando de arriba hacia abajo, y de lo más general a lo más particular, teniendo prioridad lo más
+            particular. Esto es, los estilos que prevalecen son los que han sido definidos <span class="n-bold">en
+              línea</span>, luego los que
+            fueron definidos mediante la etiqueta <span class="n-bold">style</span> en la cabeza o cuerpo del html, y
+            por último los estilos
+            definidos en archivos externos enlazados con la etiqueta <span class="n-bold">link</span> . Esta prioridad
+            se puede alterar al usar el
+            modificador !important en la definición de algún estilo en particular, aunque esto no es recomendado.</p>
+        </article>
+        <article id="web-content-rules">
+          <h3>Reglas, selectores, declaraciones, propiedades y valores de CSS</h3>
+          <figure class="courses-images"><img src="../../img/frontend/reglas-css.jpg" alt="declaración de seleccion css"
+              width="450" /></figure>
+          <h4>Los estilos incluidos por el navegador</h4>
+          <p>Los navegadores incluyen estilos predeterminados para cada elemento html. Esto significa que aun cuando no
+            hayas definido o asignado ningún estilo a tus etiquetas, éstas tendrán una apariencia particular que es muy
+            similar en todos los navegadores, aunque no necesariamente idéntica.</p>
+        </article>
+        <article id="web-content-class">
+          <h3>Agregando clases a los componentes escritos en HTML</h3>
+          <p>Para aplicar estilos a los componentes html, lo más común y recomendable es hacerlo a través de clases que
+            se asignan al elemento html mediante el atributo class.
+            Un elemento html puede tener varias clases, se deben indicar en el mismo atributo <span class="n-bold">class</span>
+            pero separadas por
+            un espacio en blanco.
+            Al escoger los nombres de clases, debemos tener en cuenta que se pudieran aplicar a muchos elementos, o a
+            elementos particulares, así que la claridad y precisión en su identificación facilitará la
+            contextualización y mantenibilidad en el futuro.
+          </p>
+        </article>
+        <article id="web-content-color">
+          <h3>Unidades de medida y colores</h3>
+          <p>Hay varias unidades de medida con las que se puede trabajar en CSS: %, em, rem, px, pt, fr, vw, vh
+            Las medidas más comunes y utilizadas son los pixeles. Un pixel es la menor unidad homogénea en color que
+            forma parte de una imagen digital. Es la unidad más práctica y fácil de utilizar y manipular.
+          </p>
+          <p>Los colores en CSS pueden ser representados de al menos tres formas diferentes:</p>
+          <ul>
+            <li>Representados con <span class="n-bold">palabras claves</span> para cada color, como: red, green, blue,
+              pink, yellow, black, etc.</li>
+            <li>Usando la composición de tres colores (<span class="n-bold">rojo, verde y azul</span>): para esto
+              podemos usar notación exadecimal o las funciones rgb() y rgba().</li>
+            <li>Usando la composición mediante valores de <span class="n-bold">Matiz, Saturación y Luminosidad</span>
+              con: hls() y hlsa().</li>
+          </ul>
+          <p>Con respecto a los valores hexadecimales, cada color está representado por 6 dígitos, que representan 3
+            pares de hexadecimales: FF - FF - FF (rojo, verde y azul), en el que cada par puede tomar valores
+            hexadecimales entre 00 y FF. Cada uno equivale a valores decimales entre 0 y 255, donde 0 es la ausencia de
+            ese color y 255 la mayor cantidad disponible. De esta manera cada color se forma por la combinación de
+            diferentes proporciones de rojo, verde y azul.</p>
+          <ul>
+            <li>#000000 es equivalente a Negro.</li>
+            <li>#FF0000 es equivalente a Rojo.</li>
+            <li>#00FF00 es equivalente a Verde.</li>
+            <li>#0000FF es equivalente a Azul.</li>
+            <li>#FFFFFF es equivalente a Blanco.</li>
+          </ul>
+          <p><span class="n-bold">px</span> Es la menor unidad homogénea en color que forma parte de una imagen
+            digital. </p>
+        </article>
+        <article id="web-content-text">
+          <h3>Textos</h3>
+          <p>Los tipos de texto, también conocidos como <span class="n-bold">tipos de letras</span> o <span class="n-bold">fuentes</span>,
+            son el conjunto de diseños
+            <span class="n-bold">tipográficos</span> que representan a cada una de las letras y los caracteres gráficos
+            en el documento. Su nombre
+            correcto es tipografía. Los diferentes tipos de fuente están basados en archivos que existen en cada
+            sistema operativo.
+            Algunos ejemplos de <span class="n-bold">tipos de texto</span> o fuentes son:
+          </p>
+          <ul>
+            <li>Arial</li>
+            <li>Times New Roman</li>
+            <li>Verdana</li>
+            <li>DeJaVu</li>
+            <li>Lato</li>
+            <li>OpenSans</li>
+            <li>Roboto</li>
+          </ul>
+          <p>CSS permite utilizar <span class="n-bold">fuentes</span> diferentes a las disponibles en el sistema
+            operativo del cliente, mediante la
+            importación o el enlace a archivos de fuentes externas. Las más usadas son las que están disponibles a
+            través del sitio web de <span class="n-bold">Google Fonts</span>.
+            Al definir el tipo de texto asociado a una clase css con la propiedad <span class="n-bold">font-family</span>
+            indicamos al navegador,
+            que debe intentar usar esa fuente en particular para darle la apariencia tipográfica a los textos de ese
+            elemento html.
+          </p>
+          <h4>Propiedades de los textos</h4>
+          <p>Además de todas las propiedades comunes que comparten los elementos estándar de html, como: display,
+            position, margin, padding, top, left, right, bottom, border, etc., los elementos que admiten contenidos
+            textuales aceptan una serie particular de propiedades entre las que se encuentran las siguientes:</p>
+          <ul>
+            <li><span class="n-bold">font-family:</span> define el tipo de fuente aplicado al texto.</li>
+            <li><span class="n-bold">color:</span> define el colore del texto.</li>
+            <li><span class="n-bold">line-height:</span> define la altura desde la base del texto hasta la base de la
+              siguiente línea de texto.</li>
+            <li><span class="n-bold">font-size:</span> define el tamaño del texto, admite cualquiera de las unidades de
+              medida disponibles.</li>
+            <li><span class="n-bold">letter-spacing:</span> define el espaciado entre las letras del texto.</li>
+            <li><span class="n-bold">font-weight:</span> define el "peso" de la letra, negrita, normal, light y
+              normalmente se indica en múltiplos de 100 o usando keywords.</li>
+            <li><span class="n-bold">text-decoration:</span> define el decorado del texto como subrayado, tachado, con
+              subrayado superior, etc.</li>
+            <li><span class="n-bold">text-transform:</span> permite transformar el estado de mayúsculas / minúsculas en
+              el texto, usando uppercase para mayúsculas sostenidas, lowercase para minúsculas sostenidas, etc.</li>
+            <li><span class="n-bold">font-style:</span> para modificar el estilo de la fuente.</li>
+          </ul>
+        </article>
+        <article id="web-content-background">
+          <h3>Backgrounds</h3>
+          <p>Algunas de las propiedades de css relacionadas con la apariencia del fondo de los elementos son:</p>
+          <ul>
+            <li><span class="n-bold">background:</span> con la que se puede indicar un color, o usada de manera
+              extendida, puede incluir color de fondo, url de la imagen, posición y modo de repetición de la imagen.</li>
+            <li><span class="n-bold">background-image:</span> contiene la url que se usará como fondo del elemento.</li>
+            <li><span class="n-bold">background-color: </span> indica el color de fondo, se puede usar en combinación
+              con la imagen.</li>
+            <li><span class="n-bold">background-size:</span> se puede indicar en valores de alto y ancho o en alguna de
+              las palabras claves permitidas: cover o contain.</li>
+            <li><span class="n-bold">background-position: </span> indica la posición de la imagen dentro del elemento,
+              puede indicarse en unidades o en palabras claves como center, left, top y right.</li>
+            <li><span class="n-bold">background-repeat:</span> indica el método de repetición de la imagen de fondo,
+              puede ser: repeat, repeat-x, repeat-y o no-repeat.</li>
+          </ul>
+        </article>
+        <article id="web-content-box">
+          <h3>Bordes, Márgenes y Rellenos</h3>
+          <h4>Bordes</h4>
+          <p>Todos los elementos html admiten la propiedad de css <span class="n-bold">border</span>, que define la
+            apariencia que tendrá el
+            contorno del componente.
+            El borde puede ser de muchos estilos, y al igual que las propiedades margin y padding que aprenderás más
+            adelante, a los bordes se les puede colocar estilos tanto de forma general con la propiedad border, como de
+            acuerdo al lado del elemento que se indique: border-top, border-right, border-bottom y border-left.
+            Con la propiedad <span class="n-bold">boder-radius</span> se define el redondeado de las esquinas de los
+            bordes.
+          </p>
+          <figure class="courses-images"><img src="../../img/frontend/bordes.jpg" alt="estilos de los bordes css" width="450" /><br />Estilos
+            de los bordes</figure>
+          <p>Para asignar un borde:</p>
+          <p> <span class="n-bold code-style">border:</span> tamaño tipo estilo </p>
+          <p>Para asignar el borde solo en una parte podemos usar:</p>
+          <ul>
+            <li>border-top</li>
+            <li>border-right</li>
+            <li>border-bottom</li>
+            <li>border-left</li>
+          </ul>
+          <p>Para redondear el borde</p>
+          <span class="n-bold code-style">border-radius:</span> tamaño;
+          <h4>Márgenes</h4>
+          <p>Los márgenes en CSS son el espacio que separa a los elementos html entre sí. Hay elementos de html que
+            traen márgenes predefinidos (por defecto) en los estilos propios del navegador como el caso de: body, h1,
+            h2, h3, h4, h5, h6, ol, ul, li, p, y muchos otros.
+            Cuando hay dos márgenes de elementos diferentes que colindan entre sí, se presenta una situación llamada
+            "margin collapsing" en la que el mayor margen de los dos se superpone al otro.
+            Se puede asignar una medida de margin para los cuatro lados del elemento, o márgenes individuales para cada
+            uno de los lados con: margin-top, margin-right, margin-bottom y margin-left.
+          </p>
+          <p><span class="n-bold">Nota:</span> Se puede centrar un elemento html colocándole el valor de <span class="n-bold">margin:
+              0 auto</span>, cuando dicho elemento tiene display block.</p>
+          <figure class="courses-images"><img src="../../img/frontend/margin-collapsing.jpg" alt="ejemplo de margin collapsing"
+              width="450" /><br /><span>Ejemplo de margin collapsing</span></figure>
+          <h3>Rellenos</h3>
+          <p>Así como el margen separa a los elementos html entre sí, la propiedad <span class="n-bold">padding</span>
+            de relleno, permite definir
+            una separación entre el contenido interno y el borde de un elemento.
+            Al inspeccionar los elementos html en el navegador, se puede apreciar el margin con color naranja y el
+            padding con color verde.
+            Una forma de identificar cuándo es mejor usar margin o padding en un elemento, es evaluando la necesidad de
+            usar borde o background, ya que son éstos: el borde y el background, los que realmente diferencian el uso
+            de uno u otro.
+          </p>
+        </article>
+        <article id="web-content-modelBox">
+          <h3>Modelo de cajas</h3>
+          <p>El modelo de caja es un concepto teórico de css que representa a cada elemento html en base sus
+            propiedades de: <span class="n-bold">margin, border, padding</span> y <span class="n-bold">dimensiones</span>
+            (alto y ancho).
+            Para visualizar un elemento html en su representación como modelo de caja debemos irnos a la parte baja de
+            la sección styles del inspector de elementos, o en la sección llamada <span class="n-bold">Computed</span>.
+            En el modelo de caja, el <span class="n-bold">ancho total</span> de un elemento html equivale a la
+            sumatoria de los valores de: <span class="n-bold">width, padding-left, padding-right, border-left-width,
+              border-right-width</span>. De manera similar aplica para el alto
+            total de cada elemento. Aunque <span class="n-bold">margin-left</span> y <span class="n-bold">margin-right</span>,
+            forman parte del modelo de caja, no se incluyen
+            para el cálculo del ancho total.
+          </p>
+          <p>Con la propiedad <span class="n-bold">box-sizing</span>, y en particular con el valor <span class="n-bold">border-box</span>
+            de esta propiedad, podemos modificar
+            el comportamiento del modelo de caja para que nuestro elemento nunca supere el tamaño máximo que le hayamos
+            definido en width y height. Esta es la opción recomendad para trabajar.</p>
+        </article>
+        <article id="web-content-display">
+          <h3>Tipos de display</h3>
+          <p>Display es la propiedad de css que indica cómo debe ser mostrado un elemento html. Todos los elementos
+            tienen algún tipo de display. Si un elemento no se ve en pantalla es porque seguramente su display es none.</p>
+          <p>Los valores más comunes que puede recibir la propiedad <span class="n-bold">display</span> son:</p>
+          <ul>
+            <li><span class="n-bold">block:</span> el elemento intenta abarcar todo el ancho posible.</li>
+            <li><span class="n-bold">inline:</span> reduce su tamaño exclusivamente hasta lo que abarca su contenido,
+              descartando las propiedades width y height.</li>
+            <li><span class="n-bold">inline-block:</span> combina lo mejor de block e inline, ya que respeta las
+              dimensiones indicadas en las propiedades width y height, pero coloca el elemento en línea (al costado) de
+              elementos hermanos que también tengan display: inline o inline-block.</li>
+            <li><span class="n-bold">flex:</span> asume algunas propiedades por defecto que favorecen la alineación de
+              los elementos internos.</li>
+            <li><span class="n-bold">grid:</span> similar a flex, asume algunas propiedades por defecto organizando los
+              contenidos en filas y columnas.</li>
+            <li><span class="n-bold">none:</span> oculta el elemento.</li>
+          </ul>
+          <figure class="courses-images"><img src="../../img/frontend/display.png" alt="tipos de display" width="450" /></figure>
+        </article>
+        <article id="web-content-flex">
+          <h3>Propiedad flexbox</h3>
+          <p>Flexbox se refiere al tipo de display en css que permite un manejo flexible de la alineación,
+            dimensionamiento y distribución de elementos html.
+            Esta propiedad se aplica a un elemento padre, pero va a afectar principalmente a sus elementos hijos
+            directos. Por defecto, los elementos internos quedan alineados unos seguidos de los otros. El
+            comportamiento del modelo de caja de estos elementos hijos también se ha modificado, ya que pierden el
+            efecto de su propiedad margin.
+            Los elementos hijos de un padre con propiedad <span class="n-bold">display: flex</span> tienen a su
+            disposición algunas nuevas
+            propiedades que aportan mayor flexibilidad a su comportamiento. Una de estas propiedades es <span class="n-bold">flex-shrink</span>
+            que, junto a la propiedad <span class="n-bold">flex-wrap</span> del padre, permite adaptar y distribuir los
+            elementos de manera
+            dinámica en el espacio horizontal disponible hasta ocupar todo el espacio, y luego pasar a ocupar
+            dinámicamente las siguientes filas hacia abajo.
+          </p>
+          <p>Propiedades flex en el padre:</p>
+          <ul>
+            <li><span class="n-bold">flex-direction: </span> column (una sola columna) que los elementos se posicionen
+              verticalmente.</li>
+            <li><span class="n-bold">flex-wrap:</span> que los elementos cuando no halla espacio en el ancho designado
+              se posición debajo o no.
+              <ul>
+                <li><span class="n-bold">flex-wrap:</span> nowrap (no cae). </li>
+                <li><span class="n-bold">flex-wrap:</span> rap (si cae). </li>
+              </ul>
+            </li>
+          </ul>
+          <p>Propiedades flex en los hijos:</p>
+          <ul>
+            <li><span class="n-bold">flex-shrink: </span> capacidad de encogimiento, cuando se quiere que los hijos de
+              flex no cambien su ancho.
+              <ul>
+                <li><span class="n-bold">flex-shrink:</span> 0 - 1 (100% encogible).</li>
+                <li><span class="n-bold">flex-shrink:</span> 0 (nada encogible).</li>
+              </ul>
+            </li>
+            <li><span class="n-bold">align-self: </span> Aplica propiedades de alineación a los hijos de flex.</li>
+          </ul>
+          <h4>Alineando elementos de forma horizontal</h4>
+          <p>La propiedad de css que nos permite definir la forma en que se alinearán o distribuirán los hijos de un
+            elemento al que se le ha asignado un display flex es: <span class="n-bold">justify-content</span>. Y puede
+            tomar entre otros valores,
+            los siguientes:</p>
+          <ul>
+            <li><span class="n-bold">flex-start:</span> para alinear todos los elementos hacia el inicio del espacio
+              disponible.</li>
+            <li><span class="n-bold">flex-end:</span> para alinear todos los elementos hacia el final, a la derecha.</li>
+            <li><span class="n-bold">center:</span> para alinear todos los elementos al centro del espacio disponible.</li>
+            <li><span class="n-bold">space-between:</span> para distribuir los elementos con un espacio proporcional e
+              igual entre ellos.</li>
+            <li><span class="n-bold">space-evenly:</span> para distribuir los elementos con un espacio proporcional e
+              igual entre ellos (incluyendo el primer y último elementos con respecto a los estremos del espacio
+              disponible).</li>
+            <li><span class="n-bold">space-around:</span> similar a space-evenly pero tanto en el primero como en el
+              último elemento, el espacio hacia los extremos es la mitad del espacio usado entre los elementos.</li>
+          </ul>
+          <figure class="courses-images"><img src="../../img/frontend/justify-content.jpg" alt="propiedades de justify content"
+              width="450" /></figure>
+          <h4>Alineando elementos de forma vertical</h4>
+          <p>
+            Similar a como sucede con justify-content, es posible alinear y distribuir los elementos internos en el
+            espacio vertical disponible usando la propiedad <span class="n-bol">align-items</span>, que puede tomar
+            también los valores de:
+            <span class="n-bold">flex-start, flex-end</span> y <span class="n-bold">center</span>.
+            Algo que es muy importante y se debe tener en cuenta a la hora de usar <span class="n-bold">align-items</span>
+            y <span class="n-bold">justify-content</span> es que
+            dependiendo de la propiedad <span class="n-bold">flex-direction</span> que se haya definido, el efecto de
+            ambos se invierte, no en
+            cuanto a sus elementos internos, sino en cuanto a si se debe usar uno u otro de manera vertical u
+            horizontal.
+            IMPORTANTE: Cuando la propiedad <span class="n-bold">flex-direction</span> se ha definido como <span class="n-bold">column</span>,
+            la propiedad <span class="n-bold">justify-content</span> ya
+            no va a aplicar sobre la alineación horizontal, sino sobre la vertical. Y <span class="n-bold">align-items</span>
+            ya no aplicaría sobre
+            la alineación vertical sino la horizontal. Se intercambian sus efectos.
+            Para centrar completamente los elementos internos de manera vertical y horizontal en su elemento padre,
+            debemos usar el valor <span class="n-bold">center</span> en ambas propiedades.
+          </p>
+          <figure class="courses-images"><img src="../../img/frontend/align-item.jpg" alt="propiedades de align items"
+              width="450" /></figure>
+          <p><span class="n-bold">Nota:</span> align-self aplica propiedades a los hijos.</p>
+          <figure class="courses-images big-img"><img src="../../img/frontend/flex.jpg" alt="demás propiedades flex"
+              width="650" /><br /><span>Más propiedad flexbox</span></figure>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="main-container">
+        <div class="footer-container">
+          <p>Carlos Zabala Roqueme - 2018</p>
+          <figure>
+            <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-white.png" alt="Logo Carlos Zabala" /></a>
+          </figure>
+        </div>
+      </div>
+    </footer>
+    <!--Pie de página-->
+  </div>
+</body>
+
+
+<script>
+
+  const ipad = window.matchMedia('screen and (max-width: 767px)');
+  const links = document.querySelectorAll('.link-course')
+
+  const menu = document.querySelector('.general-content-menu');
+  const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+  ipad.addListener(validation);
+
+  function validation(event) {
+
+    if (event.matches) {
+      // console.log('Hello');
+      burgerButton.addEventListener('click', showHideMenu);
+      //lineas agregadas para recorrer los objetos y agregar un listener
+      Array.from(links).forEach(link => {
+        link.addEventListener('click', showHideMenu)
+      })
+    }
+    else {
+      burgerButton.removeEventListener('click', showHideMenu);
+    }
+
+  }
+
+  validation(ipad);
+
+  function showHideMenu() {
+    // console.log('clicc');
+    if (menu.classList.contains('isActive')) {
+      menu.classList.remove('isActive');
+
+    }
+    else {
+      menu.classList.add('isActive');
+    }
+  }
+
+  // console.log(menu, ' ' ,burgerButton);
+</script>
+
+</html>

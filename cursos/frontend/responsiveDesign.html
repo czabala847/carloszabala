@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Responsive Design - Carlos Zabala</title>
+  <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/estilos.css" />
+</head>
+
+<body>
+  <!-- <i class="icon-menu burger-button" id="burgerMenu"></i> -->
+  <i class="icon-menu button-course-menu" id="burgerMenu"></i>
+  <div class="main">
+    <div class="main-container">
+      <header class="header main-container">
+        <!--Cabecera-->
+        <nav class="menu-gn-courses menu menu-left">
+          <ol>
+            <li class="menu-link"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link"><a href="../frontend.html">Carrera</a></li>
+          </ol>
+        </nav>
+        <figure class="logo-imageContainer">
+          <!--Logo-->
+          <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
+        </figure>
+        <nav class="menu-gn-courses menu menu-right">
+          <ol>
+            <li class="menu-link"><a href="recomendacionesResponsiveDesign.html">Recomendaciones</a></li>
+            <li class="menu-link"><a href="codigoResponsiveDesign.html">Codigos</a></li>
+          </ol>
+        </nav>
+      </header>
+    </div>
+
+    <section class="hero res-hero-background">
+      <div class="main-container title-container">
+        <h1>Responsive Design</h1>
+      </div>
+    </section>
+
+    <!-- <div class="main-container"> -->
+    <section class="general-course-container">
+      <aside class="general-content-menu">
+        <nav class="general-course-menu">
+          <ol>
+            <li class="link-course"><a href="#web-content-origin">Introducción</a></li>
+            <li class="link-course"><a href="#web-content-patron">Patrones en Responsive Design</a></li>
+            <li class="link-course"><a href="#web-content-concept">Conceptos básicos</a></li>
+            <li class="link-course"><a href="#web-content-tools">Developer tools</a></li>
+            <li class="link-course"><a href="#web-content-metaViewport">Meta viewport</a></li>
+            <li class="link-course"><a href="#web-content-medidasRelativas">Medidas relativas</a></li>
+            <li class="link-course"><a href="#web-content-typeMedia">Formas media queries</a></li>
+            <li class="link-course"><a href="#web-content-elasticDesign">Diseño elastico</a></li>
+            <li class="link-course"><a href="#web-content-positions">Posiciones</a></li>
+            <li class="link-course"><a href="#web-content-video">Videos <span class="link-upper">html5</span></a></li>
+            <li class="link-course"><a href="#web-content-icon">Iconos</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <div class="general-content">
+        <article class="web-content-origin" id="web-content-origin">
+          <h3>Responsive Design</h3>
+          <p>
+            Son todas esas técnicas que usamos para adaptar nuestras aplicaciones web a la mayor cantidad de pantallas.
+          </p>
+        </article>
+        <article id="web-content-patron">
+          <h3>Patrones en Responsive Desing</h3>
+          <ul>
+            <li>
+              <p><span class="n-bold">Mostly Fluid:</span> El patrón Mostly fluid consiste, principalmente, en una
+                cuadrícula fluida. Por lo general, en las pantallas grandes o medianas se mantiene el mismo tamaño y
+                simplemente se ajustan los márgenes en las más anchas.
+                En las pantallas más pequeñas, la cuadrícula fluida genera la reprocesamiento del contenido principal,
+                mientras que las columnas se apilan verticalmente. Una de las mayores ventajas de este patrón es que,
+                en
+                general, solo se necesita un punto de interrupción entre las pantallas grandes y las pequeñas.</p>
+              <p><span class="n-bold">Ejemplos:</span> <a class="link-normal" href="https://alistapart.com/" target="_blank">A
+                  List
+                  Apart</a> y <a class="link-normal" href="http://simplebits.com/" target="_blank">Simple Bits</a>.</p>
+              <figure class="courses-images"><img src="../../img/frontend/mostly-fluid.png" alt="Diseño Mostly Fluid"
+                  width="400" /></figure>
+            </li>
+            <li>
+              <p><span class="n-bold">Colocación de columnas:</span> En el caso de los diseños con varias columnas de
+                ancho completo, durante el proceso de colocación de
+                columnas éstas únicamente se colocan de forma vertical debido a que el ancho de la ventana es demasiado
+                reducido para el contenido.
+                En un momento dado, todas las columnas se apilan verticalmente. La selección de puntos de interrupción
+                para este patrón de diseño depende del contenido y cambia para cada diseño.</p>
+              <p><span class="n-bold">Ejemplos:</span> <a class="link-normal" href="https://modernizr.com/" target="_blank">modernizr</a>
+                y <a class="link-normal" href="http://weenudge.com/" target="_blank">Wee Nudge</a>.</p>
+              <figure class="courses-images"><img src="../../img/frontend/colocacion-columnas.png" alt="Diseño Colocación de columnas"
+                  width="400" /></figure>
+            </li>
+            <li>
+              <p><span class="n-bold">Layout shifter:</span>
+                El patrón Layout shifter es el más adaptable, ya que posee varios puntos de interrupción en diferentes
+                anchos de pantalla.
+                La clave para este diseño es el desplazamiento del contenido, en lugar de su reprocesamiento y
+                colocación
+                debajo de otras columnas. Debido a las diferencias significativas entre cada punto de interrupción
+                principal, es más complejo de mantener, y es posible que se deban realizar cambios dentro de los
+                elementos, no solo en el diseño de contenido general.</p>
+              <p><span class="n-bold">Ejemplos:</span> <a class="link-normal" href="https://www.anderssonwise.com/"
+                  target="_blank">Andersson Wise</a>
+                y <a class="link-normal" href="https://alistapart.com/d/responsive-web-design/ex/ex-site-FINAL.html"
+                  target="_blank">A List Apart</a>.</p>
+              <figure class="courses-images"><img src="../../img/frontend/layout shifter.png" alt="Diseño Layout Shifter"
+                  width="400" /></figure>
+            </li>
+            <li>
+              <p><span class="n-bold">Tiny tweaks:</span>
+                El patrón Tiny tweaks permite realizar pequeños cambios en el diseño, como ajustar el tamaño de la
+                fuente, cambiar el tamaño de las imágenes o desplazar el contenido de maneras muy poco significativas.
+                Funciona correctamente en diseños con una sola columna, como los sitios web lineales de una sola página
+                y
+                los artículos con mucho texto.</p>
+              <p><span class="n-bold">Ejemplos:</span> <a class="link-normal" href="http://gingerwhale.com/" target="_blank">gingerwhale</a>
+                y <a class="link-normal" href="http://futurefriendlyweb.com/" target="_blank">Future Friendly</a>.</p>
+              <figure class="courses-images"><img src="../../img/frontend/tiny-tweaks.png" alt="Diseño Tiny Tweaks"
+                  width="400" /></figure>
+            </li>
+            <li>
+              <p><span class="n-bold">Off canvas:</span>
+                En lugar de apilar contenido verticalmente, el patrón Off canvas coloca contenido menos usado (tal vez
+                menús de navegación o de apps) fuera de la pantalla y solo lo muestra cuando el tamaño de la pantalla
+                es
+                suficientemente grande. En las pantallas más pequeñas, el acceso al contenido es posible con solo a un
+                clic.</p>
+              <p><span class="n-bold">Ejemplos:</span> <a class="link-normal" href="https://www.html5rocks.com/en/tutorials/developertools/async-call-stack/"
+                  target="_blank">html5rocks</a>
+                y <a class="link-normal" href="https://store.google.com/countrypicker" target="_blank">Google Store</a>.</p>
+              <figure class="courses-images"><img src="../../img/frontend/off-canvas.png" alt="Diseño Off Canvas" width="400" /></figure>
+            </li>
+          </ul>
+        </article>
+        <article id="web-content-concept">
+          <h3>Conceptos Básicos</h3>
+          <h4>Viewport</h4>
+          <p>Es el área visible del navegador.</p>
+          <figure class="courses-images"><img src="../../img/frontend/viewport.png" alt="Viewport del navegador" /></figure>
+          <h4>Portrait - Landscape</h4>
+          <ul>
+            <li>Vertical.</li>
+            <li>horizontal.</li>
+          </ul>
+          <figure class="courses-images"><img src="../../img/frontend/portrait - landscape.png" alt="Landscape y Portrait ejemplo" /></figure>
+          <h4>Mobile First</h4>
+          <p>Empezar un website desde la menor resolución soportada.</p>
+          <h4>Desktop First</h4>
+          <p>Empezar un website desde la mayor resolución soportada.</p>
+          <h4>¿Cuál es mejor?</h4>
+          <p>Técnicamente Mobile First, pero depende a que dispositivos se quiere enfocar mucho más el website.</p>
+        </article>
+        <article id="web-content-tools">
+          <h3>Developer tools para Responsive Design</h3>
+          <p>Antes de empezar a aplicar las herramientas necesarias para realizar Responsive Design es fundamental que
+            aprendas a visualizar y manejar el menú en donde se encuentran tales herramientas, el cual se encuentra en
+            cualquier explorador desde el que trabajes.
+            De tal modo que, en esta clase, aprenderás a manejar las herramientas para lograr la variación de tamaños
+            del website, asimismo, podrás verlas desde tu ordenador en tamaños de diversos dispositivos comúnmente
+            usados; también verás la regla de medida -la cual te indicará medidas máximas y mínimas- y, por último,
+            aprenderás a capturar fullsize screenshots.
+          </p>
+          <figure class="courses-images big-img"><img src="../../img/frontend/developer-tools.png" alt="Inspector de google Toggle device toolbar"
+              width="600" /></figure>
+          <figure class="courses-images big-img"><img src="../../img/frontend/developer-tools-2.png" alt="Inspector de google Toggle device toolbar 2"
+              width="600" /></figure>
+        </article>
+        <article id="web-content-metaViewport">
+          <h3>Meta viewport</h3>
+          <p>Esta es una etiqueta de metadatos que te ayudará a configurar tu website para que sea visible en
+            dispositivos de menor tamaño, Uno de los objetivos principales al usar esta etiqueta será que conserves la
+            legibilidad de tu página web, al variar el escalado de tus contenidos.</p>
+          <ul>
+            <li><span class="n-bold">width=device-width</span> para que se adapte según la pantalla del dispositivo.</li>
+            <li><span class="n-bold">initial-scale=1.0</span> para indicar el escalado según el dispositivo.</li>
+          </ul>
+        </article>
+        <article id="web-content-medidasRelativas">
+          <h3>Medidas relativas útiles en Responsive Design</h3>
+          <p>Lo primero que debes tener en cuenta es que estas medidas son maleables, en la medida en que dependen de
+            su fuente de origen o medida madre. Entre ellas se encuentran el porcentaje (longitud referente al tamaño
+            de los elementos padre), los em (unidad relativa al tamaño de fuente especificada más cercano), los rem
+            (unidad relativa al tamaño de fuente especificada en el ancestro más lejano, como html o body) y tamaños
+            del viewport vw/vh (longitud relativa porcentual con respecto al viewport).</p>
+          <p>Unidades relativas de medidas, varían respecto a una condición.</p>
+          <h4>Porcentajes</h4>
+          <p>Longitud referente al tamaño de los elementos padres.</p>
+          <h4>em</h4>
+          <p>Unidad relativa al tamaño de fuente especificada más cercano, para los padding, margin, width, el elemento
+            va a tomar como referencia el tamaño de fuente mas próximo, si ese elemento tiene un tamaño de fuente
+            <span class="n-bold">font-size</span> especificado, el padding tomara ese tamaño de referencia.</p>
+          <figure class="courses-images"><img src="../../img/frontend/em.png" alt="Código ejemplo uso del em" width="400" /></figure>
+          <p><span class="n-bold">Nota:</span> casí siembre un em equivale a 16px.</p>
+          <h4>rem</h4>
+          <p>Unidad relativa al tamaño de fuente especificada en el ancestro más lejano (html o body).</p>
+          <figure class="courses-images"><img src="../../img/frontend/rem.png" alt="Código ejemplo uso del rem" width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/rem_2.png" alt="Código segundo ejemplo uso del rem"
+              width="400" /></figure>
+          <h4>vw / vh</h4>
+          <p>Unidad relativa porcentual con respecto al Viewport.</p>
+          <figure class="courses-images"><img src="../../img/frontend/viewport-wh.png" alt="Ejemplo medidas respecto al viewport"
+              width="500" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/viewport-wh_2.png" alt="Segundo ejemplo medidas respecto al viewport"
+              width="500" /></figure>
+        </article>
+        <article id="web-content-media">
+          <h3>Media queries</h3>
+          <p>Para que logres los resultados que deseas en tus proyectos, es necesario cambiar ciertas propiedades para
+            modificar el tamaño de los textos, contenidos y hojas de estilo; la manera de hacer esto es a través de los
+            media queries.
+            La media queries es un módulo de css que hace posible al responsive design, éste existe desde el 2010 y se
+            encarga de adaptar la representación del contenido a características del dispositivo.
+          </p>
+          <figure class="courses-images"><img src="../../img/frontend/media-query.png" alt="Ejemplo media-query" width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/media-query-2.png" alt="Ejemplo 2 media-query"
+              width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/media-query-3.png" alt="Ejemplo 3 media-query"
+              width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/media-query-4.png" alt="Ejemplo 4 media-query"
+              width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/media-query-5.png" alt="Ejemplo 5 media-query"
+              width="400" /></figure>
+          <p><span class="n-bold">Notas:</span> max-width = hasta / min-width = desde</p>
+          <a class="link-refe" href="recomendacionesResponsiveDesign.html#web-content-media">Medidas recomendadas</a>
+        </article>
+        <article id="web-content-typeMedia">
+          <h3>Formas de incluir media queries</h3>
+          <p>Se pueden agregar en la etiqueta <span class="n-bold">style</span> o por medio de un archivo externo por
+            medio de la etiqueta <span class="n-bold">link</span>, hasta por medio de javascript podemos agregar media
+            queries, lo recomendado es que se haga dentro del archivo de estilos css.</p>
+          <a class="link-refe" href="codigoResponsiveDesign.html#web-content-media">Ejemplos</a>
+        </article>
+        <article id="web-content-elasticDesign">
+          <h3>Diseño elástico con max-width y flex-wrap</h3>
+          <p>Lo recomendable es ordenar los proyectos por medio del uso de contenedores flexibles, que varíen su tamaño
+            según la amplitud
+            con la que cuentan en diversos dispositivos y permitan una óptima visualización.
+            Por otro lado, para hacer esto posible, hay que aplicar las etiquetas de <span class="n-bold">max-width</span>
+            y <span class="n-bold">flex- wrap</span>; éstas
+            ayudarán a evitar que los usuarios navegen la página de forma horizontal, pues la
+            información se organizará en forma vertical para facilitar la experiencia.
+          </p>
+        </article>
+        <article id="web-content-positions">
+          <h3>CSS positions</h3>
+          <p>En los proyecto, al probarlo en distintos dispositivos, veremos que no solamente sus elementos y
+            contenidos deben tener la propiedad de cambiar sus tamaños y condiciones para hacerse elementos de una
+            buena visualización; sino que, además, hay unos ciertos contenidos que permanecen constantemente en el
+            espacio de visualización, a pesar de que el usuario realice scroll en la página.
+            Por tal razón es recomendado saber sobre los distintos tipos de posiciones (estática, relativa, absoluta,
+            fixed y sticky).</p>
+          <ul>
+            <li><span class="n-bold">static:</span> es la propiedad por defecto.</li>
+          </ul>
+          <p>Con las otras opciones, se activan las propiedades de top, bottom, left, right y z-index.</p>
+          <ul>
+            <li><span class="n-bold">relative:</span> el objeto se mueve en base al lugar donde se encuentra
+              originalmente.</li>
+            <li><span class="n-bold">absolute:</span> el objeto se ubica de manera absoluta con el elemento más cercano
+              que tenga posición relativa o con el body.</li>
+            <li><span class="n-bold">fixed:</span> El elemento se muestra de manera fija en el viewport.</li>
+            <li><span class="n-bold">sticky:</span> El elemento se queda de manera fija una vez que aparece en
+              pantalla.</li>
+          </ul>
+          <p>Para destacar:</p>
+          <ul>
+            <li><span class="n-bold">relative:</span> Cuando el elemento se mueve, el espacio inicial reservado para
+              este elemento se mantiene en el mismo lugar.</li>
+            <li><span class="n-bold">absolute:</span> Cuando el elemento se mueve, se lleva consigo el espacio que
+              ocupa.</li>
+          </ul>
+          <a class="link-refe" href="">Código sticky</a>
+        </article>
+        <article id="web-content-video">
+          <h3>Videos en <span class="link-upper">html5</span></h3>
+          <p>Como sabes, los videos son contenidos cada vez más comunes e incluso necesarios en los websites.
+            Por esta razón, en esta clase aprenderás a incluir un video en tu proyecto y, por lo tanto, lo modificarás
+            para convertirlo en un material responsivo, es decir, que sea coherente con tu trabajo de Responsive
+            Design.
+            Para aprender esto es necesario que elijas cualquier video que tengas en su formato original.
+          </p>
+          <p>Para esto se emplea la etiqueta <span class="n-bold">video</span>.</p>
+          <a class="link-refe" href="codigoResponsiveDesign.html#web-content-video">Ejemplo</a>
+          <h4>Video insertado</h4>
+          <p>En esta clase aprenderás a implementar videos responsive en tu proyecto, originarios o alojados en otras
+            plataformas (como youtube y/o vimeo). Por este motivo trabajarás con la etiqueta <span class="n-bold">iframe</span>.
+            Ésta etiqueta hará posible que el video que insertes tenga la posibilidad de adaptarse a distintas formas
+            de visualización, aunque, a pesar de ellas, aprenderás cuáles son las diferencias entre usar un video
+            inserto y hacerlo desde html5.
+          </p>
+          <p>
+            <span class="n-bold">Para calcular la proporción de nuestro vídeo:</span> height * 100 / width
+          </p>
+          <p>A veces con la proporción del video deseada, nos ahorramos no saber el tamaño exacto del video, ejemplo.</p>
+          <p><span class="link-upper">relación</span> 16:9 <br />16 * 100 / 9 = 177,777 <br /><span class="link-upper">relación</span>
+            4:3 <br />4 * 100 / 3 = 133,333
+          </p>
+          <figure class="courses-images"><img src="../../img/frontend/video-responsive.png" alt="Como hacer un video responsivo"
+              width="400" /></figure>
+        </article>
+        <article id="web-content-icon">
+          <h3>Fuentes de iconos</h3>
+          <p>Todo menú necesita de la presencia de iconos, por este motivo, en esta clase aprenderás sobre las fuentes
+            de iconos y las aplicarás en la realización del menú de tu proyecto.
+            En este abordaje a las fuentes de iconos, conocerás la plataforma <a class="link-normal" href="https://icomoon.io/" target="_blank">icomoon.io</a>, en ella podrás importar o
+            añadir familias de iconos, desde tu computador o desde el sistema.
+            Posteriormente, llevarás los archivos que selecciones a tu editor de código, allí trabajarás sobre ellos
+            con la etiqueta @font- face, que acogerá a otros atributos como font- family, font- style y font- weigth,
+            font- variant, entre otras.
+          </p>
+          <p><span class="n-bold">Nota:</span> Es recomendable colocar un icono en la etiqueta <span class="n-bold">i</span>.</p>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="main-container">
+        <div class="footer-container">
+          <p>Carlos Zabala Roqueme - 2018</p>
+          <figure>
+            <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-white.png" alt="Logo Carlos Zabala" /></a>
+          </figure>
+        </div>
+      </div>
+    </footer>
+    <!--Pie de página-->
+  </div>
+</body>
+
+</html>
