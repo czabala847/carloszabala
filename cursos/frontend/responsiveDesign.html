@@ -310,7 +310,8 @@
           <h3>Fuentes de iconos</h3>
           <p>Todo menú necesita de la presencia de iconos, por este motivo, en esta clase aprenderás sobre las fuentes
             de iconos y las aplicarás en la realización del menú de tu proyecto.
-            En este abordaje a las fuentes de iconos, conocerás la plataforma <a class="link-normal" href="https://icomoon.io/" target="_blank">icomoon.io</a>, en ella podrás importar o
+            En este abordaje a las fuentes de iconos, conocerás la plataforma <a class="link-normal" href="https://icomoon.io/"
+              target="_blank">icomoon.io</a>, en ella podrás importar o
             añadir familias de iconos, desde tu computador o desde el sistema.
             Posteriormente, llevarás los archivos que selecciones a tu editor de código, allí trabajarás sobre ellos
             con la etiqueta @font- face, que acogerá a otros atributos como font- family, font- style y font- weigth,
@@ -334,5 +335,48 @@
     <!--Pie de página-->
   </div>
 </body>
+<script>
+
+  const ipad = window.matchMedia('screen and (max-width: 767px)');
+  const links = document.querySelectorAll('.link-course')
+
+  const menu = document.querySelector('.general-content-menu');
+  const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+  ipad.addListener(validation);
+
+  function validation(event) {
+
+    if (event.matches) {
+      // console.log('Hello');
+      burgerButton.addEventListener('click', showHideMenu);
+      //lineas agregadas para recorrer los objetos y agregar un listener
+      Array.from(links).forEach(link => {
+        link.addEventListener('click', showHideMenu)
+      })
+    }
+    else {
+      burgerButton.removeEventListener('click', showHideMenu);
+    }
+
+  }
+
+  validation(ipad);
+
+  function showHideMenu() {
+    // console.log('clicc');
+    if (menu.classList.contains('isActive')) {
+      menu.classList.remove('isActive');
+
+    }
+    else {
+      menu.classList.add('isActive');
+    }
+  }
+
+  // console.log(menu, ' ' ,burgerButton);
+</script>
 
 </html>
