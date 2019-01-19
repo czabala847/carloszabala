@@ -6,13 +6,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Recomendaciones Java SE - Carlos Zabala</title>
+  <title>Recomendaciones Css Gird Layout - Carlos Zabala</title>
   <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
   <link rel="stylesheet" href="../../css/estilos.css" />
 </head>
 
 <body>
+  <!-- <i class="icon-menu burger-button" id="burgerMenu"></i> -->
   <i class="icon-menu button-course-menu" id="burgerMenu"></i>
   <div class="main">
     <div class="main-container">
@@ -21,7 +22,7 @@
         <nav class="menu-gn-courses menu menu-left">
           <ol>
             <li class="menu-link"><a href="../../index.html">Inicio</a></li>
-            <li class="menu-link"><a href="index.html#java-content-origin">Teoría</a></li>
+            <li class="menu-link"><a href="css-grid.html">Teoría</a></li>
           </ol>
         </nav>
         <figure class="logo-imageContainer">
@@ -30,88 +31,52 @@
         </figure>
         <nav class="menu-gn-courses menu menu-right">
           <ol>
-            <li class="menu-link"><a href="recomendaciones.html">Recomendaciones</a></li>
+            <li class="menu-link"><a href="recomendaciones-grid.html">Recomendaciones</a></li>
             <li class="menu-link"><a href="#">Codigos</a></li>
           </ol>
         </nav>
       </header>
     </div>
 
-
-    <section class="hero java-hero-background">
+    <section class="hero res-hero-background">
       <div class="main-container title-container">
-        <h1>Recomendaciones Java SE</h1>
+        <h1>Recomendaciones Css Grid Layout</h1>
       </div>
     </section>
 
+    <!-- <div class="main-container"> -->
     <section class="general-course-container">
       <aside class="general-content-menu">
         <nav class="general-course-menu">
           <ol>
-            <li><a href="#java-rec-installation">Instalación</a></li>
-            <li><a href="#java-rec-entorno">Entorno de desarrollo</a></li>
-            <li><a href="#java-rec-object">Objetos</a></li>
-            <li><a href="#java-rec-mod">Modificadores de acceso</a></li>
-            <li><a href="#java-rec-inheritance">Herencia</a></li>
-            <li><a href="#java-rec-interface">Interfaces</a></li>
+            <li class="link-course"><a href="css-grid.html">Ver teoría</a></li>
+            <li class="link-course"><a href="#web-content-container">Contenedores</a></li>
+            <li class="link-course"><a href="#web-content-area">Grid area</a></li>
           </ol>
         </nav>
       </aside>
       <div class="general-content">
-        <div id="java-reco-installation">
-          <h3>Instalación</h3>
-          <p>Descargar tanto el jdk y jre en sus más resientes versiones, de pueden bajar desde la página de Oracle.</p>
-        </div>
-        <div id="java-rec-entorno">
-          <h3>Configurar entorno de desarrollo</h3>
-          <p>En la consola de nuestro sistema operativo (CMD) podemos ejecutar los siguientes comandos una vez
-            tengamos
-            java instalado:
-            <ul>
-              <li>java -v o java-version: Para ver la versión de java que tenemos instalada.</li>
-              <li>javac: Ver el resto de opciones que tenemos una vez instalado java.</li>
-            </ul>
-            <a class="link-refe" href="https://platzi.com/java-basico/tutoriales/como-solucionar-el-error-al-ejecutar-el-comando-javac-en-la-ventana-de-comandos-de-windows-10-x64-bits/"
-              target="_blank">Solucionar error javac</a>
-          </p>
-        </div>
-        <div id="java-rec-object">
-          <h3>Identificando objetos</h3>
-          <p>Los <strong>nombres</strong> y <strong>atributos</strong> de los <strong>objetos</strong> por lo general
-            son <strong>sustantivos.</strong>
-            <br /> <i>user, session</i><br /> La operaciones suelen ser verbos o sustantivo y verbo. <br /> <i>login,
-              makeReport</i>
-          </p>
-          <p>Es recomendado que al analizar una clase empecemos "desglosando" los objetos en papel, escribiendo los
-            atributos que puedan tener estos objetos, para así tener una lluvia de ideas.</p>
-          <figure class="courses-images"><img src="../../img/java/tablero-clases.png" alt="lluvia de ideas objetos" width="450" /></figure>
-        </div>
-        <div id="java-rec-mod">
-          <h3>Modificadores de acceso</h3>
-          <p>Es recomendado usar la encapsulación, mediante modificadores de acceso getters y setters, ver más en:
-            <a class="link-refe" href="index.html#java-content-mod">Modificadores</a></p>
-          <p>Nota: cuando empieces a copiar y pegar código en Java, quiere decir siempre que hay una mejor forma de
-            hacerlo, utilizando las buenas prácticas.</p>
-        </div>
-        <div id="java-rec-inheritance">
-          <h3>Herencia</h3>
-          <p>Cuando encontramos redundancia, es decir, cuando vemos que ciertos atributos y métodos de algunas clases
-            son los mismo, es cuando debemos aplicar la herencia
-            <i>Reutilizar código, para escribir lo menos posible.</i>
-            <a class="link-refe" href="index.html#java-content-inheritance">Más sobre herencia.</a>
-          </p>
-          <figure class="courses-images">
-            <img src="../../img/java/herencia.png" alt="Herencia Java" width="500" />
-          </figure>
-        </div>
-        <div id="java-rec-interface">
-          <h3>Interfaces</h3>
-          <p>Al nombrar una interface es recomendable empezar con la letra I, ejemplo IRunCar.</p>
-          <a class="link-refe" href="index.html#java-content-interface">Teoría sobre interface</a>
-        </div>
+        <article id="web-content-container">
+          <h3>Centrar contenido</h3>
+          <p>Para hacer un contenedor general y centrarlo se puede usar: </p>
+          <p><span class="n-bold">grid-template-columns: </span>minmax(auto, 1024px);</p>
+          <p><span class="n-bold">justify-content: </span>center;</p>
+        </article>
+        <article id="web-content-area">
+          <h3>Grid area</h3>
+          <p>Si no queremos que una sección ocupe todo el ancho o todas las columnas del grid, se pueden colocar un
+            punto(.) en la propiedad <span class="n-bold">grid-template-areas</span>:</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-area-punto.png" alt="Ejemplo en código grid-template-areas y espacios vacios"
+              width="400" /></figure>
+          <figure class="courses-images big-img"><img src="../../img/frontend/grid-area-posicion.png" alt="Ejemplo en código grid-template-areas y el posicionamiento de elementos"
+               /></figure>
+          <figure class="courses-images big-img"><img src="../../img/frontend/grid-area-posicion-2.png" alt="2 Ejemplo en código grid-template-areas y el posicionamiento de elementos"
+               /></figure>
+        </article>
       </div>
     </section>
 
+    <!-- </div> -->
 
     <!-- <section class="contact" id="contacto">
       Contacto
@@ -147,6 +112,8 @@
     <!--Pie de página-->
   </div>
 </body>
+
+
 <script>
 
   const ipad = window.matchMedia('screen and (max-width: 767px)');

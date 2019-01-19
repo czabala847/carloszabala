@@ -148,6 +148,10 @@ figure{
   background-image: url('../img/hero-responsive-design.jpg');
 }
 
+.grid-hero-background{
+  background-image: url('../img/hero-grid.jpg');
+}
+
 .hero {
   /* background: url('../img/hero-3.jpg'); */
   height: 450px;

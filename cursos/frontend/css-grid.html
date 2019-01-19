@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Css Grid Layout - Carlos Zabala</title>
+  <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/estilos.css" />
+</head>
+
+<body>
+  <!-- <i class="icon-menu burger-button" id="burgerMenu"></i> -->
+  <i class="icon-menu button-course-menu" id="burgerMenu"></i>
+  <div class="main">
+    <div class="main-container">
+      <header class="header main-container">
+        <!--Cabecera-->
+        <nav class="menu-gn-courses menu menu-left">
+          <ol>
+            <li class="menu-link"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link"><a href="../frontend.html">Carrera</a></li>
+          </ol>
+        </nav>
+        <figure class="logo-imageContainer">
+          <!--Logo-->
+          <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
+        </figure>
+        <nav class="menu-gn-courses menu menu-right">
+          <ol>
+            <li class="menu-link"><a href="recomendaciones-grid.html">Recomendaciones</a></li>
+            <li class="menu-link"><a href="#">Codigos</a></li>
+          </ol>
+        </nav>
+      </header>
+    </div>
+
+    <section class="hero grid-hero-background">
+      <div class="main-container title-container">
+        <h1><span class="link-upper">css</span> Grid Layout</h1>
+      </div>
+    </section>
+
+    <!-- <div class="main-container"> -->
+    <section class="general-course-container">
+      <aside class="general-content-menu">
+        <nav class="general-course-menu">
+          <ol>
+            <li class="link-course"><a href="#web-content-origin">Conceptos</a></li>
+            <li class="link-course"><a href="#web-content-column">Columnas</a></li>
+            <li class="link-course"><a href="#web-content-row">Filas</a></li>
+            <li class="link-course"><a href="#web-content-identados">Grids identados y tipos de displays</a></li>
+            <li class="link-course"><a href="#web-content-gap">Espaciado entre filas y columnas</a></li>
+            <li class="link-course"><a href="#web-content-funcionMedidas">Unidades de medida y funciones</a></li>
+            <li class="link-course"><a href="#web-content-areas">Áreas de contenido</a></li>
+            <li class="link-course"><a href="#web-content-columnSize">Tamaño de columnas</a></li>
+            <li class="link-course"><a href="#web-content-implicitGrid">Manejando el grid implícito</a></li>
+            <li class="link-course"><a href="#web-content-align">Alineación de elementos</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <div class="general-content">
+        <article id="web-content-origin">
+          <h3>Conceptos fundamentales sobre <span class="link-upper">CSS</span> Grid Layout</h3>
+          <ul>
+            <li><span class="n-bold">Grid Container:</span> va a ser el elemento padre que va a tener puesto un nuevo
+              tipo de display: grid. Nos permite colocar otras propiedades para manipular nuestro layaout.</li>
+            <li><span class="n-bold">Grid Item:</span> Son nuestro componentes, contenido, lo que vamos a manejar.
+              Nuestras filas o columnas que
+              vamos a mover a nuestro gusto. Son hijos directos de grid.</li>
+            <li><span class="n-bold">Grid Line:</span> Lineas divisorias horizontales y verticales.</li>
+            <li><span class="n-bold">Grid Track:</span> Espacio entre dos líneas adyacentes. Filas y columnas.</li>
+            <li><span class="n-bold">Grid Cell:</span> Celdas, espacio en dos filas adyacentes y 2 columnas adyacentes.</li>
+            <li><span class="n-bold">Grid Area:</span> Espacio rodeado por 4 grid lines.</li>
+          </ul>
+          <p>Cualquier cosa son cajas, cajas dentro de más cajas, css no tenía una especificación dedicada a crear
+            layout, se diferencia de flex en que flex esta diseñado para hacer algo en línea, no para elementos
+            dinámicos.</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-container.png" alt="Grid container" width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-item.png" alt="Grid item" width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-line.png" alt="Grid line" width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-track.png" alt="Grid track" width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-cell.png" alt="Grid cell" width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-area.png" alt="Grid area" width="400" /></figure>
+          <a class="link-refe" href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout" target="_blank">Más
+            sobre grid </a>
+        </article>
+        <article id="web-content-column">
+          <h3>Definiendo columnas</h3>
+          <p>Para agregar la propiedad de grid al contenedor padre se emplea el siguiente código:</p>
+          <p class="n-bold"><span class="code-style">.container</span>{ <br /> display: <span class="code-style-green">grid;</span><br />
+            } </p>
+          <p>Para definir Columnas de contenido en nuestro layout debemos definir la propiedad <span class="n-bold">grid-template-columns</span>
+            seguido del qué tamaño serán el número de columnas que queremos. Su sintaxis es la siguiente:</p>
+          <p><span class="n-bold">grid-template-columns:</span> <span class="link-upper">n1 n2 n3 ... ;</span></p>
+          <figure class="courses-images">
+            <img src="../../img/frontend/grid-code-column.png" alt="Ejemplo definiendo columnas con grid" width="400" />
+            <img src="../../img/frontend/grid-show-example.png" alt="Ejemplo en el navegador definiendo columnas con grid"
+              width="400" />
+          </figure>
+          <figure class="courses-images">
+            <img src="../../img/frontend/grid-code-column-2.png" alt="Ejemplo 2 definiendo columnas con grid" width="400" />
+            <img src="../../img/frontend/grid-show-example-2.png" alt="Ejemplo 2 en el navegador definiendo columnas con grid"
+              width="400" />
+          </figure>
+        </article>
+        <article id="web-content-row">
+          <h3>Definiendo filas</h3>
+          <ul>
+            <li><span class="n-bold">Grid explicito (explicit grid)</span> es cuando nosotros definimos el numero de
+              filas o columnas.</li>
+            <li><span class="n-bold">Grid implicito (implicit grid)</span> es cuando tenemos filas o columnas que no
+              definimos pero son parte de nuestro grid.</li>
+          </ul>
+          <figure class="courses-images"><img src="../../img/frontend/grid-row.png" alt="Código definir grid row" width="400" /></figure>
+          <p>Para manejar filas y columnas en una sola línea de código:</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-row-column.png" alt="Código grid row y columns"
+              width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-template.png" alt="Ejemplo código grid row y columns"
+              width="400" /></figure>
+          <h4>Grid implicito</h4>
+          <p>La rejilla explícita es la red que defina con los <span class="n-bold">grid-template-rows</span>, <span
+              class="n-bold">grid-template-columns</span> y
+            <span class="n-bold">grid-template-areaspropiedades</span>.
+            Sin embargo, aún puede tener elementos que no se ajusten a su cuadrícula explícitamente definida. Por
+            ejemplo, supongamos que define una cuadrícula que solo puede ajustarse a 6 elementos de cuadrícula, pero el
+            contenedor de cuadrícula en realidad contiene 9 elementos de cuadrícula. Solo 6 elementos cabrán en la
+            cuadrícula explícita, y 3 serán dejados. Aquí es donde entra la cuadrícula implícita.
+            La cuadrícula implícita es generada automáticamente por el contenedor de la cuadrícula cuando los elementos
+            de la cuadrícula se colocan fuera de la cuadrícula explícita. El contenedor de cuadrícula genera pistas de
+            cuadrícula implícitas agregando líneas de cuadrícula implícitas a la cuadrícula. Estas líneas junto con la
+            cuadrícula explícita forman la cuadrícula implícita.
+            <a class="link-refe" href="https://www.quackit.com/css/grid/tutorial/explicit_vs_implicit_grid.cfm" target="_blank">Ver
+              más</a>
+            <figure class="courses-images big-img"><img src="../../img/frontend/grid-implicito.png" alt="Grid implicito" /></figure>
+          </p>
+        </article>
+        <article id="web-content-identados">
+          <h3>Grids identados y tipos de displays</h3>
+          <p>Display subgrid para heredar la configuración del grid padre (cuando se estén anidando grids).</p>
+          <p><span class="n-bold">display:</span> subgrid; (No disponible aún).</p>
+          <p>Display inline-grid muestra el grid en una sola linea:</p>
+          <p><span class="n-bold">display:</span> inline-grid; (No disponible aún).</p>
+          <p>Para hacer un subgrid, sensillamente hay que agregarle esta propiedad a uno de los hijos(grid item) del
+            contenedor padre(grid container).</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-subgrid.png" alt="Agregando display grid a un hijo de grid container"
+              width="400" /></figure>
+          <figure class="courses-images big-img"><img src="../../img/frontend/grid-subgrid-ejemplo.png" alt="Así se veria en el navegador display grid a un hijo de grid" /></figure>
+        </article>
+        <article id="web-content-gap">
+          <h3>Espaciado entre filas y columnas</h3>
+          <p>Si queremos tener márgenes entre columnas y filas, una opción sería colocar márgenes en los extremos de
+            cada elemento, esto solucionaría el problema de una forma visual, pero esto puede traer problemas, como por
+            ejemplo nuestro grid-container se haría más pequeño.
+            Como grid soluciona esto, tiene propiedades para que estos márgenes ocurran tanto filas y columnas
+            Esa propiedad es <span class="n-bold">grid-gap</span>.
+          </p>
+          <ul>
+            <li>Para definir espaciado entre columnas <span class="n-bold">grid-column-gap:</span> valor;</li>
+            <li>Para definir espaciado entre filas <span class="n-bold">grid-row-gap:</span> valor;</li>
+            <li>Para decir esto en una sola línea de código: <span class="n-bold">grid-gap:</span> filas / columnas;</li>
+          </ul>
+          <p><span class="n-bold">Notas:</span>Gap es cuanto de espaciado queremos entre columnas. El gap no rompe cómo
+            funciona el grid, ejemplo:</p>
+          <figure class="courses-images"><img src="../../img/frontend/gap-code.png" alt="Ejemplo del uso de grid gap" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/gap-margin.png" alt="Ejemplo display grid con margin" /><br /><span>Con
+              margin</span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/gap-no-margin.png" alt="Ejemplo display grid sin margin y con gap" /><span><br />Sin
+              margin</span></figure>
+        </article>
+        <article id="web-content-funcionMedidas">
+          <h3>Repetidores, unidades de medida y funciones</h3>
+          <p>Unidad de medida: fracciones <span class="n-bold">fr</span> distribuye el espacio disponible tanto
+            vertical como horizontal en formas iguales.</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-medidas.png" alt="Uso de fr en grid" width="400" /><br /><span>En
+              este ejemplo: tendremos 3 Columnas de 33,33..%</span></figure>
+          <figure class="courses-images big-img"><img src="../../img/frontend/grid-medidas-muestra.png" alt="Muestra en el navegador uso de fr en grid" /><br /><span>Las
+              columnas se distribuyen con un mismo tamaño</span></figure>
+          <p>Que sucede con el automatico.</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-automatico-medidas.png" alt="Medias automaticos en el tamaño de grid grid-template"
+              width="400" /></figure>
+          <p>En teoría debería hacer lo mismo que <span class="n-bold">fr</span>, pero el <span class="n-bold">auto</span>
+            distribuye el tamaño del elemento respecto al contenido que lleve dentro.</p>
+          <figure class="courses-images big-img"><img src="../../img/frontend/grid-automatico-medidas-2.png" alt="Ejemplo en el navegador medias automaticos en el tamaño de grid grid-template" /><br /><span>En
+              la columna 1 es mas ancha que el resto ya que en esa columna hay un elemento que tiene más elementos
+              adentro como es el caso de los sub-item.</span></figure>
+          <h4>Funciones</h4>
+          <ul>
+            <li>
+              <p><span class="n-bold">repeat</span>(cantidad, valor) para usar el mismo valor varias veces. Para evitar
+                escribir lo mismo en los valores de ccs como por ejemplo 3 columas de 1fr</p>
+              <p><span class="n-bold">grid-template-columns:</span> 1fr 1fr 1fr;</p>
+              <p>Podemos reemplazar con:</p>
+              <p><span class="n-bold">grid-template-columns:</span> repeat(3, 1fr);</p>
+            </li>
+            <li>
+              <p><span class="n-bold">minmax</span>(min, max) agregar un valor minimo y maximo para el tamaño al hacer
+                responsive valor mínimo y máximo que puede ocupar un elemento (columna) se puede combinar con la
+                función repeat
+              </p>
+              <p><span class="n-bold">grid-template:</span> 300px 100px 100px / repeat(4, minmax(200px, 1fr));</p>
+            </li>
+          </ul>
+        </article>
+        <article id="web-content-areas">
+          <h3>Definiendo áreas de contenido</h3>
+          <figure class="courses-images"><img src="../../img/frontend/grid-contenido.png" alt="Estructura básica de una web"
+              width="400" /></figure>
+          <p>Para poder construir nuestro sitio con grid layout, hay que identificar cuantas <span class="n-bold">colmunas</span>
+            y cuantas <span class="n-bold">filas</span>
+            tenemos y apara cada área es decir header, left navigation, contenido, footer, etc., debemos especificar o
+            colocar como valor ese nombre dentro del atributo <span class="n-bold">grid-template-area</span>. En la
+            imagen anterior se puede observar que tenemos 3 filas y 2 columnas.
+          </p>
+          <p>Si vamos a usar area en más de una columna colocamos el mismo donde del area donde la queramos. Ejemplo:</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-def-area.png" alt="Implementando grid-area en el código"
+              width="400" /></figure>
+          <p>Nuestro header ocupara dos columnas, una fila tendrá dos columnas left y contenido y el footer también
+            tendrá dos columnas.</p>
+          <p>También hay que especificar cuantas columas y filas son con en el grid-template-columns y rows</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-area-template.png" alt="Especificando columnas y filas en grid"
+              width="400" /></figure>
+          <p><span class="n-bold">En <span class="link-upper">html</span></span>:</p>
+          <p>Se le coloca una clase definida a cada elemento html, es decir, a los elementos html se le coloca el
+            nombre de la clase que se coloco en grid-template-area.</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-area-html.png" alt="Especificando areas en html"
+              width="400" /></figure>
+          <p><span class="n-bold">En <span class="link-upper">css</span></span>:</p>
+          <p>Para especificar qué área ocupara cada elemento lo hacemos por css con la propiedad grid-area que se le
+            aplica a los hijos de container es decir a los grid-items.</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-area-css.png" alt="Especificando areas en css"
+              width="400" /></figure>
+        </article>
+        <article id="web-content-columnSize">
+          <h3>Definiendo el tamaño de los columnas dentro de un grid</h3>
+          <p>Definir el tamaño de las columnas dentro de un grid:</p>
+          <p><span class="n-bold">grid-column-start</span>:1; <br /> <span class="n-bold">grid-column-end</span>:2;</p>
+          <p>Para escribir esto en una sola linea:</p>
+          <p><span class="n-bold">grid-column:</span> inicio / final;</p>
+          <p>Con grid-column-end: no es hasta cuantas columnas si no hasta cuantas líneas.</p>
+          <p>Para usar por espacios: <span class="n-bold">span</span> #</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-espacios.png" alt="Uso de espacios entre filas y columnas grid"
+              width="400" /></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-espacios-2.png" alt="Ejemplo 2 uso de espacios entre filas y columnas grid"
+              width="400" /></figure>
+        </article>
+        <article id="web-content-implicitGrid">
+          <h3>Manejando el grid implícito</h3>
+          <p>Para cambiar el flujo automático de mi grid:</p>
+          <p><span class="n-bold">grid-auto-flow:</span> column;</p>
+          <p>Por defecto viene <span class="n-bold">grid-auto-flow:</span> row;</p>
+          <p>Para asignar el valor por defecto de el espacio de las columnas o filas que no han sido asignadas: </p>
+          <p><span class="n-bold">grid-auto-columns:</span> valores;</p>
+          <p><span class="n-bold">grid-auto-rows:</span> valores; </p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-implicito-code.png" alt="Ejemplo en código de manejar git implicito"
+              width="400" /></figure>
+        </article>
+        <article id="web-content-align">
+          <h3>Alineando elementos</h3>
+          <h4>Alineación de contenido</h4>
+          <p>Para alinear contenido:</p>
+          <ul>
+            <li><span class="n-bold">justify-items:</span> valor; para alineación horizontal.</li>
+            <li><span class="n-bold">align-items:</span> valor; para alineación vertical.</li>
+          </ul>
+          <p>Los valores que toman por defecto es stretch el cual hace que tomen todo el valor asignado en la fila o
+            columna.</p>
+          <figure class="courses-images"><img src="../../img/frontend/grid-justify-items.png" alt="Uso de justify-items: start"
+              width="400" /><br /><span>justify-items: start</span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-justify-items-end.png" alt="Uso de justify-items: end"
+              width="400" /><br /><span>justify-items: end</span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-justify-items-center.png" alt="Uso de justify-items: center"
+              width="400" /><br /><span>justify-items: center</span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-justify-items-stretch.png" alt="Uso de justify-items: stretch"
+              width="400" /><br /><span>justify-items: strech</span></figure>
+          <h4>Alineación de filas y columnas</h4>
+          <p>Para alinear el contenido de filas y columnas:</p>
+          <ul>
+            <li><span class="n-bold">justify-content:</span> valor; (horizontal).</li>
+            <li><span class="n-bold">align-content:</span> valor; 8vertical).</li>
+          </ul>
+          <p>Para distribuir uniformemente:</p>
+          <ul>
+            <li>Con <span class="n-bold">space-around</span> Los items tienen el mismo espacio a su alrededor.</li>
+            <li>Con <span class="n-bold">space-evenly</span> Hay un espacio mas homogeneo entre items.</li>
+            <li>Con <span class="n-bold">space-between</span> El primer item al inicio, el último al final</li>
+          </ul>
+          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-center.png" alt="Uso de justify-content: center"
+            width="400" /><br /><span>justify-content: center</span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-end.png" alt="Uso de justify-content: end"
+            width="400" /><br /><span>justify-content: end</span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-around.png" alt="Uso de justify-content: space-around"
+            width="400" /><br /><span>justify-content: space-around</span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-even.png" alt="Uso de justify-content: space-evenly"
+            width="400" /><br /><span>justify-content: space-evenly</span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-between.png" alt="Uso de justify-content: space-between"
+            width="400" /><br /><span>justify-content: space-between</span></figure>
+        </article>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="main-container">
+        <div class="footer-container">
+          <p>Carlos Zabala Roqueme - 2018</p>
+          <figure>
+            <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-white.png" alt="Logo Carlos Zabala" /></a>
+          </figure>
+        </div>
+      </div>
+    </footer>
+    <!--Pie de página-->
+  </div>
+</body>
+<script>
+
+  const ipad = window.matchMedia('screen and (max-width: 767px)');
+  const links = document.querySelectorAll('.link-course')
+
+  const menu = document.querySelector('.general-content-menu');
+  const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+  ipad.addListener(validation);
+
+  function validation(event) {
+
+    if (event.matches) {
+      // console.log('Hello');
+      burgerButton.addEventListener('click', showHideMenu);
+      //lineas agregadas para recorrer los objetos y agregar un listener
+      Array.from(links).forEach(link => {
+        link.addEventListener('click', showHideMenu)
+      })
+    }
+    else {
+      burgerButton.removeEventListener('click', showHideMenu);
+    }
+
+  }
+
+  validation(ipad);
+
+  function showHideMenu() {
+    // console.log('clicc');
+    if (menu.classList.contains('isActive')) {
+      menu.classList.remove('isActive');
+
+    }
+    else {
+      menu.classList.add('isActive');
+    }
+  }
+
+  // console.log(menu, ' ' ,burgerButton);
+</script>
+
+</html>

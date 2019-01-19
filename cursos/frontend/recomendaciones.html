@@ -57,6 +57,7 @@
             <li class="link-course"><a href="#web-content-boxModel">Módelo de cajas</a></li>
             <li class="link-course"><a href="#web-content-set">Setteando elementos</a></li>
             <li class="link-course"><a href="#web-content-selector">Selectores avanzados</a></li>
+            <li class="link-course"><a href="#web-content-emment">Uso de Emmet</a></li>
           </ol>
         </nav>
       </aside>
@@ -120,6 +121,13 @@
               muestre la parte que se desborda, solo se muestra en pantalla lo que este dentro del alto y ancho que
               posee la caja.</li>
           </ul>
+          <h4>box-sizing</h4>
+          <p>La siguiente ilustración muestra dos elementos div con el mismo ancho y alto especificados: </p>
+          <figure class="courses-images"><img src="../../img/frontend/box-sizing.PNG" alt="Ejemplo de box-sizing" /></figure>
+          <p>La propiedad <span class="n-bold">box-sizing</span> nos permite incluir el relleno y el borde en el ancho y alto total de un elemento.</p>
+          <p>Si establece <span class="n-bold">box-sizing:</span> border-box; un elemento, el relleno y el borde se incluyen en el ancho y altura:</p>
+          <figure class="courses-images"><img src="../../img/frontend/box-sizing-2.PNG" alt="Ejemplo 2 de box-sizing" /></figure>
+          <a class="link-refe" href="https://www.w3schools.com/css/css3_box-sizing.asp" target="_blank">Saber más</a>
         </article>
         <article id="web-content-set">
           <h3>Setteando elementos</h3>
@@ -133,6 +141,20 @@
             <li>Cualquier clase que comience con icon-</li>
             <li>Cualquier clase que en su nombre tenga un icon-</li>
           </ol>
+          <h4>nth-of-type</h4>
+          <p>El <span class="n-bold">:nth-of-type</span> permite seleccionar uno o más elementos según su orden de origen, de acuerdo
+            con una fórmula. Se define en la especificación del Nivel 3 de los selectores de <span class="link-upper">css</span> como una "pseudo-clase
+            estructural", lo que significa que se utiliza para diseñar el contenido en función de su relación con los
+            elementos primarios y hermanos.</p>
+            <figure class="courses-images"><img src="../../img/frontend/nth-type.png" alt="Ejemplo selector nth-of-type" /></figure>
+            <figure class="courses-images"><img src="../../img/frontend/nth-type-2.png" alt="Ejemplo lo que hace selector nth-of-type" width="400" /></figure>
+        </article>
+        <article id="web-content-emment">
+          <h4>Recomendaciones Emment</h4>
+          <p>Comando rápido para crear varios elementos.</p>
+          <p>.item{contenido #$}*12</p>
+          <p>Lo que hace el anterior código es crear 12 elmentos <span class="n-bold">div</span> con la clase <span
+              class="n-bold">item</span>, el signo $ los <span class="n-bold">enumera</span> del 1 al 12.</p>
         </article>
       </div>
     </section>
