@@ -1,0 +1,291 @@
+/* Contenedor padre de los elemntos de ejemplo: bordes, definición de grid, posicionamiento de grid */
+.border-container, .grid-box-example, .grid-pos-example{
+  display: grid;
+  grid-template-columns: minmax(auto, 450px);
+  height: 350px;
+  /* background-color: #77c429; */
+  justify-content: center;
+}
+
+/* Contenedor padre de definición de css grid */
+.grid-box-example{
+  grid-template-columns: minmax(auto, 200px);
+  height: 100px;
+  margin: 1em 0;
+}
+
+/*Sub contenedor de los ejemplos de: bordes, definición de grid, posicionamiento de grid*/
+.border-container .border-content, .grid-box-example .grid-box-content, .grid-pos-example .grid-pos-content{
+  /* border: 1px solid red; */
+  display: grid;
+  grid-template-columns: repeat(3, minmax(auto, 150px));
+  grid-gap: 1em;
+}
+
+/*Sub contenedor de grid de definición de css grid*/
+.grid-box-example .grid-box-content{
+  grid-gap: 0;
+  border-right: 3px solid black;
+  border-bottom: 3px solid black;
+}
+
+/*Cajas de ejemplos de bordes*/
+.border-container .border-content .border-example{
+  border: 5px solid #d8d8d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*estilos de los bordes*/
+.border-container .border-content .border-example.none{
+  border-style:none;
+}
+
+.border-container .border-content .border-example.dotted{
+  border-style:dotted;
+}
+
+.border-container .border-content .border-example.dashed{
+  border-style:dashed;
+}
+
+.border-container .border-content .border-example.double{
+  border-style:double;
+}
+
+.border-container .border-content .border-example.groove{
+  border-style:groove;
+  border-width: 10px;
+}
+
+.border-container .border-content .border-example.ridge{
+  border-style:ridge;
+  border-width: 10px;
+}
+
+.border-container .border-content .border-example.inset{
+  border-style:inset;
+  border-width: 10px;
+}
+
+.border-container .border-content .border-example.outset{
+  border-style:outset;
+  border-width: 10px;
+} /*cierre de los estilos de los bordes*/
+
+
+/*Cajas de ejemplos de definición de css grid*/
+.grid-box-example .grid-box-content .grid-box-item{
+  border-top: 3px solid;
+  border-left: 3px solid;
+}
+
+/*Aplicando estilos a los hijos 3 y 6 de definición de css grid*/
+.grid-box-line .grid-box-example .grid-box-content .grid-box-item:nth-of-type(3), 
+.grid-box-line .grid-box-example .grid-box-content .grid-box-item:nth-of-type(6){
+  border-left-color: yellow;
+  /* background: red; */
+}
+
+/*Aplicando estilos a los hijos 1 - 6 de definición de css grid*/
+.grid-box-track .grid-box-example .grid-box-content .grid-box-item:nth-of-type(1n+4){
+  background-color: yellow;
+}
+
+/*Aplicando estilos al hijo 2 de definición de css grid*/
+.grid-box-cell .grid-box-example .grid-box-content .grid-box-item:nth-of-type(2){
+  background-color: yellow;
+}
+
+/*Aplicando estilos a los hijos 2 - 6 de definición de css grid*/
+.grid-box-area .grid-box-example .grid-box-content .grid-box-item:nth-of-type(1n+2){
+  background-color: yellow;
+}
+
+/*Aplicando estilos al hijo 4 de definición de css grid*/
+.grid-box-area .grid-box-example .grid-box-content .grid-box-item:nth-of-type(4){
+  background-color: white;
+}
+
+/* ejemplos de alineación de contenido css grid layout */
+.grid-pos-example{
+  margin-bottom: 1.5em;
+}
+
+.grid-pos-example.content{
+  grid-template-columns: minmax(auto, 550px);
+  margin-top: 1em;
+  /* border: 1px solid red; */
+}
+
+.grid-pos-example .grid-pos-content{
+  grid-template-rows: 1fr 1fr 20px;
+  justify-items: start;
+  border: 1.5px dashed #d8d8d8;
+  padding: 1em .5em;
+}
+
+
+.grid-pos-example .grid-pos-content .grid-pos-item{
+  /* border: 1px solid #d33800; */
+  color: white;
+  background-color: #fa6900;
+  padding: .3em;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.grid-pos-example .grid-pos-content .grid-pos-item.def{
+  border:none;
+  grid-column-start: 1;
+  grid-column-end: -1;
+  color: black;
+  background: white;
+  font-style: italic;
+  width: 98%;
+  text-align: center;
+}
+
+.grid-pos-example .grid-pos-content.end{
+  justify-items: end;
+}
+
+.grid-pos-example .grid-pos-content.center{
+  justify-items: center;
+}
+
+.grid-pos-example .grid-pos-content.strech{
+  justify-items: stretch;
+
+}
+
+.grid-pos-example.content .grid-pos-content{
+  grid-template-columns: repeat(3, minmax(auto, 100px));
+  justify-items: initial;
+}
+
+.grid-pos-example .grid-pos-content.c-center{
+  justify-content: center;
+}
+
+.grid-pos-example .grid-pos-content.c-end{
+  justify-content: end;
+}
+
+.grid-pos-example .grid-pos-content.c-around{
+  justify-content: space-around;
+}
+
+.grid-pos-example .grid-pos-content.c-evenly{
+  justify-content: space-evenly;
+}
+
+.grid-pos-example .grid-pos-content.c-between{
+  justify-content: space-between;
+}
+
+.grid-pos-example.content.area{
+  height: auto;
+}
+
+.grid-pos-example.content.area .grid-content-area{
+  display: grid;
+  grid-template-columns: 70px 1fr;
+  /* border: 1px solid red; */
+  background-color: #1E3643;
+  color: white;
+  grid-template-areas: "icon-area title-area-con"
+                        "content-area-con content-area-con"
+                        "time time"
+                        "form-area-con form-area-con";
+  padding: 1em;
+}
+
+.grid-pos-example.content.area .grid-content-area.change {
+  grid-template-areas: "icon-area title-area-con"
+                        "content-area-con content-area-con"
+                        "form-area-con form-area-con"
+                        "time time";
+}
+
+.icon-area{
+  grid-area: icon-area;
+  display: flex;
+  justify-content: center;
+}
+
+.icon-area img{
+  align-self: center;
+}
+
+.title-area-con{
+  grid-area: title-area-con;
+}
+
+.time {
+  grid-area: time;
+}
+
+.content-area-con{
+  grid-area: content-area-con;
+}
+
+.form-area-con{
+  grid-area: form-area-con;
+}
+
+
+.grid-pos-example.content.area .grid-content-area form{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding: .5em;
+  background-color: rgba(255,255,255,.8);
+  color: black;
+  border-radius: .5em;
+}
+
+.grid-pos-example.content.area .grid-content-area form input {
+  padding: .5em;
+  margin-bottom: 1em;
+  border-radius: .5em;
+  border: none;
+}
+
+.grid-pos-example.content.area .grid-content-area form .btn-area{
+  background-color: #93C942;
+  border: none;
+  color: white;
+  padding: .5em .5em .8em;
+  outline: none;
+  border-radius: .5em;
+  width: 150px;
+  align-self: center;
+  box-shadow: inset 0 -.3em rgba(0,0,0,.3);
+}
+
+@media screen and (max-width:480px){
+  .grid-pos-example {
+    height: 250px;
+    /* background-color: #77c429; */
+  }
+
+  .grid-pos-example.content .grid-pos-content {
+    grid-template-columns: repeat(3, minmax(auto, 50px));
+  }
+
+  .grid-pos-example.items .grid-pos-content .grid-pos-item {
+    max-width: 40px;
+  }
+
+  .grid-pos-example .grid-pos-content .grid-pos-item.def {
+    max-width: initial;
+  }
+
+  .grid-pos-example .grid-pos-content.strech .grid-pos-item{
+    width: initial;
+    max-width: initial;
+  }
+}

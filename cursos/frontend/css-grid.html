@@ -9,6 +9,7 @@
   <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
   <link rel="stylesheet" href="../../css/estilos.css" />
+  <link rel="stylesheet" href="../../css/ejemplos.css" />
 </head>
 
 <body>
@@ -66,45 +67,106 @@
           <h3>Conceptos fundamentales sobre <span class="link-upper">CSS</span> Grid Layout</h3>
           <ul>
             <li><span class="n-bold">Grid Container:</span> va a ser el elemento padre que va a tener puesto un nuevo
-              tipo de display: grid. Nos permite colocar otras propiedades para manipular nuestro layaout.</li>
+              tipo de <span class="n-bold">display: grid</span>. Nos permite colocar otras propiedades para manipular
+              nuestro layaout.
+              <pre class="code-space">
+                &lt<span class="code-style">div</span> <span class="n-bold code-style-green">class</span>="<span class="n-bold">container</span>"&gt
+                  &lt<span class="code-style">div</span> <span class="n-bold code-style-green">class</span>="item item-1"&gt&lt<span class="code-style">/div</span>&gt
+                  &lt<span class="code-style">div</span> <span class="n-bold code-style-green">class</span>="item item-2"&gt&lt<span class="code-style">/div</span>&gt
+                  &lt<span class="code-style">div</span> <span class="n-bold code-style-green">class</span>="item item-3"&gt&lt<span class="code-style">/div</span>&gt
+                &lt<span class="code-style">/div</span>&gt
+              </pre>
+            </li>
             <li><span class="n-bold">Grid Item:</span> Son nuestro componentes, contenido, lo que vamos a manejar.
               Nuestras filas o columnas que
-              vamos a mover a nuestro gusto. Son hijos directos de grid.</li>
-            <li><span class="n-bold">Grid Line:</span> Lineas divisorias horizontales y verticales.</li>
-            <li><span class="n-bold">Grid Track:</span> Espacio entre dos líneas adyacentes. Filas y columnas.</li>
-            <li><span class="n-bold">Grid Cell:</span> Celdas, espacio en dos filas adyacentes y 2 columnas adyacentes.</li>
-            <li><span class="n-bold">Grid Area:</span> Espacio rodeado por 4 grid lines.</li>
+              vamos a mover a nuestro gusto. Son hijos directos de grid.
+              <pre class="code-space">
+                  &lt<span class="code-style">div</span> <span class="n-bold code-style-green">class</span>="container"&gt
+                    &lt<span class="code-style">div</span> <span class="n-bold code-style-green">class</span>="<span class="n-bold">item</span>"&gt&lt<span class="code-style">/div</span>&gt
+                    &lt<span class="code-style">div</span> <span class="n-bold code-style-green">class</span>="<span class="n-bold">item</span>"&gt
+                      &lt<span class="code-style">p</span> <span class="n-bold code-style-green">class</span>="sub-item"&gt &lt<span class="code-style">/p</span>&gt
+                    &lt<span class="code-style">/div</span>&gt
+                    &lt<span class="code-style">div</span> <span class="n-bold code-style-green">class</span>="<span class="n-bold">item</span>"&gt&lt<span class="code-style">/div</span>&gt
+                  &lt<span class="code-style">/div</span>&gt
+                </pre>
+            </li>
+            <li class="grid-box-line"><span class="n-bold">Grid Line:</span> Lineas divisorias horizontales y
+              verticales.
+              <div class="grid-box-example">
+                <div class="grid-box-content">
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                </div>
+              </div>
+            </li>
+            <li class="grid-box-track"><span class="n-bold">Grid Track:</span> Espacio entre dos líneas adyacentes.
+              Filas y columnas.
+              <div class="grid-box-example">
+                <div class="grid-box-content">
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                </div>
+              </div>
+            </li>
+            <li class="grid-box-cell"><span class="n-bold">Grid Cell:</span> Celdas, espacio en dos filas adyacentes y
+              2 columnas adyacentes.
+              <div class="grid-box-example">
+                <div class="grid-box-content">
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                </div>
+              </div>
+            </li>
+            <li class="grid-box-area"><span class="n-bold">Grid Area:</span> Espacio rodeado por 4 grid lines.
+              <div class="grid-box-example">
+                <div class="grid-box-content">
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                  <div class="grid-box-item"></div>
+                </div>
+              </div>
+            </li>
           </ul>
           <p>Cualquier cosa son cajas, cajas dentro de más cajas, css no tenía una especificación dedicada a crear
             layout, se diferencia de flex en que flex esta diseñado para hacer algo en línea, no para elementos
             dinámicos.</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-container.png" alt="Grid container" width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-item.png" alt="Grid item" width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-line.png" alt="Grid line" width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-track.png" alt="Grid track" width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-cell.png" alt="Grid cell" width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-area.png" alt="Grid area" width="400" /></figure>
           <a class="link-refe" href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_Grid_Layout" target="_blank">Más
             sobre grid </a>
         </article>
         <article id="web-content-column">
           <h3>Definiendo columnas</h3>
           <p>Para agregar la propiedad de grid al contenedor padre se emplea el siguiente código:</p>
-          <p class="n-bold"><span class="code-style">.container</span>{ <br /> display: <span class="code-style-green">grid;</span><br />
-            } </p>
+          <pre class="code-space">
+              <span class="code-style-green n-bold">.container</span>{
+                <span class="code-style">display</span>: grid;
+              }
+          </pre>
           <p>Para definir Columnas de contenido en nuestro layout debemos definir la propiedad <span class="n-bold">grid-template-columns</span>
             seguido del qué tamaño serán el número de columnas que queremos. Su sintaxis es la siguiente:</p>
           <p><span class="n-bold">grid-template-columns:</span> <span class="link-upper">n1 n2 n3 ... ;</span></p>
-          <figure class="courses-images">
-            <img src="../../img/frontend/grid-code-column.png" alt="Ejemplo definiendo columnas con grid" width="400" />
-            <img src="../../img/frontend/grid-show-example.png" alt="Ejemplo en el navegador definiendo columnas con grid"
-              width="400" />
-          </figure>
-          <figure class="courses-images">
-            <img src="../../img/frontend/grid-code-column-2.png" alt="Ejemplo 2 definiendo columnas con grid" width="400" />
-            <img src="../../img/frontend/grid-show-example-2.png" alt="Ejemplo 2 en el navegador definiendo columnas con grid"
-              width="400" />
-          </figure>
+          <pre class="code-space">
+            <span class="n-bold code-style-green">.container</span>{
+              <span class="code-style">display</span>: grid; 
+              <span class="code-style">grid-template-columns</span>: 200px 200px 200px; /*3 columnas de 200px*/
+            }
+
+            <span class="code-style">grid-template-columns</span>: 25% 50% 25%; /*2 columnas de 25% y 1 de 50%*/
+          </pre>
         </article>
         <article id="web-content-row">
           <h3>Definiendo filas</h3>
@@ -114,12 +176,15 @@
             <li><span class="n-bold">Grid implicito (implicit grid)</span> es cuando tenemos filas o columnas que no
               definimos pero son parte de nuestro grid.</li>
           </ul>
-          <figure class="courses-images"><img src="../../img/frontend/grid-row.png" alt="Código definir grid row" width="400" /></figure>
+          <p>Definiendo <span class="n-bold">filas</span> con grid layaout:</p>
+          <pre class="code-space">
+            <span class="code-style">grid-template-rows</span>: 300px 300px;
+          </pre>
           <p>Para manejar filas y columnas en una sola línea de código:</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-row-column.png" alt="Código grid row y columns"
-              width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-template.png" alt="Ejemplo código grid row y columns"
-              width="400" /></figure>
+          <pre class="code-space">
+              <span class="code-style">grid-template</span>: filas / columnas;
+              <span class="code-style">grid-template</span>: 100px 100px 400px / 50% 50%;
+          </pre>
           <h4>Grid implicito</h4>
           <p>La rejilla explícita es la red que defina con los <span class="n-bold">grid-template-rows</span>, <span
               class="n-bold">grid-template-columns</span> y
@@ -134,19 +199,35 @@
             cuadrícula explícita forman la cuadrícula implícita.
             <a class="link-refe" href="https://www.quackit.com/css/grid/tutorial/explicit_vs_implicit_grid.cfm" target="_blank">Ver
               más</a>
-            <figure class="courses-images big-img"><img src="../../img/frontend/grid-implicito.png" alt="Grid implicito" /></figure>
+            <figure class="courses-images"><img src="../../img/frontend/grid-implicito.png" alt="Grid implicito" width="400" /></figure>
           </p>
         </article>
         <article id="web-content-identados">
           <h3>Grids identados y tipos de displays</h3>
-          <p>Display subgrid para heredar la configuración del grid padre (cuando se estén anidando grids).</p>
-          <p><span class="n-bold">display:</span> subgrid; (No disponible aún).</p>
-          <p>Display inline-grid muestra el grid en una sola linea:</p>
-          <p><span class="n-bold">display:</span> inline-grid; (No disponible aún).</p>
-          <p>Para hacer un subgrid, sensillamente hay que agregarle esta propiedad a uno de los hijos(grid item) del
+          <ul>
+            <li>
+              <p>Display subgrid para heredar la configuración del grid padre (cuando se estén anidando grids). <br />
+                <span class="n-bold">display:</span> subgrid; (No disponible aún).</p>
+            </li>
+            <li>
+              <p>Display inline-grid muestra el grid en una sola linea: <br />
+                <span class="n-bold">display:</span> inline-grid; (No disponible aún).</p>
+            </li>
+          </ul>
+          <p>Para hacer un subgrid, sensillamente hay que agregarle la propiedad <span class="n-bold">grid</span> a uno
+            de los hijos(grid item) del
             contenedor padre(grid container).</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-subgrid.png" alt="Agregando display grid a un hijo de grid container"
-              width="400" /></figure>
+          <pre class="code-space">
+              <span class="code-style-green n-bold">.item:nth-of-type</span>(9){
+                <span class="code-style">background</span>: yellow;
+                <span class="code-style">display</span>: grid;
+                <span class="code-style">grid-template</span>: 100px 100px 400px / 25% 25% 25% 25%;
+              }
+
+              <span class="code-style-green n-bold">.item</span> <span class="code-style-green n-bold">.item</span>{
+                <span class="code-style">background</span>: orange;
+              }
+            </pre>
           <figure class="courses-images big-img"><img src="../../img/frontend/grid-subgrid-ejemplo.png" alt="Así se veria en el navegador display grid a un hijo de grid" /></figure>
         </article>
         <article id="web-content-gap">
@@ -162,25 +243,31 @@
             <li>Para definir espaciado entre filas <span class="n-bold">grid-row-gap:</span> valor;</li>
             <li>Para decir esto en una sola línea de código: <span class="n-bold">grid-gap:</span> filas / columnas;</li>
           </ul>
-          <p><span class="n-bold">Notas:</span>Gap es cuanto de espaciado queremos entre columnas. El gap no rompe cómo
+          <p><span class="n-bold">Notas:</span> Gap es cuanto de espaciado queremos entre columnas. El gap no rompe
+            cómo
             funciona el grid, ejemplo:</p>
-          <figure class="courses-images"><img src="../../img/frontend/gap-code.png" alt="Ejemplo del uso de grid gap" /></figure>
+          <pre class="code-space">
+            <span class="code-style">grid-column-gap</span>: 30px;
+            <span class="code-style">grid-row-gap</span>: 50px;
+            <span class="code-style">grid-gap</span>: 30px; /*tanto columnas como filas*/
+          </pre>
           <figure class="courses-images"><img src="../../img/frontend/gap-margin.png" alt="Ejemplo display grid con margin" /><br /><span>Con
               margin</span></figure>
-          <figure class="courses-images"><img src="../../img/frontend/gap-no-margin.png" alt="Ejemplo display grid sin margin y con gap" /><span><br />Sin
-              margin</span></figure>
+          <figure class="courses-images"><img src="../../img/frontend/gap-no-margin.png" alt="Ejemplo display grid sin margin y con gap" /><span><br />Con
+              gap</span></figure>
         </article>
         <article id="web-content-funcionMedidas">
           <h3>Repetidores, unidades de medida y funciones</h3>
           <p>Unidad de medida: fracciones <span class="n-bold">fr</span> distribuye el espacio disponible tanto
-            vertical como horizontal en formas iguales.</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-medidas.png" alt="Uso de fr en grid" width="400" /><br /><span>En
-              este ejemplo: tendremos 3 Columnas de 33,33..%</span></figure>
-          <figure class="courses-images big-img"><img src="../../img/frontend/grid-medidas-muestra.png" alt="Muestra en el navegador uso de fr en grid" /><br /><span>Las
-              columnas se distribuyen con un mismo tamaño</span></figure>
-          <p>Que sucede con el automatico.</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-automatico-medidas.png" alt="Medias automaticos en el tamaño de grid grid-template"
-              width="400" /></figure>
+            vertical como horizontal en formas iguales. <br />
+            En este ejemplo: tendremos 3 Columnas de 33,33..%</p>
+          <pre class="code-space">
+              <span class="code-style">grid-template:</span> 100px 100px 400px / 1fr 1fr 1fr; /*Las columnas se distribuyen con un mismo tamaño*/
+            </pre>
+          <p>¿Que sucede con el automatico?.</p>
+          <pre class="code-space">
+              <span class="code-style">grid-template:</span> 100px 100px 400px / auto auto auto;
+            </pre>
           <p>En teoría debería hacer lo mismo que <span class="n-bold">fr</span>, pero el <span class="n-bold">auto</span>
             distribuye el tamaño del elemento respecto al contenido que lleve dentro.</p>
           <figure class="courses-images big-img"><img src="../../img/frontend/grid-automatico-medidas-2.png" alt="Ejemplo en el navegador medias automaticos en el tamaño de grid grid-template" /><br /><span>En
@@ -191,16 +278,22 @@
             <li>
               <p><span class="n-bold">repeat</span>(cantidad, valor) para usar el mismo valor varias veces. Para evitar
                 escribir lo mismo en los valores de ccs como por ejemplo 3 columas de 1fr</p>
-              <p><span class="n-bold">grid-template-columns:</span> 1fr 1fr 1fr;</p>
+              <pre class="code-space">
+                <span class="code-style">grid-template-columns:</span> 1fr 1fr 1fr;
+              </pre>
               <p>Podemos reemplazar con:</p>
-              <p><span class="n-bold">grid-template-columns:</span> repeat(3, 1fr);</p>
+              <pre class="code-space">
+                <span class="code-style">grid-template-columns:</span> <span class="n-bold">repeat</span>(3, 1fr);
+              </pre>
             </li>
             <li>
               <p><span class="n-bold">minmax</span>(min, max) agregar un valor minimo y maximo para el tamaño al hacer
                 responsive valor mínimo y máximo que puede ocupar un elemento (columna) se puede combinar con la
                 función repeat
               </p>
-              <p><span class="n-bold">grid-template:</span> 300px 100px 100px / repeat(4, minmax(200px, 1fr));</p>
+              <pre class="code-space">
+                  <span class="code-style">grid-template:</span> 300px 100px 100px / repeat(4, <span class="n-bold">minmax</span>(200px, 1fr));
+              </pre>
             </li>
           </ul>
         </article>
@@ -215,88 +308,206 @@
             imagen anterior se puede observar que tenemos 3 filas y 2 columnas.
           </p>
           <p>Si vamos a usar area en más de una columna colocamos el mismo donde del area donde la queramos. Ejemplo:</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-def-area.png" alt="Implementando grid-area en el código"
-              width="400" /></figure>
-          <p>Nuestro header ocupara dos columnas, una fila tendrá dos columnas left y contenido y el footer también
-            tendrá dos columnas.</p>
-          <p>También hay que especificar cuantas columas y filas son con en el grid-template-columns y rows</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-area-template.png" alt="Especificando columnas y filas en grid"
-              width="400" /></figure>
+          <pre class="code-space">
+            <span class="code-style">grid-template-areas</span>: "header header"
+                                "left contenido"
+                                "footer footer";
+          </pre>
+          <p>Nuestro <span class="n-bold">header</span> ocupara dos columnas, una fila tendrá dos columnas <span class="n-bold">left</span>
+            y <span class="n-bold">contenido</span> y el <span class="n-bold">footer</span> también
+            tendrá dos columnas. Además hay que especificar cuantas columas y filas son con en el
+            grid-template-columns y rows.</p>
+          <pre class="code-space">
+              <span class="code-style">grid-template</span>: repeat(3, 1fr) / repeat(2, 1fr);
+            </pre>
           <p><span class="n-bold">En <span class="link-upper">html</span></span>:</p>
           <p>Se le coloca una clase definida a cada elemento html, es decir, a los elementos html se le coloca el
-            nombre de la clase que se coloco en grid-template-area.</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-area-html.png" alt="Especificando areas en html"
-              width="400" /></figure>
+            nombre de la clase que se coloco en <span class="n-bold">grid-template-area</span>.</p>
+          <pre class="code-space">
+            &lt<span class="code-style">section</span> <span class="code-style-green n-bold">class</span> = "container"&gt
+              &lt<span class="code-style">div</span> <span class="code-style-green n-bold">class</span> = "item <span class="n-bold">header</span>"&gtheader&lt<span class="code-style">/div</span>&gt
+              &lt<span class="code-style">div</span> <span class="code-style-green n-bold">class</span> = "item <span class="n-bold">left</span>"&gtleft&lt<span class="code-style">/div</span>&gt
+              &lt<span class="code-style">div</span> <span class="code-style-green n-bold">class</span> = "item <span class="n-bold">contenido</span>"&gtcontenido&lt<span class="code-style">/div</span>&gt
+              &lt<span class="code-style">div</span> <span class="code-style-green n-bold">class</span> = "item <span class="n-bold">footer</span>"&gtfooter&lt<span class="code-style">/div</span>&gt
+            &lt<span class="code-style">/section</span>&gt
+          </pre>
           <p><span class="n-bold">En <span class="link-upper">css</span></span>:</p>
-          <p>Para especificar qué área ocupara cada elemento lo hacemos por css con la propiedad grid-area que se le
-            aplica a los hijos de container es decir a los grid-items.</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-area-css.png" alt="Especificando areas en css"
-              width="400" /></figure>
+          <p>Para especificar qué área ocupara cada elemento lo hacemos por css con la propiedad <span class="n-bold">grid-area</span>
+            que se le
+            aplica a los hijos de container es decir a los <span class="n-bold">grid-items</span>.</p>
+          <pre class="code-space">
+            <span class="n-bold code-style-green">.header</span>{
+              <span class="code-style">grid-area</span>: header;
+            }
+            <span class="n-bold code-style-green">.left</span>{
+              <span class="code-style">grid-area</span>: left;
+            }
+            <span class="n-bold code-style-green">.footer</span>{
+              <span class="code-style">grid-area</span>: footer;
+            }
+          </pre>
         </article>
         <article id="web-content-columnSize">
           <h3>Definiendo el tamaño de los columnas dentro de un grid</h3>
           <p>Definir el tamaño de las columnas dentro de un grid:</p>
-          <p><span class="n-bold">grid-column-start</span>:1; <br /> <span class="n-bold">grid-column-end</span>:2;</p>
+          <pre class="code-space">
+            <span class="code-style">grid-column-start</span>: 1;
+            <span class="code-style">grid-column-end</span>: 2;
+          </pre>
           <p>Para escribir esto en una sola linea:</p>
-          <p><span class="n-bold">grid-column:</span> inicio / final;</p>
-          <p>Con grid-column-end: no es hasta cuantas columnas si no hasta cuantas líneas.</p>
-          <p>Para usar por espacios: <span class="n-bold">span</span> #</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-espacios.png" alt="Uso de espacios entre filas y columnas grid"
-              width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-espacios-2.png" alt="Ejemplo 2 uso de espacios entre filas y columnas grid"
-              width="400" /></figure>
+          <pre class="code-space">
+              <span class="code-style">grid-column</span>: inicio / final;
+              <span class="code-style">grid-column</span>: 1 / 2;
+              <span class="code-style">grid-column</span>: 2 / 4;
+              <span class="code-style">grid-column</span>: 1 / -1; /*Hasta la última columna del contenedor*/
+          </pre>
+          <p>Con <span class="n-bold">grid-column-end</span> no es hasta cuantas columnas si no hasta cuantas líneas
+            (grid-line). Para usar por espacios: <span class="n-bold">span</span> #</p>
+          <pre class="code-space">
+            <span class="code-style">grid-column</span>: 1 / <span class="n-bold">span</span> 2;
+            <span class="code-style">grid-column</span>: 4 / <span class="n-bold">span</span> 2;
+          </pre>
         </article>
         <article id="web-content-implicitGrid">
           <h3>Manejando el grid implícito</h3>
           <p>Para cambiar el flujo automático de mi grid:</p>
-          <p><span class="n-bold">grid-auto-flow:</span> column;</p>
-          <p>Por defecto viene <span class="n-bold">grid-auto-flow:</span> row;</p>
-          <p>Para asignar el valor por defecto de el espacio de las columnas o filas que no han sido asignadas: </p>
-          <p><span class="n-bold">grid-auto-columns:</span> valores;</p>
-          <p><span class="n-bold">grid-auto-rows:</span> valores; </p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-implicito-code.png" alt="Ejemplo en código de manejar git implicito"
-              width="400" /></figure>
+          <pre class="code-space">
+            <span class="code-style">grid-auto-flow</span>: column;
+          </pre>
+          <p>Por defecto viene <span class="n-bold">grid-auto-flow:</span> row. Para asignar el valor por defecto del
+            espacio de las columnas o filas que no han sido asignadas: </p>
+          <pre class="code-space">
+            <span class="code-style">grid-auto-columns</span>: valores;
+            <span class="code-style">grid-auto-rows</span>: valores;
+          </pre>
         </article>
         <article id="web-content-align">
           <h3>Alineando elementos</h3>
-          <h4>Alineación de contenido</h4>
-          <p>Para alinear contenido:</p>
           <ul>
-            <li><span class="n-bold">justify-items:</span> valor; para alineación horizontal.</li>
-            <li><span class="n-bold">align-items:</span> valor; para alineación vertical.</li>
+            <li>
+              <h4>Alineación de contenido</h4>
+              <ul>
+                <li><span class="n-bold">justify-items:</span> para alineación horizontal.</li>
+                <li><span class="n-bold">align-items:</span> para alineación vertical.</li>
+              </ul>
+              <p>Los valores que toman por defecto es <span class="n-bold">stretch</span> el cual hace que tomen todo
+                el valor asignado en la fila
+                o columna.</p>
+              <div class="grid-pos-example items">
+                <div class="grid-pos-content">
+                  <div class="grid-pos-item">content #1</div>
+                  <div class="grid-pos-item">content #2</div>
+                  <div class="grid-pos-item">content #3</div>
+                  <div class="grid-pos-item">content #4</div>
+                  <div class="grid-pos-item">content #5</div>
+                  <div class="grid-pos-item">content #6</div>
+                  <div class="grid-pos-item def">justify-items: <span class="n-bold">start</span>;</div>
+                </div>
+              </div>
+              <div class="grid-pos-example items">
+                <div class="grid-pos-content end">
+                  <div class="grid-pos-item">content #1</div>
+                  <div class="grid-pos-item">content #2</div>
+                  <div class="grid-pos-item">content #3</div>
+                  <div class="grid-pos-item">content #4</div>
+                  <div class="grid-pos-item">content #5</div>
+                  <div class="grid-pos-item">content #6</div>
+                  <div class="grid-pos-item def">justify-items: <span class="n-bold">end</span>;</div>
+                </div>
+              </div>
+              <div class="grid-pos-example items">
+                <div class="grid-pos-content center">
+                  <div class="grid-pos-item">content #1</div>
+                  <div class="grid-pos-item">content #2</div>
+                  <div class="grid-pos-item">content #3</div>
+                  <div class="grid-pos-item">content #4</div>
+                  <div class="grid-pos-item">content #5</div>
+                  <div class="grid-pos-item">content #6</div>
+                  <div class="grid-pos-item def">justify-items: <span class="n-bold">center</span>;</div>
+                </div>
+              </div>
+              <div class="grid-pos-example items">
+                <div class="grid-pos-content strech">
+                  <div class="grid-pos-item">content #1</div>
+                  <div class="grid-pos-item">content #2</div>
+                  <div class="grid-pos-item">content #3</div>
+                  <div class="grid-pos-item">content #4</div>
+                  <div class="grid-pos-item">content #5</div>
+                  <div class="grid-pos-item">content #6</div>
+                  <div class="grid-pos-item def">justify-items: <span class="n-bold">strech</span>;</div>
+                </div>
+              </div>
+            </li>
+            <li>
+              <h4>Alineación de filas y columnas</h4>
+              <p>Para alinear el contenido de filas y columnas:</p>
+              <ul>
+                <li><span class="n-bold">justify-content:</span> Para alinear horizontal.</li>
+                <li><span class="n-bold">align-content:</span> Para alinear vertical.</li>
+              </ul>
+              <p>Para distribuir uniformemente:</p>
+              <ul>
+                <li>Con <span class="n-bold">space-around</span> Los items tienen el mismo espacio a su alrededor.</li>
+                <li>Con <span class="n-bold">space-evenly</span> Hay un espacio mas homogeneo entre items.</li>
+                <li>Con <span class="n-bold">space-between</span> El primer item al inicio, el último al final.</li>
+              </ul>
+              <div class="grid-pos-example content">
+                <div class="grid-pos-content c-center">
+                  <div class="grid-pos-item">content #1</div>
+                  <div class="grid-pos-item">content #2</div>
+                  <div class="grid-pos-item">content #3</div>
+                  <div class="grid-pos-item">content #4</div>
+                  <div class="grid-pos-item">content #5</div>
+                  <div class="grid-pos-item">content #6</div>
+                  <div class="grid-pos-item def">justify-content: <span class="n-bold">center</span>;</div>
+                </div>
+              </div>
+              <div class="grid-pos-example content">
+                <div class="grid-pos-content c-end">
+                  <div class="grid-pos-item">content #1</div>
+                  <div class="grid-pos-item">content #2</div>
+                  <div class="grid-pos-item">content #3</div>
+                  <div class="grid-pos-item">content #4</div>
+                  <div class="grid-pos-item">content #5</div>
+                  <div class="grid-pos-item">content #6</div>
+                  <div class="grid-pos-item def">justify-content: <span class="n-bold">end</span>;</div>
+                </div>
+              </div>
+              <div class="grid-pos-example content">
+                <div class="grid-pos-content c-around">
+                  <div class="grid-pos-item">content #1</div>
+                  <div class="grid-pos-item">content #2</div>
+                  <div class="grid-pos-item">content #3</div>
+                  <div class="grid-pos-item">content #4</div>
+                  <div class="grid-pos-item">content #5</div>
+                  <div class="grid-pos-item">content #6</div>
+                  <div class="grid-pos-item def">justify-content: <span class="n-bold">space-around</span>;</div>
+                </div>
+              </div>
+              <div class="grid-pos-example content">
+                <div class="grid-pos-content c-evenly">
+                  <div class="grid-pos-item">content #1</div>
+                  <div class="grid-pos-item">content #2</div>
+                  <div class="grid-pos-item">content #3</div>
+                  <div class="grid-pos-item">content #4</div>
+                  <div class="grid-pos-item">content #5</div>
+                  <div class="grid-pos-item">content #6</div>
+                  <div class="grid-pos-item def">justify-content: <span class="n-bold">space-evenly</span>;</div>
+                </div>
+              </div>
+              <div class="grid-pos-example content">
+                <div class="grid-pos-content c-between">
+                  <div class="grid-pos-item">content #1</div>
+                  <div class="grid-pos-item">content #2</div>
+                  <div class="grid-pos-item">content #3</div>
+                  <div class="grid-pos-item">content #4</div>
+                  <div class="grid-pos-item">content #5</div>
+                  <div class="grid-pos-item">content #6</div>
+                  <div class="grid-pos-item def">justify-content: <span class="n-bold">space-between</span>;</div>
+                </div>
+              </div>
+            </li>
           </ul>
-          <p>Los valores que toman por defecto es stretch el cual hace que tomen todo el valor asignado en la fila o
-            columna.</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-justify-items.png" alt="Uso de justify-items: start"
-              width="400" /><br /><span>justify-items: start</span></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-justify-items-end.png" alt="Uso de justify-items: end"
-              width="400" /><br /><span>justify-items: end</span></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-justify-items-center.png" alt="Uso de justify-items: center"
-              width="400" /><br /><span>justify-items: center</span></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-justify-items-stretch.png" alt="Uso de justify-items: stretch"
-              width="400" /><br /><span>justify-items: strech</span></figure>
-          <h4>Alineación de filas y columnas</h4>
-          <p>Para alinear el contenido de filas y columnas:</p>
-          <ul>
-            <li><span class="n-bold">justify-content:</span> valor; (horizontal).</li>
-            <li><span class="n-bold">align-content:</span> valor; 8vertical).</li>
-          </ul>
-          <p>Para distribuir uniformemente:</p>
-          <ul>
-            <li>Con <span class="n-bold">space-around</span> Los items tienen el mismo espacio a su alrededor.</li>
-            <li>Con <span class="n-bold">space-evenly</span> Hay un espacio mas homogeneo entre items.</li>
-            <li>Con <span class="n-bold">space-between</span> El primer item al inicio, el último al final</li>
-          </ul>
-          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-center.png" alt="Uso de justify-content: center"
-            width="400" /><br /><span>justify-content: center</span></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-end.png" alt="Uso de justify-content: end"
-            width="400" /><br /><span>justify-content: end</span></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-around.png" alt="Uso de justify-content: space-around"
-            width="400" /><br /><span>justify-content: space-around</span></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-even.png" alt="Uso de justify-content: space-evenly"
-            width="400" /><br /><span>justify-content: space-evenly</span></figure>
-          <figure class="courses-images"><img src="../../img/frontend/grid-justify-content-between.png" alt="Uso de justify-content: space-between"
-            width="400" /><br /><span>justify-content: space-between</span></figure>
         </article>
       </div>
     </section>

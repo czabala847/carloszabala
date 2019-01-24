@@ -75,24 +75,38 @@
         </article>
         <article id="web-content-width">
           <h3>Max-width</h3>
-          <p>El max-width, depende de sus hijos, si le colocamos a un contenedor un tamaño máximo de 1000px pero sus
+          <p>El max-width, depende de sus hijos, si le colocamos a un contenedor un <span class="n-bold">tamaño máximo</span> de 1000px pero sus
             hijos no llegan a cumplir o sobre pasar ese ancho, el contenedor no va a tener los 1000px de ancho, esto
             causa que los hijos de ese contenedor se alineen al centro.</p>
           <figure class="courses-images big-img"><img src="../../img/frontend/max-width.png" alt="Error al usuar max-width"
               width="700" /></figure>
-          <p>Un truco para corregir esto es colocarle un tamaño de 100%, del tamaño máximo que debe tener.</p>
-          <figure class="courses-images"><img src="../../img/frontend/max-width_2.png" alt="Ejemplo max-width en código"
-              width="400" /></figure>
+          <p>Un truco para corregir esto es colocarle un tamaño de <span class="n-bold">100%</span>, del tamaño máximo que debe tener.</p>
+          <pre class="code-space">
+            <span class="code-style-green n-bold">.container</span>{
+              <span class="code-style">max-width</span>: 1000px;
+              <span class="code-style">width</span>: 100%; /*truco del ancho del 100%*/
+              <span class="code-style">margin</span>: 0 auto; /*Centrar contenedor*/
+              <span class="code-style">display</span>: inherit;
+              <span class="code-style">justify-content</span>: inherit;
+              <span class="code-style">align-items</span>: inherit;
+              <span class="code-style">height</span>: inherit;
+              <span class="code-style">flex-wrap</span>: inherit;
+            }
+          </pre>
           <p>Esto también pasa cuando esta activo el display flex, otra forma alternativa del width del 100% es usar
-            propiedades del flex.</p>
-          <figure class="courses-images"><img src="../../img/frontend/flex-1.png" alt="Uso de flex:1" /></figure>
-          <p>Esto quiere decir que el elemento toma todo el ancho que tiene disponible
-            El problema del width 100%, es que si le agregamos un padding, el ancho va a ser mayor al 100%.
-          </p>
+            propiedades del flex. Esto quiere decir que el elemento toma todo el ancho que tiene disponible
+            El problema del width 100%, es que si le agregamos un padding, el ancho va a ser mayor al 100%.</p>
+            <pre class="code-space">
+              <span class="code-style">flex</span>:1;
+            </pre>
         </article>
         <article id="web-content-img">
           <h3>Imagenes responsivas</h3>
-          <figure class="courses-images"><img src="../../img/frontend/responsive-img.png" alt="Ejemplo en código de como hacer imagenes responsivas" width="400"/></figure>
+          <pre class="code-space">
+            <span class="code-style-green n-bold">.project-imageContainer</span> img{
+              <span class="code-style">max-width</span>: 100%;
+            }
+          </pre>
         </article>
       </div>
     </section>

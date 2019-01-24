@@ -54,8 +54,7 @@
             <li class="link-course"><a href="#web-content-tools">Developer tools</a></li>
             <li class="link-course"><a href="#web-content-metaViewport">Meta viewport</a></li>
             <li class="link-course"><a href="#web-content-medidasRelativas">Medidas relativas</a></li>
-            <li class="link-course"><a href="#web-content-typeMedia">Formas media queries</a></li>
-            <li class="link-course"><a href="#web-content-elasticDesign">Diseño elastico</a></li>
+            <li class="link-course"><a href="#web-content-media">Media queries</a></li>
             <li class="link-course"><a href="#web-content-positions">Posiciones</a></li>
             <li class="link-course"><a href="#web-content-video">Videos <span class="link-upper">html5</span></a></li>
             <li class="link-course"><a href="#web-content-icon">Iconos</a></li>
@@ -142,21 +141,33 @@
         </article>
         <article id="web-content-concept">
           <h3>Conceptos Básicos</h3>
-          <h4>Viewport</h4>
-          <p>Es el área visible del navegador.</p>
-          <figure class="courses-images"><img src="../../img/frontend/viewport.png" alt="Viewport del navegador" /></figure>
-          <h4>Portrait - Landscape</h4>
           <ul>
-            <li>Vertical.</li>
-            <li>horizontal.</li>
+            <li>
+              <h4>Viewport</h4>
+              Es el área visible del navegador.
+              <figure class="courses-images"><img src="../../img/frontend/viewport.png" alt="Viewport del navegador" /></figure>
+            </li>
+            <li>
+              <h4>Portrait - Landscape</h4>
+              <ul>
+                <li>Vertical.</li>
+                <li>horizontal.</li>
+              </ul>
+              <figure class="courses-images"><img src="../../img/frontend/portrait - landscape.png" alt="Landscape y Portrait ejemplo" /></figure>
+            </li>
+            <li>
+              <h4>Mobile First</h4>
+              Empezar un website desde la menor resolución soportada.
+            </li>
+            <li>
+              <h4>Desktop First</h4>
+              Empezar un website desde la mayor resolución soportada.
+            </li>
+            <li>
+              <h4>¿Cuál es mejor?</h4>
+              Técnicamente Mobile First, pero depende a que dispositivos se quiere enfocar mucho más el website.
+            </li>
           </ul>
-          <figure class="courses-images"><img src="../../img/frontend/portrait - landscape.png" alt="Landscape y Portrait ejemplo" /></figure>
-          <h4>Mobile First</h4>
-          <p>Empezar un website desde la menor resolución soportada.</p>
-          <h4>Desktop First</h4>
-          <p>Empezar un website desde la mayor resolución soportada.</p>
-          <h4>¿Cuál es mejor?</h4>
-          <p>Técnicamente Mobile First, pero depende a que dispositivos se quiere enfocar mucho más el website.</p>
         </article>
         <article id="web-content-tools">
           <h3>Developer tools para Responsive Design</h3>
@@ -191,25 +202,41 @@
             (unidad relativa al tamaño de fuente especificada en el ancestro más lejano, como html o body) y tamaños
             del viewport vw/vh (longitud relativa porcentual con respecto al viewport).</p>
           <p>Unidades relativas de medidas, varían respecto a una condición.</p>
-          <h4>Porcentajes</h4>
-          <p>Longitud referente al tamaño de los elementos padres.</p>
-          <h4>em</h4>
-          <p>Unidad relativa al tamaño de fuente especificada más cercano, para los padding, margin, width, el elemento
-            va a tomar como referencia el tamaño de fuente mas próximo, si ese elemento tiene un tamaño de fuente
-            <span class="n-bold">font-size</span> especificado, el padding tomara ese tamaño de referencia.</p>
-          <figure class="courses-images"><img src="../../img/frontend/em.png" alt="Código ejemplo uso del em" width="400" /></figure>
-          <p><span class="n-bold">Nota:</span> casí siembre un em equivale a 16px.</p>
-          <h4>rem</h4>
-          <p>Unidad relativa al tamaño de fuente especificada en el ancestro más lejano (html o body).</p>
-          <figure class="courses-images"><img src="../../img/frontend/rem.png" alt="Código ejemplo uso del rem" width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/rem_2.png" alt="Código segundo ejemplo uso del rem"
-              width="400" /></figure>
-          <h4>vw / vh</h4>
-          <p>Unidad relativa porcentual con respecto al Viewport.</p>
-          <figure class="courses-images"><img src="../../img/frontend/viewport-wh.png" alt="Ejemplo medidas respecto al viewport"
-              width="500" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/viewport-wh_2.png" alt="Segundo ejemplo medidas respecto al viewport"
-              width="500" /></figure>
+          <ul>
+            <li>
+              <h4>Porcentajes</h4>
+              Longitud referente al tamaño de los elementos padres
+            </li>
+            <li>
+              <h4>em</h4>
+              Unidad relativa al tamaño de fuente especificada más cercano, para los padding, margin, width, el
+              elemento
+              va a tomar como referencia el tamaño de fuente mas próximo, si ese elemento tiene un tamaño de fuente
+              <span class="n-bold">font-size</span> especificado, el padding tomara ese tamaño de referencia.
+              <pre class="code-space">
+                &lt<span class="code-style">nav</span>&gt font-size:16px;
+                  &lt<span class="code-style">ul</span>&gt font-size:2em; 32px;
+                    &lt<span class="code-style">li</span>&gt font-size:1em; 32px;
+                      &lt<span class="code-style">a <span class="code-style-green">href</span>="" </span>&gthola!&lt<span class="code-style">/a</span>&gt font-size: .5em; 16px; padding: 2em; 32px;
+                    &lt<span class="code-style">/li</span>&gt
+                  &lt<span class="code-style">/ul</span>&gt
+                &lt<span class="code-style">/nav</span>&gt
+              </pre>
+              <span class="n-bold">Nota:</span> casí siembre un <span class="n-bold">em</span> equivale a 16px.
+            </li>
+            <li>
+              <h4>rem</h4>
+              Unidad relativa al tamaño de fuente especificada en el ancestro más lejano (html o body).
+            </li>
+            <li>
+              <h4>vw / vh</h4>
+              Unidad relativa porcentual con respecto al Viewport.
+              <figure class="courses-images"><img src="../../img/frontend/viewport-wh.png" alt="Ejemplo medidas respecto al viewport"
+                  width="500" /></figure>
+              <figure class="courses-images"><img src="../../img/frontend/viewport-wh_2.png" alt="Segundo ejemplo medidas respecto al viewport"
+                  width="500" /></figure>
+            </li>
+          </ul>
         </article>
         <article id="web-content-media">
           <h3>Media queries</h3>
@@ -219,35 +246,39 @@
             La media queries es un módulo de css que hace posible al responsive design, éste existe desde el 2010 y se
             encarga de adaptar la representación del contenido a características del dispositivo.
           </p>
-          <figure class="courses-images"><img src="../../img/frontend/media-query.png" alt="Ejemplo media-query" width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/media-query-2.png" alt="Ejemplo 2 media-query"
-              width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/media-query-3.png" alt="Ejemplo 3 media-query"
-              width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/media-query-4.png" alt="Ejemplo 4 media-query"
-              width="400" /></figure>
-          <figure class="courses-images"><img src="../../img/frontend/media-query-5.png" alt="Ejemplo 5 media-query"
-              width="400" /></figure>
-          <p><span class="n-bold">Notas:</span> max-width = hasta / min-width = desde</p>
+          <p>Se compone de un media type y una o más condiciones.</p>
+          <pre class="code-space">
+            <span class="code-style">@media</span> media type <span class="code-style">and</span> (condición){}
+          </pre>
+          <p>Todas las pantallas con un ancho inferior o igual a 768px cumplen esta condición.</p>
+          <pre class="code-space">
+            <span class="code-style">@media</span> screen <span class="code-style">and</span> (max-width:768px){}
+          </pre>
+          <p>Todas las pantallas con un ancho de 480px hasta 768px cumplen esta condición.</p>
+          <pre class="code-space">
+            <span class="code-style">@media</span> screen <span class="code-style">and</span> (max-width:768px) <span class="code-style">and</span> (max-width:768px) {}
+          </pre>
+          <p>Usando <span class="n-bold">min-width</span> (desde), especialmente utilizado en <span class="n-bold">Mobile
+              First</span>.</p>
+          <pre class="code-space">
+            <span class="code-style">@media</span> screen <span class="code-style">and</span> (min-width:320px){}
+            <span class="code-style">@media</span> screen <span class="code-style">and</span> (min-width:480px){}
+            <span class="code-style">@media</span> screen <span class="code-style">and</span> (min-width:768px){}
+            <span class="code-style">@media</span> screen <span class="code-style">and</span> (min-width:1024px){}
+          </pre>
+          <p>Usando <span class="n-bold">max-width</span> (hasta), especialmente utilizado en <span class="n-bold">Desktop
+              First</span>.</p>
+          <pre class="code-space">
+          <span class="code-style">@media</span> screen <span class="code-style">and</span> (max-width:1024px){}
+          <span class="code-style">@media</span> screen <span class="code-style">and</span> (max-width:768px){}
+          <span class="code-style">@media</span> screen <span class="code-style">and</span> (max-width:480px){}
+          <span class="code-style">@media</span> screen <span class="code-style">and</span> (max-width:320px){}
+        </pre>
           <a class="link-refe" href="recomendacionesResponsiveDesign.html#web-content-media">Medidas recomendadas</a>
-        </article>
-        <article id="web-content-typeMedia">
-          <h3>Formas de incluir media queries</h3>
-          <p>Se pueden agregar en la etiqueta <span class="n-bold">style</span> o por medio de un archivo externo por
+          <p><span class="n-bold">Incluir media queries</span> Se pueden agregar en la etiqueta <span class="n-bold">style</span>
+            o por medio de un archivo externo por
             medio de la etiqueta <span class="n-bold">link</span>, hasta por medio de javascript podemos agregar media
             queries, lo recomendado es que se haga dentro del archivo de estilos css.</p>
-          <a class="link-refe" href="codigoResponsiveDesign.html#web-content-media">Ejemplos</a>
-        </article>
-        <article id="web-content-elasticDesign">
-          <h3>Diseño elástico con max-width y flex-wrap</h3>
-          <p>Lo recomendable es ordenar los proyectos por medio del uso de contenedores flexibles, que varíen su tamaño
-            según la amplitud
-            con la que cuentan en diversos dispositivos y permitan una óptima visualización.
-            Por otro lado, para hacer esto posible, hay que aplicar las etiquetas de <span class="n-bold">max-width</span>
-            y <span class="n-bold">flex- wrap</span>; éstas
-            ayudarán a evitar que los usuarios navegen la página de forma horizontal, pues la
-            información se organizará en forma vertical para facilitar la experiencia.
-          </p>
         </article>
         <article id="web-content-positions">
           <h3>CSS positions</h3>
@@ -277,18 +308,25 @@
             <li><span class="n-bold">absolute:</span> Cuando el elemento se mueve, se lleva consigo el espacio que
               ocupa.</li>
           </ul>
-          <a class="link-refe" href="codigoResponsiveDesign.html#web-content-position">Código sticky</a>
+          <pre class="code-space">
+            <span class="code-style">position</span>: static / relative / absolute / fixed / sticky;
+          </pre>
         </article>
         <article id="web-content-video">
           <h3>Videos en <span class="link-upper">html5</span></h3>
-          <p>Como sabes, los videos son contenidos cada vez más comunes e incluso necesarios en los websites.
-            Por esta razón, en esta clase aprenderás a incluir un video en tu proyecto y, por lo tanto, lo modificarás
-            para convertirlo en un material responsivo, es decir, que sea coherente con tu trabajo de Responsive
+          <p>Los videos son contenidos cada vez más comunes e incluso necesarios en los websites.
+            Por esta razón, hay que aprender a incluir los videos en futuros proyectos, a su vez, aprender a
+            convertirlo en un material responsivo, es decir, que sea coherente con el diseño Responsive
             Design.
-            Para aprender esto es necesario que elijas cualquier video que tengas en su formato original.
           </p>
           <p>Para esto se emplea la etiqueta <span class="n-bold">video</span>.</p>
-          <a class="link-refe" href="codigoResponsiveDesign.html#web-content-video">Ejemplo</a>
+          <pre class="code-space">
+              &lt<span class="code-style">video</span> <span class="n-bold code-style-green">src</span>="videos/nombreVideo.mp4" <span class="n-bold code-style-green">width</span> ="1280" <span class="n-bold code-style-green">height</span> ="720" <span class="code-style-green">controls</span>&gt &lt/<span class="code-style">video</span>&gt
+          </pre>
+          <p>Para agregarle una miniatura al vídeo se usa el atributo <span class="n-bold">poster</span>.</p>
+          <pre class="code-space">
+              <span class="code-style-green">poster</span>="imagen.jpg"
+          </pre>
           <h4>Video insertado</h4>
           <p>En esta clase aprenderás a implementar videos responsive en tu proyecto, originarios o alojados en otras
             plataformas (como youtube y/o vimeo). Por este motivo trabajarás con la etiqueta <span class="n-bold">iframe</span>.
@@ -303,8 +341,13 @@
           <p><span class="link-upper">relación</span> 16:9 <br />16 * 100 / 9 = 177,777 <br /><span class="link-upper">relación</span>
             4:3 <br />4 * 100 / 3 = 133,333
           </p>
-          <figure class="courses-images"><img src="../../img/frontend/video-responsive.png" alt="Como hacer un video responsivo"
-              width="400" /></figure>
+          <pre class="code-space">
+            <span class="code-style-green n-bold">.flexible-video</span>{
+              <span class="code-style">width</span>:100%;
+              <span class="code-style">height</span>:0;
+              <span class="code-style">padding-top</span>:56.25%;
+            }
+          </pre>
         </article>
         <article id="web-content-icon">
           <h3>Fuentes de iconos</h3>
@@ -318,6 +361,9 @@
             font- variant, entre otras.
           </p>
           <p><span class="n-bold">Nota:</span> Es recomendable colocar un icono en la etiqueta <span class="n-bold">i</span>.</p>
+          <pre class="code-space">
+            &lt<span class="code-style n-bold">i</span> <span class="code-style-green n-bold">class</span>="icon-menu" &gt &lt<span class="code-style n-bold">/i</span>&gt
+          </pre>
         </article>
       </div>
     </section>

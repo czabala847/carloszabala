@@ -10,6 +10,7 @@
   <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
   <link rel="stylesheet" href="../../css/estilos.css" />
+  <link rel="stylesheet" href="../../css/ejemplos.css" />
 </head>
 
 <body>
@@ -59,19 +60,77 @@
         <article id="web-content-container">
           <h3>Centrar contenido</h3>
           <p>Para hacer un contenedor general y centrarlo se puede usar: </p>
-          <p><span class="n-bold">grid-template-columns: </span>minmax(auto, 1024px);</p>
-          <p><span class="n-bold">justify-content: </span>center;</p>
+          <pre class="code-space">
+            <span class="code-style">grid-template-columns</span>: minmax(auto, 1024px);
+            <span class="code-style">justify-content:</span>: center;
+          </pre>
         </article>
         <article id="web-content-area">
           <h3>Grid area</h3>
           <p>Si no queremos que una sección ocupe todo el ancho o todas las columnas del grid, se pueden colocar un
             punto(.) en la propiedad <span class="n-bold">grid-template-areas</span>:</p>
-          <figure class="courses-images"><img src="../../img/frontend/grid-area-punto.png" alt="Ejemplo en código grid-template-areas y espacios vacios"
-              width="400" /></figure>
-          <figure class="courses-images big-img"><img src="../../img/frontend/grid-area-posicion.png" alt="Ejemplo en código grid-template-areas y el posicionamiento de elementos"
-               /></figure>
-          <figure class="courses-images big-img"><img src="../../img/frontend/grid-area-posicion-2.png" alt="2 Ejemplo en código grid-template-areas y el posicionamiento de elementos"
-               /></figure>
+          <pre class="code-space">
+            <span class="code-style">grid-template-areas:</span> "icon-area title-area-con"
+                                "content-area-con content-area-con"
+                                "time time"
+                                "form-area-con form-area-con";
+          </pre>
+          <div class="grid-pos-example content area">
+            <div class="grid-content-area">
+              <figure class="icon-area">
+                <img src="../../img/logos/logo-grid-area.png" alt="logo" width="50" />
+              </figure>
+              <!-- <div class="grid-area-con"> -->
+              <h2 class="title-area-con">Curso de CSS Grid Layout</h2>
+              <p class="content-area-con">
+                El módulo CSS Grid Layout nos permite generar distribuciones del contenido en nuestros sitios web de
+                forma eficiente. Controla esta estructura bidimensional de filas y columnas fácilmente con
+                propiedades
+                de CSS logrando un mejor flujo que el que se tiene al utilizando otras propiedades de CSS
+              </p>
+              <div class="time">
+                <p style="text-align:center">Lanzamiento: <br /> 01d: 03h: 09m: 05s </p>
+              </div>
+              <form class="form-area-con">
+                <h3>Registrate en platzi</h3>
+                <input type="text" placeholder="Nombre" />
+                <input type="email" placeholder="Correo electronico" />
+                <button class="btn-area">Comienza ahora</button>
+              </form>
+              <!-- </div> -->
+            </div>
+          </div>
+          <pre class="code-space">
+            <span class="code-style">grid-template-areas:</span> "icon-area title-area-con"
+                                "content-area-con content-area-con"
+                                "form-area-con form-area-con"
+                                "time time"; /*el time debe aparecer abajo sin importar como este escrito el html*/
+          </pre>
+          <div class="grid-pos-example content area">
+            <div class="grid-content-area change">
+              <figure class="icon-area">
+                <img src="../../img/logos/logo-grid-area.png" alt="logo" width="50" />
+              </figure>
+              <!-- <div class="grid-area-con"> -->
+              <h2 class="title-area-con">Curso de CSS Grid Layout</h2>
+              <p class="content-area-con">
+                El módulo CSS Grid Layout nos permite generar distribuciones del contenido en nuestros sitios web de
+                forma eficiente. Controla esta estructura bidimensional de filas y columnas fácilmente con
+                propiedades
+                de CSS logrando un mejor flujo que el que se tiene al utilizando otras propiedades de CSS
+              </p>
+              <div class="time">
+                <p style="text-align:center">Lanzamiento: <br /> 01d: 03h: 09m: 05s </p>
+              </div>
+              <form class="form-area-con">
+                <h3>Registrate en platzi</h3>
+                <input type="text" placeholder="Nombre" />
+                <input type="email" placeholder="Correo electronico" />
+                <button class="btn-area">Comienza ahora</button>
+              </form>
+              <!-- </div> -->
+            </div>
+          </div>
         </article>
       </div>
     </section>

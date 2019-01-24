@@ -10,6 +10,7 @@
   <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
   <link rel="stylesheet" href="../../css/estilos.css" />
+  <link rel="stylesheet" href="../../css/ejemplos.css" />
 </head>
 
 <body>
@@ -115,11 +116,11 @@
           </figure>
         </article>
         <article class="web-content-html" id="web-content-html">
-          <h3>Hypertext Markup Language</h3>
+          <h3>Hypertext Markup Language <span class="link-upper">(html)</span></h3>
           <p>Languaje de marcado para hacer websites. Determinar el contenido: texto, imágenes, videos, enlaces, etc.</p>
         </article>
         <article class="web-content-css" id="web-content-css">
-          <h3>Cascade Style Sheet</h3>
+          <h3>Cascade Style Sheet <span class="link-upper">(css)</span></h3>
           <p>Lenguaje para definir la presentación de documentos <span class="link-upper">html</span>. </p>
         </article>
         <article class="web-content-flow" id="web-content-flow">
@@ -155,21 +156,23 @@
           <p><span class="n-bold">Nota:</span> El <span class="link-upper">BOM</span> se enfoca en el navegador
             mientras que el <span class="link-upper">DOM</span>
             en el <span class="link-upper">HTML</span> .</p>
-          <figure class="courses-images"><img src="../../img/frontend/bom.gif" alt="Estructura del bom" width="450" /><br /><span>Estructua
+          <figure class="courses-images"><img src="../../img/frontend/bom.gif" alt="Estructura del bom" width="450" /><br /><span>Estructura
               del <span class="link-upper">bom.</span> </span></figure>
-          <figure class="courses-images"><img src="../../img/frontend/dom.gif" alt="Estructura del dom" width="450" /><br /><span>Estructua
+          <figure class="courses-images"><img src="../../img/frontend/dom.gif" alt="Estructura del dom" width="450" /><br /><span>Estructura
               del <span class="link-upper">dom.</span> </span></figure>
         </article>
         <article id="web-content-label">
           <h3>Etiquetas</h3>
-          <p>Cada etiqueta tiene una determina función.</p>
-          <p>Las etiquetas son la representación básica de la información en un documento html. Sirven para crear y
+          <p>Cada etiqueta tiene una determina función.
+            Las etiquetas son la representación básica de la información en un documento html. Sirven para crear y
             organizar el contenido.</p>
           <p>La sintaxis general de una etiqueta es:</p>
-          <span class="code-style">&ltnombre&gt</span>contenido<span class="code-style">&lt/nombre&gt</span>
+          <pre class="code-space">
+            &lt<span class="code-style">nombre</span>&gt contenido &lt/<span class="code-style">nombre</span>&gt
+          </pre>
           <p>Algunas de las etiquetas más conocidas y usadas son:</p>
           <ul>
-            <li>
+            <li class="li-principal">
               Etiquetas del cuerpo del documento (body).
               <ul>
                 <li><span class="n-bold">doctype:</span> indica al navegador el tipo de documento que se está
@@ -180,8 +183,8 @@
                   recursos adicionales</li>
               </ul>
             </li>
-            <li>
-              Etiquetas de cabecera (head).
+            <li class="li-principal">
+              Etiquetas de cabecera (head). 
               <ul>
                 <li><span class="n-bold">article:</span> diferencia partes del contenido que pueden vivir por sí
                   mismas.</li>
@@ -210,7 +213,8 @@
             </li>
 
           </ul>
-          <p><span class="n-bold">Notas:</span> div(personalizar secciones de elementos) span(personalizar líneas de
+          <p><span class="n-bold">Notas:</span> <span class="n-bold">div</span>(personalizar secciones de elementos)
+            <span class="n-bold">span</span>(personalizar líneas de
             texto).</p>
         </article>
         <article class="web-content-attribute" id="web-content-attribute">
@@ -278,7 +282,20 @@
             <li><span class="n-bold">Estilos en línea:</span> se definen directamente en el elemento html que quieres
               estilizar, se agregan con el atributo <span class="n-bold">style</span> .</li>
             <li><span class="n-bold">Estilos con el tag Style:</span> regularmente este tag se incluye dentro de la
-              etiqueta head del html.</li>
+              etiqueta head del html.
+              <pre class="code-space">
+                &lthead&gt
+                  <span class="code-style">&ltstyle&gt</span>
+                    body{
+                      margin: 0;
+                    }  
+                   .clase{
+                      color: #ffffff;
+                    }
+                  <span class="code-style">&lt/style&gt</span>
+                &lt/head&gt
+              </pre>
+            </li>
             <li><span class="n-bold">Estilos enlazados desde un archivo css externo:</span> utilizando la etiqueta
               <span class="n-bold">link</span> que nos permite enlazar recursos externos.</li>
           </ul>
@@ -313,14 +330,17 @@
             elementos particulares, así que la claridad y precisión en su identificación facilitará la
             contextualización y mantenibilidad en el futuro.
           </p>
+          <pre class="code-space">
+              &lt<span class="code-style">p</span> <span class="n-bold">class</span>="mensaje" &gtEste es un parrafo al que se le asigna la clase mensaje, para despues agregarle estilos con css.&lt/<span class="code-style">p</span>&gt
+            </pre>
         </article>
         <article id="web-content-color">
           <h3>Unidades de medida y colores</h3>
-          <p>Hay varias unidades de medida con las que se puede trabajar en CSS: %, em, rem, px, pt, fr, vw, vh
+          <p>Hay varias <span class="n-bold">unidades de medida</span> con las que se puede trabajar en <span class="link-upper">css</span> : %, em, rem, px, pt, fr, vw, vh
             Las medidas más comunes y utilizadas son los pixeles. Un pixel es la menor unidad homogénea en color que
             forma parte de una imagen digital. Es la unidad más práctica y fácil de utilizar y manipular.
           </p>
-          <p>Los colores en CSS pueden ser representados de al menos tres formas diferentes:</p>
+          <p>Los <span class="n-bold">colores</span> en CSS pueden ser representados de al menos tres formas diferentes:</p>
           <ul>
             <li>Representados con <span class="n-bold">palabras claves</span> para cada color, como: red, green, blue,
               pink, yellow, black, etc.</li>
@@ -398,16 +418,40 @@
           <p>Algunas de las propiedades de css relacionadas con la apariencia del fondo de los elementos son:</p>
           <ul>
             <li><span class="n-bold">background:</span> con la que se puede indicar un color, o usada de manera
-              extendida, puede incluir color de fondo, url de la imagen, posición y modo de repetición de la imagen.</li>
-            <li><span class="n-bold">background-image:</span> contiene la url que se usará como fondo del elemento.</li>
+              extendida, puede incluir color de fondo, url de la imagen, posición y modo de repetición de la imagen.
+              <pre class="code-space">
+                <span class="code-style">background:</span> #FFFFFF url('imagen.jpg') left no-repeat;
+              </pre>
+            </li>
+            <li><span class="n-bold">background-image:</span> contiene la url que se usará como fondo del elemento.
+              <pre class="code-space">
+                <span class="code-style">background-image:</span> url('imagen.jpg');
+              </pre>
+            </li>
             <li><span class="n-bold">background-color: </span> indica el color de fondo, se puede usar en combinación
-              con la imagen.</li>
+              con la imagen.
+              <pre class="code-space">
+                <span class="code-style">background-color:</span> #d8d8d8;
+              </pre>
+            </li>
             <li><span class="n-bold">background-size:</span> se puede indicar en valores de alto y ancho o en alguna de
-              las palabras claves permitidas: cover o contain.</li>
+              las palabras claves permitidas: cover o contain.
+              <pre class="code-space">
+                <span class="code-style">background-size:</span> /*width*/ 100%  /*height*/ 40%;
+              </pre>
+            </li>
             <li><span class="n-bold">background-position: </span> indica la posición de la imagen dentro del elemento,
-              puede indicarse en unidades o en palabras claves como center, left, top y right.</li>
+              puede indicarse en unidades o en palabras claves como center, left, top y right.
+              <pre class="code-space">
+                <span class="code-style">background-position:</span> center;
+              </pre>
+            </li>
             <li><span class="n-bold">background-repeat:</span> indica el método de repetición de la imagen de fondo,
-              puede ser: repeat, repeat-x, repeat-y o no-repeat.</li>
+              puede ser: repeat, repeat-x, repeat-y o no-repeat.
+              <pre class="code-space">
+                <span class="code-style">background-repeat:</span> no-repeat;
+              </pre>
+            </li>
           </ul>
         </article>
         <article id="web-content-box">
@@ -422,10 +466,22 @@
             Con la propiedad <span class="n-bold">boder-radius</span> se define el redondeado de las esquinas de los
             bordes.
           </p>
-          <figure class="courses-images"><img src="../../img/frontend/bordes.jpg" alt="estilos de los bordes css" width="450" /><br />Estilos
-            de los bordes</figure>
+
+          <div class="border-container">
+            <div class="border-content">
+              <div class="border-example none">none</div>
+              <div class="border-example dotted">dotted</div>
+              <div class="border-example dashed">dashed</div>
+              <div class="border-example solid">solid</div>
+              <div class="border-example double">double</div>
+              <div class="border-example groove">groove</div>
+              <div class="border-example ridge">ridge</div>
+              <div class="border-example inset">inset</div>
+              <div class="border-example outset">ouset</div>
+            </div>
+          </div>
           <p>Para asignar un borde:</p>
-          <p> <span class="n-bold code-style">border:</span> tamaño tipo estilo </p>
+          <pre class="code-space"><span class="n-bold code-style">border:</span> tamaño tipo color</pre>
           <p>Para asignar el borde solo en una parte podemos usar:</p>
           <ul>
             <li>border-top</li>
@@ -434,7 +490,7 @@
             <li>border-left</li>
           </ul>
           <p>Para redondear el borde</p>
-          <span class="n-bold code-style">border-radius:</span> tamaño;
+          <pre class="code-space"><span class="n-bold code-style">border-radius:</span> tamaño;</pre>
           <h4>Márgenes</h4>
           <p>Los márgenes en CSS son el espacio que separa a los elementos html entre sí. Hay elementos de html que
             traen márgenes predefinidos (por defecto) en los estilos propios del navegador como el caso de: body, h1,
@@ -517,13 +573,20 @@
           <p>Propiedades flex en el padre:</p>
           <ul>
             <li><span class="n-bold">flex-direction: </span> column (una sola columna) que los elementos se posicionen
-              verticalmente.</li>
+              verticalmente.
+              <pre class="code-space">
+                <span class="code-style">flex-direction:</span> row / row-reverse / column / column-reverse;
+              </pre>
+            </li>
             <li><span class="n-bold">flex-wrap:</span> que los elementos cuando no halla espacio en el ancho designado
               se posición debajo o no.
               <ul>
                 <li><span class="n-bold">flex-wrap:</span> nowrap (no cae). </li>
-                <li><span class="n-bold">flex-wrap:</span> rap (si cae). </li>
+                <li><span class="n-bold">flex-wrap:</span> wrap (si cae). </li>
               </ul>
+              <pre class="code-space">
+                <span class="code-style">flex-wrap:</span> nowrap / wrap / wrap-reverse;
+              </pre>
             </li>
           </ul>
           <p>Propiedades flex en los hijos:</p>
@@ -534,6 +597,9 @@
                 <li><span class="n-bold">flex-shrink:</span> 0 - 1 (100% encogible).</li>
                 <li><span class="n-bold">flex-shrink:</span> 0 (nada encogible).</li>
               </ul>
+              <pre class="code-space">
+                <span class="code-style">flex-shrink:</span> 1 / 0;
+              </pre>
             </li>
             <li><span class="n-bold">align-self: </span> Aplica propiedades de alineación a los hijos de flex.</li>
           </ul>

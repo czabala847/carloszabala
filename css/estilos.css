@@ -520,6 +520,10 @@ figure{
   width:75%;
 }
 
+.general-course-container .courses-images span{
+  font-style: italic;
+  font-size: .9em;
+}
 
 .general-course-container .link-refe{
   text-decoration: none;
@@ -544,6 +548,20 @@ figure{
 
 .n-bold{
   font-weight: bold;
+}
+
+.code-space{
+  background-color: #ededed;
+  border:3px dotted #d8d8d8;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-align: justify;
+  overflow-wrap: break-word;
+  padding: 1em;
+}
+
+.li-principal ul {
+  margin: 1em 0;
 }
 
 @media screen and (max-width: 1024px){
@@ -766,6 +784,11 @@ figure{
 
   .menu-gn-courses ol{
     grid-template-columns: 1fr;
+  }
+
+  .code-space{
+    white-space: pre-line;
+    font-size: .8em;
   }
 
 }
