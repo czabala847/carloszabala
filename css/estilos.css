@@ -152,6 +152,10 @@ figure{
   background-image: url('../img/hero-grid.jpg');
 }
 
+.animation-hero-background{
+  background-image: url('../img/hero-animacion.jpg');
+}
+
 .hero {
   /* background: url('../img/hero-3.jpg'); */
   height: 450px;
@@ -161,7 +165,7 @@ figure{
   background-position: bottom;
 }
 
-.web-hero-background{
+.web-hero-background, .animation-hero-background{
   background-position: center;
 }
 
@@ -538,12 +542,17 @@ figure{
   text-transform: uppercase;
 }
 
+.code-comment{
+  color: rgba(0, 0, 0, .5);
+}
+
+
 .code-style{
   color: #f92653;
 }
 
 .code-style-green{
-  color: #77c429;
+  color: #5f8e2c;
 }
 
 .n-bold{
@@ -552,11 +561,21 @@ figure{
 
 .code-space{
   background-color: #ededed;
-  border:3px dotted #d8d8d8;
+  border:2px dashed #d8d8d8;
   white-space: pre-wrap;
   word-wrap: break-word;
   text-align: justify;
   overflow-wrap: break-word;
+  padding: 1em;
+}
+
+.code-comment{
+  color: rgba(0, 0, 0, .5);
+}
+
+.note{
+  background-color: #FEF6D0;
+  border-left: 5px solid #FEE467;
   padding: 1em;
 }
 

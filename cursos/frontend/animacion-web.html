@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Animaciones Web - Carlos Zabala</title>
+  <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/estilos.css" />
+  <link rel="stylesheet" href="../../css/ejemplos.css" />
+</head>
+
+<body>
+  <!-- <i class="icon-menu burger-button" id="burgerMenu"></i> -->
+  <i class="icon-menu button-course-menu" id="burgerMenu"></i>
+  <div class="main">
+    <div class="main-container">
+      <header class="header main-container">
+        <!--Cabecera-->
+        <nav class="menu-gn-courses menu menu-left">
+          <ol>
+            <li class="menu-link"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link"><a href="../frontend.html">Carrera</a></li>
+          </ol>
+        </nav>
+        <figure class="logo-imageContainer">
+          <!--Logo-->
+          <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
+        </figure>
+        <nav class="menu-gn-courses menu menu-right">
+          <ol>
+            <li class="menu-link"><a href="recomendaciones-animaciones.html">Recomendaciones</a></li>
+            <li class="menu-link"><a href="codigo-animaciones.html">Codigos</a></li>
+          </ol>
+        </nav>
+      </header>
+    </div>
+
+    <section class="hero animation-hero-background">
+      <div class="main-container title-container">
+        <h1>Animaciones para la web</h1>
+      </div>
+    </section>
+
+    <!-- <div class="main-container"> -->
+    <section class="general-course-container">
+      <aside class="general-content-menu">
+        <nav class="general-course-menu">
+          <ol>
+            <li class="link-course"><a href="#web-content-origin">Conceptos</a></li>
+            <li class="link-course"><a href="#web-content-transition">Transiciones</a></li>
+            <li class="link-course"><a href="#web-content-transform">Transformaciones</a></li>
+            <li class="link-course"><a href="#web-content-rotate">Rotación</a></li>
+            <li class="link-course"><a href="#web-content-translate">Translaciones</a></li>
+            <li class="link-course"><a href="#web-content-scale">Escala</a></li>
+            <li class="link-course"><a href="#web-content-skew">Sesgado</a></li>
+            <li class="link-course"><a href="#web-content-animation">Animaciones</a></li>
+            <li class="link-course"><a href="#web-content-bezier">Curva de bezier</a></li>
+            <li class="link-course"><a href="#web-content-javascript">Animaciones con Javascript</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <div class="general-content">
+        <article id="web-content-origin">
+          <h3>¿Qué son la animaciones?</h3>
+          <ul>
+            <li>La transición que ocurre entre un punto <span class="n-bold">A</span> y un punto <span class="n-bold">B</span>,
+              <span class="n-bold">animación es generar una sensación de movimiento</span> .</li>
+            <li>Son parte natural de las interfaces web.</li>
+            <li>Son una forma natural de enseñanza para el usuario. Hay acciones que tienen un tiempo de espera muy
+              largo y otros que no, es allí cuando se pueden usar las animaciones para mostrarle al usuario que algo
+              paso, y no sea algo que sale por arte de magia.</li>
+            <li>Ayudan a conectar una interfaz que solo está programada en algo que realmente está vivo.</li>
+            <li>La acción de un usuario interactuando con la interfaz y que ésta le de feedback de lo que está
+              ocurriendo.</li>
+          </ul>
+          <p class="note"><span class="n-bold">Nota:</span> Las animaciones en una interfaz web son necesarias, ya que
+            ninguna acción que ocurre en ésta se da de
+            forma instantánea.</p>
+        </article>
+        <article id="web-content-transition">
+          <h3>Transiciones</h3>
+          <p>Es una propiedad de css3, que se utiliza con la propiedad <span class="n-bold">transition</span>, Para que
+            una transición ocurra debe existir una interacción del usuario contemplada en un sitio web. Las
+            transiciones CSS pueden especificarse usando varias propiedades:</p>
+          <ul>
+            <li>
+              <span class="n-bold">property</span>: Se le especifica que propiedades van a cambiar en la transición.
+              <pre class="code-space">
+                <span class="code-style">transition-property</span>: width, height;
+              </pre>
+            </li>
+            <li>
+              <span class="n-bold">duration</span>: Cuánto tiempo va a durar la transición.
+              <pre class="code-space">
+                <span class="code-style">transition-duration</span>: 1s;
+              </pre>
+            </li>
+            <li>
+              <span class="n-bold">delay</span>: Cuánto tiempo va a tardar la transición en ocurrir (puede ser
+              opcional).
+              <pre class="code-space">
+                <span class="code-style">transition-delay</span>: 250ms;
+              </pre>
+            </li>
+            <li>
+              <span class="n-bold">timing-function</span>: Qué tan suave puede ser la animación, de qué forma se
+              calculan los valores intermedios de la transición. <br>
+              Tambien es opcional y su valor por defecto es <span class="n-bold">ease</span>.
+              <pre class="code-space">
+                <span class="code-style">transition-timing-function</span>: ease;
+              </pre>
+            </li>
+            <li>
+              Se puede colocar las propiedades en una sola línea, cada propiedad a cambiar se separa por una coma.
+              <pre class="code-space">
+                <span class="code-style">transition</span>: width 1s 250ms ease, height 1s 250ms ease;
+              </pre>
+            </li>
+          </ul>
+          <div class="animation-example-1">
+            <div class="grid-pos-example animation">
+              <div class="animation-content">
+                <div class="animation-circle">
+                  <p>Pasar mouse por el circulo, para ver la transición.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="multiple-transition">
+            <h4>Transiciones multiples</h4>
+            <p>Si queremos animar varios elementos, la interacción debe ser con su <span class="n-bold">contenedor
+                padre</span>, a ese contenedor
+              se le coloca el hover u otra forma de interacción con el usuario.</p>
+            <p>Ahora para que la transición ocurra en los dos elementos se debe hacer hover (pasar mouse por encima) al
+              contenedor padre y no a los elementos.</p>
+            <div class="grid-pos-example animation">
+              <div class="animation-content">
+                <div class="animation-circle a">hola
+                </div>
+                <div class="animation-circle b">mundo!
+                </div>
+              </div>
+            </div>
+            <p><span class="n-bold">Código</span>:</p>
+            <pre class="code-space">
+              <span class="code-comment">Tiempo de retardo entre el momento en que el elemento se carga y el comienzo de la secuencia de la animación.</span>
+              <span class="code-style-green n-bold">.animation-content</span>{
+                <span class="code-style">position</span>: relative;
+              }
+
+              <span class="code-comment">/*Circulos hijos*/</span>
+              <span class="code-style-green n-bold">.animation-content .circle</span>{
+                <span class="code-style">position</span>: absolute;
+                <span class="code-style">height</span>: 70px;
+                <span class="code-style">width</span>:70px;
+                <span class="code-style">transition</span> : 1s;
+              }
+
+              <span class="code-style-green n-bold">.animation-content .circle.a</span>{
+                <span class="code-style">left</span>: 0;
+              }
+
+              <span class="code-style-green n-bold">.animation-content .circle.b</span>{
+                <span class="code-style">right</span>: 0;
+              }
+
+              <span class="code-comment">/*Interacción se agrega al contenedor padre*/</span>
+              <span class="code-style-green n-bold">.animation-content:hover .circle.a</span>{
+                <span class="code-style">left</span>: calc(50% - 90px); <span class="code-comment">/*se calcula la cantidad a la que se debe move con <span class="n-bold">calc</span>*/</span>
+              }
+
+              <span class="code-style-green n-bold">.animation-content:hover .circle.b</span>{
+                <span class="code-style">right</span>: calc(50% - 90px);
+              }
+            </pre>
+            <p class="note"><span class="n-bold">Nota:</span><br /> Para que la transición funcione debe por lo menos
+              tener especificado la propiedad <span class="n-bold">duration</span>. Si la propiedad <span class="n-bold">transition-property</span>
+              no se declara, quiere decir que los cambios van a aplicarse a todas las propiedades del elemento y <span
+                class="n-bold">timing-function</span> viene por defecto en ease.
+            </p>
+          </div>
+        </article>
+        <article id="web-content-transform">
+          <h3>Transformaciones</h3>
+          <p>Algunas de las cosas que podemos lograr en un elemento con <span class="n-bold">transform</span> son:</p>
+          <ul>
+            <li>Rotar un elemento. <span class="n-bold">rotate</span>, se mide en grados (deg).</li>
+            <li>Sesgar un elemento. <span class="n-bold">skew</span>, también se mide en grados.</li>
+            <li>Cambiar la posición de un elemento. <span class="n-bold">translate</span>(pixeles), el elemento puede
+              moverse en <span class="link-upper">x, y</span> y <span class="link-upper">z</span>.</li>
+            <li>Cambiar el tamaño de un elemento. <span class="n-bold">scale</span>(1 = 100%, 2 = 200%, .5 = 50%).</li>
+          </ul>
+          <pre class="code-space">
+            <span class="code-style">transform:</span> rotar | sesgar | posición | tamaño;
+          </pre>
+          <pre class="code-space">
+            <span class="code-style">transform:</span> <span class="n-bold">rotate</span>(5deg)  <span class="n-bold">skew</span>(10deg) <span class="n-bold">translate</span>(100px) <span class="n-bold">scale</span>(1.5);
+          </pre>
+        </article>
+        <article id="web-content-rotate">
+          <h3>Transformaciones de rotación</h3>
+          <p>Se puede <span class="n-bold">rotar</span> un elemento de muchas formas con animaciones.</p>
+          <ul>
+            <li><span class="n-bold">rotate</span>: Define una rotación 2D, con el ángulo que se especifica en el
+              parámetro.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">rotate</span>(45<span class="code-style">deg</span>);
+              </pre>
+            </li>
+            <li><span class="n-bold">rotateX</span>: Define una rotación 3D a lo largo del <span class="n-bold">eje X</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">rotateX</span>(10<span class="code-style">deg</span>);
+              </pre>
+            </li>
+            <li><span class="n-bold">rotateY</span>: Define una rotación 3D a lo largo del <span class="n-bold">eje Y</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">rotateY</span>(10<span class="code-style">deg</span>);
+              </pre>
+            </li>
+            <li><span class="n-bold">rotateZ</span>: Define una rotación 3D a lo largo del <span class="n-bold">eje Z</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">rotateZ</span>(10<span class="code-style">deg</span>);
+              </pre>
+            </li>
+            <li><span class="n-bold">Combinación</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">rotateX</span>(10<span class="code-style">deg</span>) <span class="n-bold">rotateY</span>(45<span class="code-style">deg</span>) <span class="n-bold">rotateZ</span>(25<span class="code-style">deg</span>) ;
+              </pre>
+            </li>
+            <li><span class="n-bold">rotate3d</span>: Define una transformación a escala 3D. Se coloca 1 en los grados
+              que se desea girar.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">rotate3d</span>(x,y,z, rotación);
+                <span class="code-style">transform</span>: <span class="n-bold">rotate3d</span>(1,0,0, 45<span class="code-style">deg</span>);
+              </pre>
+            </li>
+          </ul>
+          <p class="note">
+            <span class="n-bold">Nota:</span><br />
+            La rotación se da al sentido de las manecillas del reloj, para cambiar la dirección de esa rotación se
+            pueden usar grados <span class="n-bol">negativos</span>.
+          </p>
+          <div class="a-transform-rotate">
+            <div class="animacion-container">
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-1">
+                  <img src="../../img/logos/planet-globe.png" alt="Imagen de un planeta" />
+                </figure>
+                <div class="animation-description"><span class="code-style">rotate</span>(45deg)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-2">
+                  <img src="../../img/logos/planet-globe.png" alt="Imagen de un planeta" />
+                </figure>
+                <div class="animation-description"><span class="code-style">rotate</span>(-45deg)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-3">
+                  <img src="../../img/logos/planet-globe.png" alt="Imagen de un planeta" />
+                </figure>
+                <div class="animation-description"><span class="code-style">rotateX</span>(360deg)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-4">
+                  <img src="../../img/logos/planet-globe.png" alt="Imagen de un planeta" />
+                </figure>
+                <div class="animation-description"><span class="code-style">rotateY</span>(180deg)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-5">
+                  <img src="../../img/logos/planet-globe.png" alt="Imagen de un planeta" />
+                </figure>
+                <div class="animation-description"><span class="code-style">rotateZ</span>(90deg)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-6">
+                  <img src="../../img/logos/planet-globe.png" alt="Imagen de un planeta" />
+                </figure>
+                <div class="animation-description"><span class="code-style">rotate3d</span>(1,1,1, 180deg)</div>
+              </div>
+            </div>
+          </div>
+          <p class="note">
+            <span class="n-bold"><span class="link-upper">tip</span> Importante</span> Aplicar el hover a la etiqueta
+            padre.
+          </p>
+        </article>
+        <article id="web-content-translate">
+          <h3>Transformaciones de traslación y perspectiva</h3>
+          <p><span class="n-bold">Translate</span> nos sirve para poder mover un elemento arriba, abajo, derecha e
+            izquierda. Utilizamos la propiedad <span class="n-bold">perspective</span> para poder darle profundidad a
+            un elemento y obtener un
+            efecto 3D.</p>
+          <ul>
+            <li><span class="n-bold">translate</span>: Define una translación 2D.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">translate</span>(x);
+                <span class="code-style">transform</span>: <span class="n-bold">translate</span>(100<span class="code-style">px</span>);
+                <span class="code-style">transform</span>: <span class="n-bold">translate</span>(x, y);
+                <span class="code-style">transform</span>: <span class="n-bold">translate</span>(100<span class="code-style">px</span>, -50<span class="code-style">px</span>);
+              </pre>
+            </li>
+            <li><span class="n-bold">translateX</span>: Define una translación (desplazamiento), usando solo el valor
+              para el <span class="n-bold">eje X</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">translateX</span>(100<span class="code-style">px</span>);
+              </pre>
+            </li>
+            <li><span class="n-bold">translateY</span>: Define una translación (desplazamiento), usando solo el valor
+              para el <span class="n-bold">eje Y</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">translateY</span>(100<span class="code-style">px</span>);
+              </pre>
+            </li>
+          </ul>
+          <p>Utilizamos la propiedad <span class="n-bold">perspective</span> para poder darle profundidad a un elemento
+            y obtener un efecto 3D. Para ver los efectos en el eje Z con <span class="n-bold">perspective</span>
+            utilizamos
+            <span class="n-bold">perspective-origin</span> podemos definir el punto de origen de la perspectiva,
+            podemos también combinaciones:
+            <ul>
+              <li>top right</li>
+              <li>top left</li>
+              <li>bottom left</li>
+              <li>bottom right</li>
+            </ul>
+            Al contenedor padre, del objeto que queremos agregarle profundidad:
+            <pre class="code-space">
+              <span class="code-style">body</span>, <span class="code-style-green">.container-father</span> {
+                <span class="code-style">perspective</span>: 200px; 
+              }
+            </pre>
+          </p>
+          <p>Siguiendo con las <span class="n-bold">translate</span>:</p>
+          <ul>
+            <li><span class="n-bold">translateZ</span>: Tambien podemos movernos en el <span class="n-bold">eje Z</span>,
+              para dar profundidad.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">translateZ</span>(100<span class="code-style">px</span>); 
+              </pre>
+            </li>
+            <li><span class="n-bold">translate3d</span>: Define una translación a escala 3D.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">translate3d</span>(x,y,z);
+                <span class="code-style">transform</span>: <span class="n-bold">translate3d</span>(100<span class="code-style">px</span>, 100<span class="code-style">px</span>, 100<span class="code-style">px</span>);
+              </pre>
+            </li>
+          </ul>
+          <div class="a-transform-translate">
+            <div class="animacion-container">
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-1">
+                  <img src="../../img/logos/satelite.png" alt="Imagen de un satelite" />
+                </figure>
+                <div class="animation-description"><span class="code-style">translate</span>(50px)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-3">
+                  <img src="../../img/logos/satelite.png" alt="Imagen de un satelite" />
+                </figure>
+                <div class="animation-description"><span class="code-style">translate</span>(50px, -50px)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-4">
+                  <img src="../../img/logos/satelite.png" alt="Imagen de un satelite" />
+                </figure>
+                <div class="animation-description"><span class="code-style">translateX</span>(80px)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-5">
+                  <img src="../../img/logos/satelite.png" alt="Imagen de un satelite" />
+                </figure>
+                <div class="animation-description"><span class="code-style">translateY</span>(50px)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-6">
+                  <img src="../../img/logos/satelite.png" alt="Imagen de un satelite" />
+                </figure>
+                <div class="animation-description"><span class="code-style">translateZ</span>(-50px)</div>
+              </div>
+              <div class="animacion-item-container">
+                <figure class="animation-img-container img-2">
+                  <img src="../../img/logos/satelite.png" alt="Imagen de un satelite" />
+                </figure>
+                <div class="animation-description"><span class="code-style">translate3d</span>(100px, 50px, 100px)</div>
+              </div>
+            </div>
+          </div>
+        </article>
+        <article id="web-content-scale">
+          <h3>Transformaciones de escala</h3>
+          <p>
+            <span class="n-bold">Transform-scale</span> nos permite modificar el tamaño de nuestros elementos a nuestro
+            gusto.<br />
+            Esta propiedad solo recibe valores numéricos, y dichos valores representan porcentajes, por ejemplo:
+          </p>
+          <ul>
+            <li>0 = 0% del tamaño</li>
+            <li>.5 = 50% del tamaño</li>
+            <li>1 = 100% del tamaño</li>
+            <li>1.5 = 150% del tamaño</li>
+            <li>2 = 200% del tamaño</li>
+          </ul>
+          <ul>
+            <li><span class="n-bold">scale</span>(valor): De esta manera escalamos el elemento tanto en X como Y por
+              igual.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">scale</span>(1.5);
+              </pre>
+            </li>
+            <li><span class="n-bold">scale</span>(valorX, valorY): De esta manera escalamos tanto en X, como Y pero con
+              diferentes valores.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">scale</span>(.8, 2);
+              </pre>
+            </li>
+          </ul>
+        </article>
+        <article id="web-content-skew">
+          <h3>Transformaciones de sesgados</h3>
+          <p>Sesgar es esa inclinación que puede sufrir un elemento gracias a una transformación en CSS. <br />
+            Se puede sesgar un elemento tanto de un solo eje, como de ambos:
+          </p>
+          <ul>
+            <li><span class="n-bold">skew</span>: Sesgar en el <span class="n-bold">eje X</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">skew</span>(20<span class="code-style">deg</span>);
+              </pre>
+            </li>
+            <li><span class="n-bold">skew</span>(valorX, valorY): Sesgar en el <span class="n-bold">eje X</span> e
+              <span class="n-bold">Y</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">skew</span>(10<span class="code-style">deg</span>, 45<span class="code-style">deg</span>);
+              </pre>
+            </li>
+            <li>Sesgar en X e Y, de manera independiente:
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">skewX</span>(10<span class="code-style">deg</span>);
+                <span class="code-style">transform</span>: <span class="n-bold">skewY</span>(45<span class="code-style">deg</span>);
+              </pre>
+            </li>
+          </ul>
+          <p class="note">
+            <span class="n-bold">Nota:</span><br /> Esta propiedad recibe valores en <span class="n-bold">grados</span>
+            (deg) y radianes (rad).
+          </p>
+          <h4>Punto de transformación</h4>
+          <p>El punto de transformación de un elemento está clavado en alguna parte de la interfaz, y por defecto se
+            encuentra en el centro.</p>
+          <p>Sin embargo, podemos jugar con la posición de este punto según el tipo de animación que queramos crear.</p>
+          <pre class="code-space">
+            <span class="code-style">transform</span>: rotate(45<span class="code-style">deg</span>);
+            <span class="code-style n-bold">transform-origin</span>: bottom left;
+          </pre>
+          <div class="box-rotate"><img src="../../img/logos/rocket.png" alt="Cohete" width="100" /></div>
+        </article>
+        <article id="web-content-animation">
+          <h3>Animaciones</h3>
+          <p><span class="n-bold">Configurando animación:</span> Se utiliza la palabra clave <span class="n-bold">@keyframes</span>
+            seguido
+            del nombre que queramos darle a la animación, dentro de las llaves se especifica lo que hace dicha
+            animación y esto se hace con <span class="n-bold">estados</span>:</p>
+          <pre class="code-space">
+            <span class="code-comment">/* @keyframes nombreAnimación */</span>
+            <span class="code-style">@keyframes</span> <span class="code-style-green">cuadrado</span>{
+              <span class="code-comment">/* Estado inicial de animación */</span>
+              0%{
+                <span class="code-style">opacity</span>:1;
+              }
+              <span class="code-comment">/* Estado final de animación */</span>
+              100%{
+                <span class="code-style">opacity</span>:0;
+              }
+            }
+          </pre>
+          <p>Para crear una animación CSS usaremos la propiedad <span class="n-bold">animation</span> y sus <span class="n-bold">sub-propiedades</span>,
+            con las cuales podemos configurar el ritmo, la duración, etc.</p>
+          <p>Las <spa class="n-bold">propiedades de animation</spa> son:</p>
+          <ul>
+            <li><span class="n-bold">animation-name</span>: Especifica el nombre de la regla @keyframes que describe
+              los fotogramas de la animación.
+              <pre class="code-space">
+                <span class="code-style">animation-name</span>: rebote;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-duration</span>: Indica la cantidad de tiempo que la animación consume
+              en completar su ciclo (duración).
+              <pre class="code-space">
+                <span class="code-style">animation-duration</span>: 1s;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-delay</span>: Tiempo de retardo entre el momento en que el elemento se
+              carga y el comienzo de la secuencia de la animación.
+              <pre class="code-space">
+                <span class="code-style">animation-delay</span>: 1s;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-direction</span>: Indica si la animación debe retroceder hasta el
+              fotograma de inicio al finalizar la secuencia o si debe comenzar desde el principio al llegar al final.
+              <pre class="code-space">
+                <span class="code-style">animation-direction</span>: reverse;<span class="code-comment">/*Empieza desde el último estado 100%.*/</span>
+                <span class="code-style">animation-direction</span>: alternate; <span class="code-comment">/*La animación al terminar empieza nuevamente pero desde el último estado en vez del inicio.*/</span>
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-iteration-count</span>: El número de veces que se repite. Podemos
+              indicar <span class="n-bold">infinite</span> para repetir la animación indefinidamente.
+              <pre class="code-space">
+                <span class="code-comment">/*Cuantas veces va a ocurrir la animación*/</span>
+                <span class="code-style">animation-iteration-count</span>: 1;
+                <span class="code-style">animation-iteration-count</span>: infinite;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-play-state</span>: Permite pausar y reanudar la secuencia de la
+              animación.
+              <pre class="code-space">
+                <span class="code-style">animation-play-state</span>: running; <span class="code-comment">/*Valor por defecto*/</span>
+                <span class="code-style">animation-play-state</span>: paused;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-timing-function</span>: Indica el ritmo de la animación, es decir, como
+              se muestran los fotogramas de la animación, estableciendo curvas de aceleración.
+              <pre class="code-space">
+                <span class="code-style">animation-timing-function</span>: ease; <span class="code-comment">/*Valor por defecto*/</span>
+                <span class="code-style">animation-timing-function</span>: ease-in; 
+                <span class="code-style">animation-timing-function</span>: ease-in-out; 
+                <span class="code-style">animation-timing-function</span>: linear; 
+                <span class="code-style">animation-timing-function</span>: <span class="code-style-green">cubic-bezier</span>(1, 1, 1, 1); 
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-fill-mode</span>: Especifica qué valores tendrán las propiedades después
+              de finalizar la animación (los de antes de ejecutarla, los del último fotograma de la animación o ambos).
+              <pre class="code-space">
+                <span class="code-style">animation-fill-mode</span>: forwards;
+                </pre>
+            </li>
+          </ul>
+        </article>
+        <article id="web-content-bezier">
+          <h3>Aceleración y curva de bezier</h3>
+          <p>Aceleración y movimientos curvos a los elementos web por medio de <span class="n-bold">animation-timing-function</span>.</p>
+          <p>Valores de animation-timing-function:</p>
+          <ul>
+            <li><span class="n-bold">ease</span>: Por defecto.</li>
+            <li><span class="n-bold">ease-in</span>: Se suaviza al entrar o al inicio.</li>
+            <li><span class="n-bold">ease-out</span>: Se suaviza al salir o al finalizar.</li>
+            <li><span class="n-bold">ease-in-out</span>: Se suaviza al entrar y salir, básicamente se acelera solo la
+              mitad de la animación.</li>
+            <li><span class="n-bold">steps</span>(frames por segundo): como el lag en los juegos en linea, mientras más
+              bajo será menos fluido, entre más fps más suave la animación.</li>
+          </ul>
+          <a class="link-refe" href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank">Manipular cubic-bezier</a>
+        </article>
+        <article id="web-content-animationMul">
+          <h3>Múltiples animaciones</h3>
+          <p>Para nombrar más de una animación podemos nombrarlas en la misma línea de código:</p>
+          <pre class="code-space">
+            <span class="code-style">animation-name</span>: nombre1, nombre2;
+          </pre>
+          <div class="grid-pos-example animation">
+            <div class="animation-content">
+              <div class="animation-circle a"></div>
+            </div>
+          </div>
+        </article>
+        <article id="web-content-javascript">
+          <h3>Animaciones CSS desde JS</h3>
+          <p>Para detectar eventos de animaciones a través de Javascript se pueden usar los siguientes:</p>
+          <ul>
+            <li><span class="n-bold">animationstart</span>: Para ver si la animación inicio.</li>
+            <li><span class="n-bold">animationend</span>: Para ver si la animación termino.</li>
+          </ul>
+          <p>Tambien se puede crear animaciones desde Javascript, ejemplo:</p>
+          <pre class="code-space">
+            $cuadrado.style.<span class="n-bold">animationName</span> = 'cuadrado';
+            $cuadrado.style.<span class="n-bold">animationDuration</span> = '1s';
+          </pre>
+          <p>Para crear animaciones desde JavaScript se utiliza <span class="n-bold">element.animate</span>, que es
+            parte de la especificación del API de animaciones de JavaScript.</p>
+          <pre class="code-space">
+            <span class="code-comment">// element.animate(keyframes = [], option = {})</span>
+            $pelota.animate([
+              <span class="code-comment">// from</span>
+              transform: 'translateX(0)'
+            },
+            <span class="code-comment">// to</span>
+            {
+              transform: 'translateX(500px)'
+            }  
+            ], {
+              duration: 1000,
+              delay: 1000,
+              direction: 'normal',
+              easing: 'linear',
+              iterations: Infinite,
+              fill: 'forwards'
+            })
+          </pre>
+        </article>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="main-container">
+        <div class="footer-container">
+          <p>Carlos Zabala Roqueme - 2018</p>
+          <figure>
+            <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-white.png" alt="Logo Carlos Zabala" /></a>
+          </figure>
+        </div>
+      </div>
+    </footer>
+    <!--Pie de página-->
+  </div>
+</body>
+<script>
+
+  const ipad = window.matchMedia('screen and (max-width: 767px)');
+  const links = document.querySelectorAll('.link-course')
+
+  const menu = document.querySelector('.general-content-menu');
+  const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+  ipad.addListener(validation);
+
+  function validation(event) {
+
+    if (event.matches) {
+      // console.log('Hello');
+      burgerButton.addEventListener('click', showHideMenu);
+      //lineas agregadas para recorrer los objetos y agregar un listener
+      Array.from(links).forEach(link => {
+        link.addEventListener('click', showHideMenu)
+      })
+    }
+    else {
+      burgerButton.removeEventListener('click', showHideMenu);
+    }
+
+  }
+
+  validation(ipad);
+
+  function showHideMenu() {
+    // console.log('clicc');
+    if (menu.classList.contains('isActive')) {
+      menu.classList.remove('isActive');
+
+    }
+    else {
+      menu.classList.add('isActive');
+    }
+  }
+
+  // console.log(menu, ' ' ,burgerButton);
+</script>
+
+</html>
