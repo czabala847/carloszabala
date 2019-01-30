@@ -133,7 +133,7 @@ figure{
 }
 
 .main-background{
-  background: url('../img/hero-3.jpg');
+  background: url('../img/hero-3.png');
 }
 
 .java-hero-background{
@@ -157,7 +157,6 @@ figure{
 }
 
 .hero {
-  /* background: url('../img/hero-3.jpg'); */
   height: 450px;
   color: white;
   text-shadow: 0 1px 8px rgba(0, 0, 0, .7);
@@ -345,7 +344,7 @@ figure{
 
 .contact{
   height: 300px;
-  background-image: url('../img/simon-abrams-286276-unsplash.jpg');
+  background-image: url('../img/simon-abrams-286276-unsplash.png');
   background-size: cover;
   background-position: center;
 }
