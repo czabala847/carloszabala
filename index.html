@@ -8,8 +8,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Carlos Zabala</title>
   <link rel="icon" href="img/logos/favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
-  <link rel="stylesheet" href="css/estilos.css" />
+  <!-- <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet"> -->
+
 </head>
 
 <body>
@@ -64,7 +64,8 @@
           <div class="course-img-background course-img-1">
             <div class="course-details">
               <h3>Desarrollo Java SE</h3>
-              <p>Repaso y notas de lo visto sobre <strong>Java SE</strong> tanto en platzi como la universidad, además de otras fuentes de investigación sobre este lenguaje de programación.
+              <p>Repaso y notas de lo visto sobre <strong>Java SE</strong> tanto en platzi como la universidad, además
+                de otras fuentes de investigación sobre este lenguaje de programación.
               </p>
               <a class="main-button" href="cursos/java.html">Ver más</a>
             </div>
@@ -76,7 +77,9 @@
           <div class="course-img-background course-img-2">
             <div class="course-details">
               <h3>Front-end</h3>
-              <p>Cursos para la formación de un arquitecto front-end, se empieza con HTML, CSS y javascript, también se encontrara tecnicas más avanzadas con CSS como lo es CSS Grid Layout y muchas más herramientas y frameworks para ser un experto en el mundo del desarrollo y diseño web</p>
+              <p>Cursos para la formación de un arquitecto front-end, se empieza con HTML, CSS y javascript, también se
+                encontrara tecnicas más avanzadas con CSS como lo es CSS Grid Layout y muchas más herramientas y
+                frameworks para ser un experto en el mundo del desarrollo y diseño web</p>
               <a class="main-button" href="cursos/frontend.html">Ver más</a>
             </div>
           </div>
@@ -221,49 +224,65 @@
     </footer>
     <!--Pie de página-->
   </div>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
+
+  <script>
+
+    WebFont.load({
+
+      google: {
+
+        families: ['Source Sans Pro', 'Pacifico']
+
+      }
+
+    });
+
+  </script>
+  <script>
+
+    const movil = window.matchMedia('screen and (max-width: 480px)');
+    const links = document.querySelectorAll('.link-rs')
+
+    const menu = document.querySelector('.menu-responsive');
+    const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+    movil.addListener(validation);
+
+    function validation(event) {
+
+      if (event.matches) {
+        console.log('Hello');
+        burgerButton.addEventListener('click', showHideMenu);
+        //lineas agregadas para recorrer los objetos y agregar un listener
+        Array.from(links).forEach(link => {
+          link.addEventListener('click', showHideMenu)
+        })
+      }
+      else {
+        burgerButton.removeEventListener('click', showHideMenu);
+      }
+
+    }
+
+    validation(movil);
+
+    function showHideMenu() {
+      console.log('clicc');
+      if (menu.classList.contains('isActive')) {
+        menu.classList.remove('isActive');
+
+      }
+      else {
+        menu.classList.add('isActive');
+      }
+    }
+
+    // console.log(menu, ' ' ,burgerButton);
+  </script>
 </body>
-<script>
-
-  const movil = window.matchMedia('screen and (max-width: 480px)');
-  const links = document.querySelectorAll('.link-rs')
-
-  const menu = document.querySelector('.menu-responsive');
-  const burgerButton = document.querySelector('#burgerMenu');
-
-
-
-  movil.addListener(validation);
-
-  function validation(event) {
-    
-    if (event.matches) {
-      console.log('Hello');
-      burgerButton.addEventListener('click', showHideMenu);
-      //lineas agregadas para recorrer los objetos y agregar un listener
-      Array.from(links).forEach(link => {
-        link.addEventListener('click', showHideMenu)
-      })
-    }
-    else {
-      burgerButton.removeEventListener('click', showHideMenu);
-    }
-
-  }
-
-  validation(movil);
-
-  function showHideMenu() {
-    console.log('clicc');
-    if (menu.classList.contains('isActive')) {
-      menu.classList.remove('isActive');
-      
-    }
-    else {
-      menu.classList.add('isActive');
-    }
-  }
-
-  // console.log(menu, ' ' ,burgerButton);
-</script>
 
 </html>

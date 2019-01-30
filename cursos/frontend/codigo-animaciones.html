@@ -52,6 +52,7 @@
           <ol>
             <li class="link-course"><a href="animacion-web.html">Ver teoría</a></li>
             <li class="link-course"><a href="#web-content-logo">Logo animado</a></li>
+            <li class="link-course"><a href="#web-content-inOut">Animaciones in y out</a></li>
           </ol>
         </nav>
       </aside>
@@ -60,10 +61,173 @@
           <h3>Logo animado</h3>
           <div class="animation-logo-container">
             <figure class="animation-logo-img">
-              <img class="logo-c" src="../../img/logos/c.svg" alt="c logo carlos zabala" width="150" />
-              <img class="logo-z" src="../../img/logos/z.svg" alt="z logo carlos zabala" width="150" />
+              <img id="logo-c" class="logo-c" src="../../img/logos/c.svg" alt="c logo carlos zabala" width="150" />
+              <img id="logo-z" class="logo-z" src="../../img/logos/z.svg" alt="z logo carlos zabala" width="150" />
             </figure>
           </div>
+          <p><span class="n-bold">Css:</span>
+            <pre class="code-space">
+              <span class="code-style-green">.animation-logo-img .logo-c</span> {
+                <span class="code-style">animation-name</span>: logo-c-in;
+                <span class="code-style">animation-duration</span> : 2s;
+                <span class="code-style">animation-iteration-count</span> : 1;
+                <span class="code-style">animation-direction</span>: alternate;
+              }
+
+              <span class="span code-style-green">.animation-logo-img .logo-z</span> {
+                <span class="code-style">opacity</span> : 0;
+              }
+              
+              <span class="code-style-green">.animation-logo-img .logo-z.active-animation</span> {
+                <span class="code-style">animation-name</span>: logo-z;
+                <span class="code-style">animation-duration</span>: 1s;
+                <span class="code-style">animation-iteration-count</span>: 1;
+                <span class="code-style">animation-fill-mode</span>: forwards;
+              }
+
+              <span class="code-comment">/*Configurando animación*/</span>
+
+              <span class="code-style">@keyframes</span> logo-c-in{
+                <span class="code-style">0%</span> {
+                  opacity: 0;
+                  transform: translateX(150px) scale(.4) rotate(360deg);
+                }
+                <span class="code-style">50%</span> {
+                  transform: translateX(150px) scale(1) rotate(0);
+                }
+                <span class="code-style">75%</span> {
+                  opacity: 1;
+                  transform: translateX(0px) scale(1) rotate(0);
+                }
+                <span class="code-style">100%</span> {
+                  opacity: 1;
+                  transform: translateX(0) scale(1) rotate(0);
+                }
+              }
+
+              <span class="code-style">@keyframes</span> logo-z {
+                <span class="code-style">0%</span>
+                  opacity: 0;
+                  transform: translateX(-150px);
+                }
+                <span class="code-style">80%</span> {
+                  opacity: .8;
+                  transform: translateX(50px) rotate(8deg);
+                }
+                <span class="code-style">100%</span> {
+                  opacity: 1;
+                  transform: translateX(0) rotate(0);
+                }
+              }
+            </pre>
+          </p>
+          <p><span class="n-bold">Javascript:</span>
+            <pre class="code-space">
+              const $logoC = document.getElementById('logo-c');
+              const $logoZ = document.getElementById('logo-z');
+
+              $logoC.addEventListener('animationend', () => {
+                $logoZ.classList.add('active-animation');
+              });
+            </pre>
+          </p>
+        </article>
+        <article id="web-content-inOut">
+          <h3>Animaciones de entrada y salida</h3>
+          <div class="animation-in-out-container">
+            <button id="btn-modal" class="btn-in main-button">Ver la animación</button>
+            <div class="overlay">
+              <div id="modal" class="modal">
+                <p class="modal-title n-bold">Esto es un modal</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde culpa placeat numquam quos voluptatum
+                  ipsum quis magnam. Commodi maxime cum nulla itaque, et nesciunt voluptas corrupti qui recusandae
+                  cupiditate eaque.</p>
+                <button id="close-modal" class="btn-close-modal">Cerrar modal</button>
+              </div>
+            </div>
+          </div>
+          <p><span class="n-bold">Css:</span>
+            <pre class="code-space">
+              <span class="code-style-green">.animation-in-out-container .overlay .modal.active</span> {
+                <span class="code-style">animation:</span>: modal-in 2s forwards;
+              }
+
+              <span class="span code-style-green">.animation-in-out-container .overlay .modal.out</span> {
+                <span class="code-style">animation</span> : modal-out 1s forwards;
+              }
+              
+              <span class="code-comment">/*Configurando animación*/</span>
+
+              <span class="code-style">@keyframes</span> modal-in{
+                <span class="code-style">0%</span> {
+                  opacity: 0;
+                  transform: translateY(-5000px);
+                }
+                <span class="code-style">70%</span> {
+                  opacity: 0;
+                }
+                <span class="code-style">80%</span> {
+                  opacity: .7;
+                  transform: translateY(40px);
+                }
+                <span class="code-style">85%</span> {
+                  opacity: 1;
+                  transform: translateY(-20px);
+                }
+                <span class="code-style">90%</span> {
+                  opacity: 1;
+                  transform: translateY(10px);
+                }
+                <span class="code-style">100%</span> {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+              }
+
+              <span class="code-style">@keyframes</span> modal-out {
+                <span class="code-style">0%</span>
+                  opacity: 1;
+                  transform: translateY(0);
+                }
+                <span class="code-style">70%</span> {
+                  opacity: 1;
+                  transform: translateY(10px);
+                }
+                <span class="code-style">80%</span> {
+                  opacity: 1;
+                  transform: translateY(-20px);
+                }
+                <span class="code-style">85%</span> {
+                  opacity: .7;
+                  transform: translateY(40px);
+                }
+                <span class="code-style">90%</span> {
+                  opacity: 0;
+                }
+                <span class="code-style">100%</span> {
+                  opacity: 0;
+                  transform: translateY(-5000px);
+                }
+              }
+            </pre>
+          </p>
+          <p><span class="n-bold">Javascript:</span>
+            <pre class="code-space">
+              const $btnModal = document.getElementById('btn-modal');
+              const $modal = document.getElementById('modal');
+              const $closeModal = document.getElementById('close-modal');
+
+              $btnModal.addEventListener('click', () => {
+                $modal.classList.remove('out');
+                $modal.classList.add('active');
+              })
+            
+              $closeModal.addEventListener('click', () => {
+                $modal.classList.add('out');
+                $modal.classList.remove('active');
+              });
+            </pre>
+          </p>
         </article>
       </div>
     </section>
@@ -148,6 +312,28 @@
   }
 
   // console.log(menu, ' ' ,burgerButton);
+
+  const $logoC = document.getElementById('logo-c');
+  const $logoZ = document.getElementById('logo-z');
+  const $btnModal = document.getElementById('btn-modal');
+  const $modal = document.getElementById('modal');
+  const $closeModal = document.getElementById('close-modal');
+
+  $logoC.addEventListener('animationend', () => {
+    console.log('ha terminado');
+    $logoZ.classList.add('active-animation');
+  });
+
+  $btnModal.addEventListener('click', () => {
+    $modal.classList.remove('out');
+    $modal.classList.add('active');
+  })
+
+  $closeModal.addEventListener('click', () => {
+    $modal.classList.add('out');
+    $modal.classList.remove('active');
+  });
+
 </script>
 
 </html>
