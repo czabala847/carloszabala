@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Stylus - Carlos Zabala</title>
+  <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/estilos.css" />
+  <link rel="stylesheet" href="../../css/ejemplos.css" />
+</head>
+
+<body>
+  <!-- <i class="icon-menu burger-button" id="burgerMenu"></i> -->
+  <i class="icon-menu button-course-menu" id="burgerMenu"></i>
+  <div class="main">
+    <div class="main-container">
+      <header class="header main-container">
+        <!--Cabecera-->
+        <nav class="menu-gn-courses menu menu-left">
+          <ol>
+            <li class="menu-link"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link"><a href="../frontend.html">Carrera</a></li>
+          </ol>
+        </nav>
+        <figure class="logo-imageContainer">
+          <!--Logo-->
+          <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
+        </figure>
+        <nav class="menu-gn-courses menu menu-right">
+          <ol>
+            <li class="menu-link"><a href="recomendaciones-stylus.html">Recomendaciones</a></li>
+            <li class="menu-link"><a href="#">Codigos</a></li>
+          </ol>
+        </nav>
+      </header>
+    </div>
+
+    <section class="hero stylus-hero-background">
+      <div class="main-container title-container">
+        <h1>Stylus</h1>
+      </div>
+    </section>
+
+    <!-- <div class="main-container"> -->
+    <section class="general-course-container">
+      <aside class="general-content-menu">
+        <nav class="general-course-menu">
+          <ol>
+            <li class="link-course"><a href="#web-content-origin">Introducción</a></li>
+            <li class="link-course"><a href="#web-content-create-steps">Crear proyecto</a></li>
+            <li class="link-course"><a href="#web-content-syntax">Sintaxis</a></li>
+            <li class="link-course"><a href="#web-content-nesting">Anidación</a></li>
+            <li class="link-course"><a href="#web-content-variable">Variables</a></li>
+            <li class="link-course"><a href="#web-content-structureCSS">Estructura css</a></li>
+            <li class="link-course"><a href="#web-content-skew">Sesgado</a></li>
+            <li class="link-course"><a href="#web-content-animation">Animaciones</a></li>
+            <li class="link-course"><a href="#web-content-bezier">Curva de bezier</a></li>
+            <li class="link-course"><a href="#web-content-javascript">Animaciones con Javascript</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <div class="general-content">
+        <article id="web-content-origin">
+          <h3>Introducción</h3>
+          <p>
+            Stylus es un pre-procesador de css. Lo que quiere decir que este código se copila para luego guardarlo en
+            un archivo CSS. Por lo tanto, se traduce del lenguaje de Stylus al lenguaje de CSS.
+          </p>
+          <p class="note"><span class="n-bold">Nota</span>: <br />
+            Stylus no usa Ruby como backend sino NodeJS.
+          </p>
+          <h4>UI / Compiladores para stylus</h4>
+          <p>
+            <a class="n-bold link-normal" href="https://codekitapp.com/" target="_blank">CodeKit</a><br />
+            <span class="code-comment">trial $34, macOS</span><br />
+            Build websites faster and better.<br />
+            Sass, Less, Stylus, CSS, CoffeeScript, Pug, Slim, Haml, TypeScript, JavaScript, ES6, Markdown, JSON, SVG,
+            PNG, GIF and JPEG.
+          </p>
+          <p><span class="n-bold">Caracteristicas</span>
+            <ul>
+              <li>Refrescar automáticamente los navegadores.</li>
+              <li>Cualquier dispositivo.</li>
+              <li>No requiere mucha/ninguna configuración.</li>
+              <li>Optimización y Mitificación.</li>
+              <li>Instalación de Frameworks.</li>
+              <li>Debuger.</li>
+            </ul>
+          </p>
+          <p>
+            <a class="n-bold link-normal" href="https://prepros.io/" target="_blank">Prepos</a><br />
+            <span class="code-comment">trial $29, Mac, Windows & Linux</span><br />
+            Compile Sass, Less, Stylus, Jade, CoffeeScript on Mac, Windows & Linux with Live Browser Reload.<br />
+            Sass, Less, Stylus, Cssnext, Jade/Pug, Markdown, Slim, Coffeescript etc.
+          </p>
+          <p><span class="n-bold">Caracteristicas</span>
+            <ul>
+              <li>Debuger.</li>
+              <li>Refrescar automáticamente los navegadores.</li>
+              <li>Optimización y Mitificación.</li>
+              <li>Prevista desde la red para distintos dispositivos.</li>
+              <li>Inspector remoto.</li>
+              <li>Temas claros y oscuros.</li>
+            </ul>
+          </p>
+          <p>
+            <a class="n-bold link-normal" href="https://platzi.com/clases/webpack/" target="_blank">Webpack</a><br />
+            <span class="code-comment">Mac, Windows & Linux</span>
+          </p>
+          <p class="note"><span class="n-bold">Nota:</span><br />
+            Se recomienda no guardar los estilos en la raíz. Crear una carpeta llamada <span class="n-bold">stylus</span>,
+            donde estaran los archivos stylus y otra carpeta <span class="n-bold">css</span> para los archivos finales.
+          </p>
+          <p>
+            <span class="n-bold">Resumen:</span><br /><br />
+            Un preprocesador nos permite compilar código escrito en stylus y convertirlo a css que entienda el
+            navegador.
+            Cuando modificamos un archivo de stylus no necesariamente debemos ir a compilar eso, podemos hacer que algo
+            automáticamente detecte el cambio y lo compile, podemos usar una <span class="link-upper n-bold">ui</span>
+            en vez de la consola, se puede usar codekit o prepos. Un archivo de stylus tiene la <span class="n-bold">extensión
+              .styl</span>.
+          </p>
+        </article>
+        <article id="web-content-create-steps">
+          <h3>Pasos básicos para crear un proyecto con Stylus</h3>
+          <ul>
+            <li>Se crean las carpetas del proyecto(images, stylus, css, ..)</li>
+            <li>En un editor de código crear un archivo <span class="n-bold">stylus</span>(styles.styl).</li>
+            <li>Se arrastran o importan las carpetas creadas a la UI que compila el código stylus.</li>
+            <li>Al editar el archivo .styl desde un editor de texto automáticamente la UI genera el css
+              correspondiente.</li>
+          </ul>
+        </article>
+        <article id="web-content-syntax">
+          <h3>Sintaxis</h3>
+          <p><span class="n-bold">Datos importantes:</span><br />
+            <ul>
+              <li>Stylus es un preprocesador que difiere un poco del resto por su sintaxis.</li>
+              <li>Su sintaxis es anidada.</li>
+              <li>En Stylus no es necesario usar los brackets y ; pero debemos recordar que para tener mejores
+                prácticas deberíamos usarlas.</li>
+            </ul>
+          </p>
+          <p>
+            Stylus no requiere el uso de las llaves o brackets {...}
+            <pre class="code-space">
+              <span class="code-comment">/*En css*/</span>
+              <span class="code-style">body</span>{
+                <span class="code-style-blue">background</span>: red;
+              }
+
+              <span class="code-comment">/*En stylus*/</span>
+              <span class="code-style">body</span>
+                <span class="code-style-blue">background</span>: red;
+            </pre>
+          </p>
+          <p>
+            punto y coma.
+            <pre class="code-space">
+              <span class="code-comment">/*En css*/</span>
+              <span class="code-style">body</span>{
+                <span class="code-style-blue">background</span>: red;
+                <span class="code-style-blue">color</span>: white;
+              }
+
+              <span class="code-comment">/*En stylus*/</span>
+              <span class="code-style">body</span>
+                <span class="code-style-blue">background</span>: red
+                <span class="code-style-blue">color</span>: white
+            </pre>
+          </p>
+        </article>
+        <article id="web-content-nesting">
+          <h3>Anidación</h3>
+          <p>Gracias a las anidaciones podemos añadir propiedades a través de la sintaxis de Stylus. Además, esto nos
+            permite referenciar al padre.</p>
+          <p><span class="n-bold">Sub-anidaciones</span> hacemos referencia a todos los elementos que estén dentro de
+            las etiquetas padres.
+            <pre class="code-space">
+              <span class="code-style">body</span>, <span class="code-style-green">.light-theme</span>
+                <span class="code-style-blue">background</span>: lightyellow
+                <span class="code-style-blue">color</span>: white
+                <span class="code-style-green n-bold">.primer-hijo</span>
+                  <span class="code-style-blue">margin-bottom</span>: 24px
+            </pre>
+          </p>
+          <p><span class="n-bold">Child</span> con el uso de "">"" hacemos referencia a los hijos directos del elemento
+            padre.
+            <pre class="code-space">
+              <span class="code-style">body</span>, <span class="code-style-green">.light-theme</span>
+                <span class="code-style-blue">background</span>: lightyellow
+                <span class="code-style-blue">color</span>: white
+                &gt<span class="code-style-green n-bold"> .primer-hijo</span>
+                  <span class="code-style-blue">margin-bottom</span>: 24px
+            </pre>
+          </p>
+          <p><span class="n-bold">Referencia al padre</span> con el uso de ""&"" hacemos referencia al nombre del
+            elemento padre.
+            <pre class="code-space">
+              <span class="code-style-green">.psudoelement</span>
+                <span class="code-style-blue">width</span>: 300px
+                &<span class="code-style-green">:before</span>
+                  <span class="code-style-blue">content</span>: 'hola'
+              <span class="code-style-green"> .ie-8</span> &
+                &<span class="code-style-green">:before</span>
+                <span class="code-style-blue">content</span>: 'ciao'
+            </pre>
+          </p>
+          <p class="note"><span class="n-bold">Nota:</span><br />No adinar más de tres veces.</p>
+          <p>Ejemplo de modulación.
+            <pre class="code-space">
+              <span class="code-style-green">.btn</span>
+                <span class="code-style-blue">background</span>: white
+                <span class="code-style-blue">color</span>: black
+                <span class="code-style-blue">border-radius</span>: 3px
+                &<span class="code-style-green">-alert</span>
+                  <span class="code-style-blue">background</span>: red
+                  <span class="code-style-blue">color</span>: white
+                &<span class="code-style-green">-warn</span>
+                  <span class="code-style-blue">background</span>: orange
+                  <span class="code-style-blue">color</span>: white
+            </pre>
+          </p>
+        </article>
+        <article id="web-content-variable">
+          <h3>Variables</h3>
+          <p>Una de las mayores ventajas que tienen los preprocesadores son las variables, estas nos permiten controlar
+            un entorno porque podemos manipular un entorno. Esto quiere decir que podemos cambiar muchas cosas a través
+            de muchas variables.</p>
+          <p>Controlar un entorno por medio de pequeños elementos, es más cómodo reutilizar variables, luego con un
+            pequeño cambio ajustar ese valor.</p>
+          <pre class="code-space">
+            <span class="code-comment">//Variables</span>
+            <span class="code-style">font-size-normal</span> = 18px
+            <span class="code-style">font-size-small</span> = <span class="code-style">font-size-normal</span> - 2px
+            <span class="code-style">font-size-paragraph</span> = <span class="code-style">font-size-normal</span>
+
+            <span class="code-comment">//Text</span>
+            <span class="code-style">p</span>
+              <span class="code-style-blue">font-size</span>: font-size-paragraph
+
+            <span class="code-style">span</span>
+              <span class="code-style-blue">font-size</span>: font-size-normal
+              &<span class="code-style-green">.small</span>
+                <span class="code-style-blue">font-size</span>: font-size-small
+          </pre>
+        </article>
+        <article id="web-content-structureCSS">
+          <h3>Estructura <span class="link-upper">css</span></h3>
+          <p>Una de las ventajas de los preprocesadores es que podemos crear diferentes parciales para organizar
+            nuestro código. Cuando creamos un parcial debemos tener un _, lo que quiere decir que debe ser importado en
+            un archivo principal.</p>
+          <p>Los archivos que tiene un _ <span class="n-bold">no se compila</span>. Es algo que vamos a usar en otro
+            archivo
+            Para importar archivos usamos <span class="n-bold">@import "_nombre_archivo"</span>.
+          </p>
+          <pre class="code-space">
+            <span class="code-style-blue">@import</span> "_variables.styl"
+          </pre>
+          <p class="note"><span class="n-bold">Nota:</span><br />Recomendado tener un solo archivo .styl que importa
+            los demás archivos con esa extensión, y ese solo archivo es el que se compila y genera el css de nuestro
+            sitio. Al importar todo se va a imprimir en el orden en que se esta importando, tener en cuenta la cascada.
+          </p>
+          <a href="" class="link-refe">Organizar carpetas</a>
+        </article>
+        <article id="web-content-skew">
+          <h3>Transformaciones de sesgados</h3>
+          <p>Sesgar es esa inclinación que puede sufrir un elemento gracias a una transformación en CSS. <br />
+            Se puede sesgar un elemento tanto de un solo eje, como de ambos:
+          </p>
+          <ul>
+            <li><span class="n-bold">skew</span>: Sesgar en el <span class="n-bold">eje X</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">skew</span>(20<span class="code-style">deg</span>);
+              </pre>
+            </li>
+            <li><span class="n-bold">skew</span>(valorX, valorY): Sesgar en el <span class="n-bold">eje X</span> e
+              <span class="n-bold">Y</span>.
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">skew</span>(10<span class="code-style">deg</span>, 45<span class="code-style">deg</span>);
+              </pre>
+            </li>
+            <li>Sesgar en X e Y, de manera independiente:
+              <pre class="code-space">
+                <span class="code-style">transform</span>: <span class="n-bold">skewX</span>(10<span class="code-style">deg</span>);
+                <span class="code-style">transform</span>: <span class="n-bold">skewY</span>(45<span class="code-style">deg</span>);
+              </pre>
+            </li>
+          </ul>
+          <p class="note">
+            <span class="n-bold">Nota:</span><br /> Esta propiedad recibe valores en <span class="n-bold">grados</span>
+            (deg) y radianes (rad).
+          </p>
+          <h4>Punto de transformación</h4>
+          <p>El punto de transformación de un elemento está clavado en alguna parte de la interfaz, y por defecto se
+            encuentra en el centro.</p>
+          <p>Sin embargo, podemos jugar con la posición de este punto según el tipo de animación que queramos crear.</p>
+          <pre class="code-space">
+            <span class="code-style">transform</span>: rotate(45<span class="code-style">deg</span>);
+            <span class="code-style n-bold">transform-origin</span>: bottom left;
+          </pre>
+          <div class="box-rotate"><img src="../../img/logos/rocket.png" alt="Cohete" width="100" /></div>
+        </article>
+        <article id="web-content-animation">
+          <h3>Animaciones</h3>
+          <p><span class="n-bold">Configurando animación:</span> Se utiliza la palabra clave <span class="n-bold">@keyframes</span>
+            seguido
+            del nombre que queramos darle a la animación, dentro de las llaves se especifica lo que hace dicha
+            animación y esto se hace con <span class="n-bold">estados</span>:</p>
+          <pre class="code-space">
+            <span class="code-comment">/* @keyframes nombreAnimación */</span>
+            <span class="code-style">@keyframes</span> <span class="code-style-green">cuadrado</span>{
+              <span class="code-comment">/* Estado inicial de animación */</span>
+              0%{
+                <span class="code-style">opacity</span>:1;
+              }
+              <span class="code-comment">/* Estado final de animación */</span>
+              100%{
+                <span class="code-style">opacity</span>:0;
+              }
+            }
+          </pre>
+          <p>Para crear una animación CSS usaremos la propiedad <span class="n-bold">animation</span> y sus <span class="n-bold">sub-propiedades</span>,
+            con las cuales podemos configurar el ritmo, la duración, etc.</p>
+          <p>Las <spa class="n-bold">propiedades de animation</spa> son:</p>
+          <ul>
+            <li><span class="n-bold">animation-name</span>: Especifica el nombre de la regla @keyframes que describe
+              los fotogramas de la animación.
+              <pre class="code-space">
+                <span class="code-style">animation-name</span>: rebote;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-duration</span>: Indica la cantidad de tiempo que la animación consume
+              en completar su ciclo (duración).
+              <pre class="code-space">
+                <span class="code-style">animation-duration</span>: 1s;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-delay</span>: Tiempo de retardo entre el momento en que el elemento se
+              carga y el comienzo de la secuencia de la animación.
+              <pre class="code-space">
+                <span class="code-style">animation-delay</span>: 1s;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-direction</span>: Indica si la animación debe retroceder hasta el
+              fotograma de inicio al finalizar la secuencia o si debe comenzar desde el principio al llegar al final.
+              <pre class="code-space">
+                <span class="code-style">animation-direction</span>: reverse;<span class="code-comment">/*Empieza desde el último estado 100%.*/</span>
+                <span class="code-style">animation-direction</span>: alternate; <span class="code-comment">/*La animación al terminar empieza nuevamente pero desde el último estado en vez del inicio.*/</span>
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-iteration-count</span>: El número de veces que se repite. Podemos
+              indicar <span class="n-bold">infinite</span> para repetir la animación indefinidamente.
+              <pre class="code-space">
+                <span class="code-comment">/*Cuantas veces va a ocurrir la animación*/</span>
+                <span class="code-style">animation-iteration-count</span>: 1;
+                <span class="code-style">animation-iteration-count</span>: infinite;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-play-state</span>: Permite pausar y reanudar la secuencia de la
+              animación.
+              <pre class="code-space">
+                <span class="code-style">animation-play-state</span>: running; <span class="code-comment">/*Valor por defecto*/</span>
+                <span class="code-style">animation-play-state</span>: paused;
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-timing-function</span>: Indica el ritmo de la animación, es decir, como
+              se muestran los fotogramas de la animación, estableciendo curvas de aceleración.
+              <pre class="code-space">
+                <span class="code-style">animation-timing-function</span>: ease; <span class="code-comment">/*Valor por defecto*/</span>
+                <span class="code-style">animation-timing-function</span>: ease-in; 
+                <span class="code-style">animation-timing-function</span>: ease-in-out; 
+                <span class="code-style">animation-timing-function</span>: linear; 
+                <span class="code-style">animation-timing-function</span>: <span class="code-style-green">cubic-bezier</span>(1, 1, 1, 1); 
+              </pre>
+            </li>
+            <li><span class="n-bold">animation-fill-mode</span>: Especifica qué valores tendrán las propiedades después
+              de finalizar la animación (los de antes de ejecutarla, los del último fotograma de la animación o ambos).
+              <pre class="code-space">
+                <span class="code-style">animation-fill-mode</span>: forwards;
+                </pre>
+            </li>
+          </ul>
+        </article>
+        <article id="web-content-bezier">
+          <h3>Aceleración y curva de bezier</h3>
+          <p>Aceleración y movimientos curvos a los elementos web por medio de <span class="n-bold">animation-timing-function</span>.</p>
+          <p>Valores de animation-timing-function:</p>
+          <ul>
+            <li><span class="n-bold">ease</span>: Por defecto.</li>
+            <li><span class="n-bold">ease-in</span>: Se suaviza al entrar o al inicio.</li>
+            <li><span class="n-bold">ease-out</span>: Se suaviza al salir o al finalizar.</li>
+            <li><span class="n-bold">ease-in-out</span>: Se suaviza al entrar y salir, básicamente se acelera solo la
+              mitad de la animación.</li>
+            <li><span class="n-bold">steps</span>(frames por segundo): como el lag en los juegos en linea, mientras más
+              bajo será menos fluido, entre más fps más suave la animación.</li>
+          </ul>
+          <a class="link-refe" href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank">Manipular cubic-bezier</a>
+        </article>
+        <article id="web-content-animationMul">
+          <h3>Múltiples animaciones</h3>
+          <p>Para nombrar más de una animación podemos nombrarlas en la misma línea de código:</p>
+          <pre class="code-space">
+            <span class="code-style">animation-name</span>: nombre1, nombre2;
+          </pre>
+          <div class="grid-pos-example animation">
+            <div class="animation-content">
+              <div class="animation-circle a"></div>
+            </div>
+          </div>
+        </article>
+        <article id="web-content-javascript">
+          <h3>Animaciones CSS desde JS</h3>
+          <p>Para detectar eventos de animaciones a través de Javascript se pueden usar los siguientes:</p>
+          <ul>
+            <li><span class="n-bold">animationstart</span>: Para ver si la animación inicio.</li>
+            <li><span class="n-bold">animationend</span>: Para ver si la animación termino.</li>
+          </ul>
+          <p>Tambien se puede crear animaciones desde Javascript, ejemplo:</p>
+          <pre class="code-space">
+            $cuadrado.style.<span class="n-bold">animationName</span> = 'cuadrado';
+            $cuadrado.style.<span class="n-bold">animationDuration</span> = '1s';
+          </pre>
+          <p>Para crear animaciones desde JavaScript se utiliza <span class="n-bold">element.animate</span>, que es
+            parte de la especificación del API de animaciones de JavaScript.</p>
+          <pre class="code-space">
+            <span class="code-comment">// element.animate(keyframes = [], option = {})</span>
+            $pelota.animate([
+              <span class="code-comment">// from</span>
+              transform: 'translateX(0)'
+            },
+            <span class="code-comment">// to</span>
+            {
+              transform: 'translateX(500px)'
+            }  
+            ], {
+              duration: 1000,
+              delay: 1000,
+              direction: 'normal',
+              easing: 'linear',
+              iterations: Infinite,
+              fill: 'forwards'
+            })
+          </pre>
+        </article>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="main-container">
+        <div class="footer-container">
+          <p>Carlos Zabala Roqueme - 2018</p>
+          <figure>
+            <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-white.png" alt="Logo Carlos Zabala" /></a>
+          </figure>
+        </div>
+      </div>
+    </footer>
+    <!--Pie de página-->
+  </div>
+</body>
+<script>
+
+  const ipad = window.matchMedia('screen and (max-width: 767px)');
+  const links = document.querySelectorAll('.link-course')
+
+  const menu = document.querySelector('.general-content-menu');
+  const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+  ipad.addListener(validation);
+
+  function validation(event) {
+
+    if (event.matches) {
+      // console.log('Hello');
+      burgerButton.addEventListener('click', showHideMenu);
+      //lineas agregadas para recorrer los objetos y agregar un listener
+      Array.from(links).forEach(link => {
+        link.addEventListener('click', showHideMenu)
+      })
+    }
+    else {
+      burgerButton.removeEventListener('click', showHideMenu);
+    }
+
+  }
+
+  validation(ipad);
+
+  function showHideMenu() {
+    // console.log('clicc');
+    if (menu.classList.contains('isActive')) {
+      menu.classList.remove('isActive');
+
+    }
+    else {
+      menu.classList.add('isActive');
+    }
+  }
+
+  // console.log(menu, ' ' ,burgerButton);
+</script>
+
+</html>

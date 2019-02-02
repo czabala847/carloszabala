@@ -9,6 +9,7 @@
   <title>Códigos Animaciones Web - Carlos Zabala</title>
   <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css">
   <link rel="stylesheet" href="../../css/estilos.css" />
   <link rel="stylesheet" href="../../css/ejemplos.css" />
 </head>
@@ -53,6 +54,8 @@
             <li class="link-course"><a href="animacion-web.html">Ver teoría</a></li>
             <li class="link-course"><a href="#web-content-logo">Logo animado</a></li>
             <li class="link-course"><a href="#web-content-inOut">Animaciones in y out</a></li>
+            <li class="link-course"><a href="#web-content-notification">Notificaciones</a></li>
+            <li class="link-course"><a href="#web-content-sprite">Sprites</a></li>
           </ol>
         </nav>
       </aside>
@@ -136,7 +139,7 @@
           <h3>Animaciones de entrada y salida</h3>
           <div class="animation-in-out-container">
             <button id="btn-modal" class="btn-in main-button">Ver la animación</button>
-            <div class="overlay">
+            <div id="overlay" class="overlay">
               <div id="modal" class="modal">
                 <p class="modal-title n-bold">Esto es un modal</p>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Unde culpa placeat numquam quos voluptatum
@@ -148,6 +151,19 @@
           </div>
           <p><span class="n-bold">Css:</span>
             <pre class="code-space">
+              <span class="code-style-green">.animation-in-out-container .overlay</span> {
+                <span class="code-style">opacity:</span>: 0;
+                <span class="code-style">transition:</span>: 1s;
+                <span class="code-style">overflow:</span>: hidden;
+              }
+
+              <span class="code-style-green">.animation-in-out-container .overlay .modal</span> {
+                <span class="code-style">opacity:</span>: 0;
+                <span class="code-style">width:</span>: 50%;
+                <span class="code-style">padding:</span>: 1em;
+                <span class="code-style">border-radius:</span>: 10px;
+              }
+
               <span class="code-style-green">.animation-in-out-container .overlay .modal.active</span> {
                 <span class="code-style">animation:</span>: modal-in 2s forwards;
               }
@@ -161,22 +177,19 @@
               <span class="code-style">@keyframes</span> modal-in{
                 <span class="code-style">0%</span> {
                   opacity: 0;
-                  transform: translateY(-5000px);
+                  transform: translateY(-200px);
                 }
-                <span class="code-style">70%</span> {
-                  opacity: 0;
-                }
-                <span class="code-style">80%</span> {
-                  opacity: .7;
-                  transform: translateY(40px);
-                }
-                <span class="code-style">85%</span> {
+                <span class="code-style">25%</span> {
                   opacity: 1;
-                  transform: translateY(-20px);
+                  transform: translateY(20px);
                 }
-                <span class="code-style">90%</span> {
+                <span class="code-style">50%</span> {
                   opacity: 1;
-                  transform: translateY(10px);
+                  transform: translateY(-10px);
+                }
+                <span class="code-style">75%</span> {
+                  opacity: 1;
+                  transform: translateY(5px);
                 }
                 <span class="code-style">100%</span> {
                   opacity: 1;
@@ -189,24 +202,21 @@
                   opacity: 1;
                   transform: translateY(0);
                 }
-                <span class="code-style">70%</span> {
+                <span class="code-style">25%</span> {
                   opacity: 1;
-                  transform: translateY(10px);
+                  transform: translateY(5px);
                 }
-                <span class="code-style">80%</span> {
+                <span class="code-style">50%</span> {
                   opacity: 1;
-                  transform: translateY(-20px);
+                  transform: translateY(-10px);
                 }
-                <span class="code-style">85%</span> {
-                  opacity: .7;
-                  transform: translateY(40px);
-                }
-                <span class="code-style">90%</span> {
-                  opacity: 0;
+                <span class="code-style">75%</span> {
+                  opacity: 1;
+                  transform: translateY(20px);
                 }
                 <span class="code-style">100%</span> {
                   opacity: 0;
-                  transform: translateY(-5000px);
+                  transform: translateY(-200px);
                 }
               }
             </pre>
@@ -216,8 +226,11 @@
               const $btnModal = document.getElementById('btn-modal');
               const $modal = document.getElementById('modal');
               const $closeModal = document.getElementById('close-modal');
+              const $overlay = document.getElementById('overlay');
 
               $btnModal.addEventListener('click', () => {
+                $overlay.style.opacity = '1';
+                $overlay.classList.remove('out');
                 $modal.classList.remove('out');
                 $modal.classList.add('active');
               })
@@ -225,9 +238,244 @@
               $closeModal.addEventListener('click', () => {
                 $modal.classList.add('out');
                 $modal.classList.remove('active');
+                $overlay.classList.add('out');
               });
             </pre>
           </p>
+        </article>
+        <article id="web-content-notification">
+          <h3>Notificaciones</h3>
+          <div class="animation-notification-content">
+            <button id="btn-notification" class="btn-example">Enviar notificacion</button>
+            <div id="icon-bell" class="icon-campana"></div>
+          </div>
+          <p><span class="n-bold">Css:</span>
+            <pre class="code-space">
+              <span class="code-style-green">.icon-campana</span> {
+                <span class="code-style">color</span>: white;
+                <span class="code-style">font-size</span>: 1.5em;
+                <span class="code-style">position</span>: relative;
+              }
+
+              <span class="code-style-green">.icon-campana:before</span> {
+                <span class="code-style">content</span>: "\f0f3";
+                <span class="code-style">font-family</span>: "Font Awesome 5 Free"; <span class="code-comment">/*Fuente de font awesome*/</span>
+                <span class="code-style">display</span>: block;
+                <span class="code-style">transform-origin</span>: center top;
+              }
+
+              <span class="code-comment">/*Desde javascript se va a añadir al elemento html correspondiente la clase <span class="n-bold">active</span>*/</span>
+              <span class="code-style-green">.icon-campana.active:before</span> {
+                <span class="code-style">animation</span>: rota-bell 1s;
+              }
+
+              <span class="code-commnet">/*Estilos del número de notificaciones al lado de la campana*/</span>
+              <span class="code-style-green">.icon-campana:after</span> {
+                <span class="code-style">font-size</span>: 10px;
+                <span class="code-style">font-weight</span>: bold;
+                <span class="code-style">height</span>: 10px;
+                <span class="code-style">min-width</span>: 10px; <span class="code-comment">/*ancho minimo, porque puede ser mas de 10px*/</span>
+                <span class="code-style">color</span>: white;
+                <span class="code-style">background-color</span>: #FE4842;
+                <span class="code-style">padding</span>: 2px;
+                <span class="code-style">border-radius</span>: 50%;
+                
+                <span class="code-style">position</span>: absolute;
+                <span class="code-style">top</span>: -10px;
+                <span class="code-style">right</span>: -10px;
+                
+                <span class="code-style">display</span>: flex;
+                <span class="code-style">justify-content</span>: center;
+                <span class="code-style">align-items</span>: center;
+                
+                <span class="code-style"></span>
+                <span class="code-style">content</span>: attr(data-count);
+                <span class="code-style">opacity</span>: 0;
+                <span class="code-style">transform</span>: scale(.5);
+                <span class="code-style">transition</span>: .3s;
+                <span class="code-style">will-change</span>: opacity, transform; <span class="code-comment">/*Optimizar render del navegador*/</span>
+              }
+
+              <span class="code-comment">/*Desde javascript se va a añadir al elemento html correspondiente la clase <span class="n-bold">show-count</span>*/</span>
+              <span class="code-style-green">.icon-campana.show-count:after</span> {
+                <span class="code-style">opacity</span>: 1;
+                <span class="code-style">transform</span>: scale(1);
+              }
+
+              <span class="code-comment">/*Configurando animación*/</span>
+
+              <span class="code-style">@keyframes</span> rota-bell {
+                <span class="code-style">0%</span> {
+                  transform: rotate(35deg);
+                }
+                <span class="code-style">12.5%</span> {
+                  transform: rotate(-30deg);
+                }
+                <span class="code-style">25%</span> {
+                  transform: rotate(25deg);
+                }
+                <span class="code-style">37.5%</span> {
+                  transform: rotate(-20deg);
+                }
+                <span class="code-style">50%</span> {
+                  transform: rotate(15deg);
+                }
+                <span class="code-style">62.5%</span> {
+                  transform: rotate(-10deg);
+                }
+                <span class="code-style">75%</span> {
+                  transform: rotate(5deg);
+                }
+                <span class="code-style">100%</span> {
+                  transform: rotate(0deg);
+                }
+              }
+
+            </pre>
+          </p>
+          <p><span class="n-bold">Javascript:</span>
+            <pre class="code-space">
+              const $btnNotification = document.getElementById('btn-notification');
+              const $iconBell = document.getElementById('icon-bell');
+
+              $btnNotification.addEventListener('click', () => {
+                const count = Number($iconBell.getAttribute('data-count')) || 0;
+                $iconBell.setAttribute('data-count', count + 1);
+                $iconBell.classList.add('show-count');
+                $iconBell.classList.add('active');
+              });
+
+
+              $iconBell.addEventListener('animationend', () => {
+                console.log('hi');
+
+                $iconBell.classList.remove('active');
+              })
+            </pre>
+          </p>
+        </article>
+        <article id="web-content-sprite">
+          <h3>Sprite</h3>
+          <p><span class="n-bold">Propiedad utilizada</span>: animation-time-function: <span class="n-bold">steps</span>().
+            Para hacer que la animación suceda en pasos. <br />
+            <span class="n-bold">Sprites</span>: Conjunto de imágenes.</p>
+          <p>Los pasos steps estan relacionados con el eje x del <span class="n-bold">background-positions</span>
+            Para calcular cuantos pixeles nos debemos estar moviendo hay que dividir el tamaño total del Sprite de la
+            imagen por el número de imágenes que tenga. <br /> Buscar imagenes sprites:
+          </p>
+          <a class="link-refe" href="http://spritedatabase.net/" target="_blank">Sprite database</a>
+          <a class="link-refe" href="https://www.spriters-resource.com/" target="_blank">Spriters resource</a>
+          <div class="animation-sprite-content">
+            <div class="item-sprite animation-like">
+              <div id="like" class="like"></div>
+            </div>
+            <div class="item-sprite animation-mask">
+              <div id="mask" class="mask"></div>
+            </div>
+            <div class="item-sprite animation-like-code">
+              <p><span class="n-bold">html</span>:
+                <pre class="code-space">
+                  &lt<span class="code-style">div</span>  <span class="code-style-green">class</span>="item-sprite animation-like"&gt
+                    &lt<span class="code-style">div</span>  id="like" <span class="code-style-green">class</span>="like"&gt&lt/<span class="code-style">div</span> &gt
+                  &lt/<span class="code-style">div</span> &gt
+                </pre>
+              </p>
+              <p><span class="n-bold">css</span>:
+                <pre class="code-space">
+                  <span class="code-style-green">.animation-like</span>{
+                    <span class="code-style">display</span>: flex;
+                    <span class="code-style">justify-content</span>: center;
+                    <span class="code-style">align-items</span>: center;
+                  }
+
+                  <span class="code-style-green">.animation-like .like</span>{
+                    <span class="code-style">background-image</span>: url('../img/like.png');
+                    <span class="code-comment">/*reducir a la mitad el tamaño del sprite*/</span>
+                    <span class="code-style">background-size</span>: 1450px 50px; 
+                    <span class="code-style">height</span>: 50px;
+                    <span class="code-style">width</span>: 50px;
+                    <span class="code-style">cursor</span>: pointer;
+                  }
+
+                  <span class="code-comment">/*Activar la animación*/</span>
+                  <span class="code-style-green">.animation-like .like.isliked</span>{
+                    <span class="code-style">animation</span>: like 1s forwards steps(28);
+                  }
+
+                  <span class="code-comment">/*Configurar la animación*/</span>
+                  <span class="code-style">@keyframes</span> like{
+                    <span class="code-style">0%</span>{
+                      background-position: 0;
+                    }
+                    <span class="code-style">100%</span>{
+                      <span class="code-comment">/*Ir moviendo hacia la derecha la imagen*/</span>
+                      background-position: right;
+                    }
+                  }
+                </pre>
+              </p>
+              <p><span class="n-bold">Javascript:</span>
+                <pre class="code-space">
+                  const $like = document.getElementById('like');
+
+                  like.addEventListener('click', () => {
+                    $like.classList.toggle('isliked');
+                  });
+                </pre>
+              </p>
+            </div>
+            <div class="item-sprite animation-other-code">
+              <p><span class="n-bold">html</span>:
+                <pre class="code-space">
+                  &lt<span class="code-style">div</span>  <span class="code-style-green">class</span>="item-sprite animation-mask"&gt
+                    &lt<span class="code-style">div</span>  id="mask" <span class="code-style-green">class</span>="mask"&gt&lt/<span class="code-style">div</span> &gt
+                  &lt/<span class="code-style">div</span> &gt
+                </pre>
+              </p>
+              <p><span class="n-bold">css</span>:
+                <pre class="code-space">
+                  <span class="code-style-green">.animation-mask</span>{
+                    <span class="code-style">display</span>: flex;
+                    <span class="code-style">justify-content</span>: center;
+                    <span class="code-style">align-items</span>: center;
+                  }
+
+                  <span class="code-style-green">.animation-mask .mask</span>{
+                    <span class="code-style">background-image</span>: url('../img/mask.png');
+                    <span class="code-style">height</span>: 100px;
+                    <span class="code-style">width</span>: 100px;
+                    <span class="code-style">border-radius</span>: 50%;
+                    <span class="code-style">cursor</span>: pointer;
+                  }
+
+                  <span class="code-comment">/*Activar la animación*/</span>
+                  <span class="code-style-green">.animation-mask .mask.is-active</span>{
+                    <span class="code-style">animation</span>: like 1s forwards steps(10);
+                  }
+
+                  <span class="code-comment">/*Configurar la animación*/</span>
+                  <span class="code-style">@keyframes</span> mask{
+                    <span class="code-style">0%</span>{
+                      background-position: 0;
+                    }
+                    <span class="code-style">100%</span>{
+                      <span class="code-comment">/*Ir moviendo hacia la derecha la imagen*/</span>
+                      background-position: right;
+                    }
+                  }
+                </pre>
+              </p>
+              <p><span class="n-bold">Javascript:</span>
+                <pre class="code-space">
+                  const $mask = document.getElementById('mask');
+
+                  $mask.addEventListener('click', () => {
+                    $mask.classList.toggle('is-active');
+                  });
+                </pre>
+              </p>
+            </div>
+          </div>
         </article>
       </div>
     </section>
@@ -318,20 +566,51 @@
   const $btnModal = document.getElementById('btn-modal');
   const $modal = document.getElementById('modal');
   const $closeModal = document.getElementById('close-modal');
+  const $overlay = document.getElementById('overlay');
 
   $logoC.addEventListener('animationend', () => {
-    console.log('ha terminado');
+    // console.log('ha terminado');
     $logoZ.classList.add('active-animation');
   });
 
   $btnModal.addEventListener('click', () => {
+    $overlay.style.opacity = '1';
+    $overlay.classList.remove('out');
     $modal.classList.remove('out');
     $modal.classList.add('active');
   })
 
   $closeModal.addEventListener('click', () => {
+    // $overlay.style.opacity = '0';
     $modal.classList.add('out');
     $modal.classList.remove('active');
+    $overlay.classList.add('out');
+  });
+
+  const $btnNotification = document.getElementById('btn-notification');
+  const $iconBell = document.getElementById('icon-bell');
+
+  $btnNotification.addEventListener('click', () => {
+    const count = Number($iconBell.getAttribute('data-count')) || 0;
+    $iconBell.setAttribute('data-count', count + 1);
+    $iconBell.classList.add('show-count');
+    $iconBell.classList.add('active');
+  });
+
+
+  $iconBell.addEventListener('animationend', () => {
+    $iconBell.classList.remove('active');
+  })
+
+  const $like = document.getElementById('like');
+  const $mask = document.getElementById('mask');
+
+  like.addEventListener('click', () => {
+    $like.classList.toggle('isliked');
+  });
+
+  $mask.addEventListener('click', () => {
+    $mask.classList.toggle('is-active');
   });
 
 </script>

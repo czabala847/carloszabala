@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+<!--En español-->
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Recomendaciones Stylus - Carlos Zabala</title>
+  <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/estilos.css" />
+  <!-- <link rel="stylesheet" href="../../css/ejemplos.css" /> -->
+</head>
+
+<body>
+  <!-- <i class="icon-menu burger-button" id="burgerMenu"></i> -->
+  <i class="icon-menu button-course-menu" id="burgerMenu"></i>
+  <div class="main">
+    <div class="main-container">
+      <header class="header main-container">
+        <!--Cabecera-->
+        <nav class="menu-gn-courses menu menu-left">
+          <ol>
+            <li class="menu-link"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link"><a href="stylus.html">Teoría</a></li>
+          </ol>
+        </nav>
+        <figure class="logo-imageContainer">
+          <!--Logo-->
+          <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
+        </figure>
+        <nav class="menu-gn-courses menu menu-right">
+          <ol>
+            <li class="menu-link"><a href="recomendaciones-stylus.html">Recomendaciones</a></li>
+            <li class="menu-link"><a href="#">Codigos</a></li>
+          </ol>
+        </nav>
+      </header>
+    </div>
+
+    <section class="hero stylus-hero-background">
+      <div class="main-container title-container">
+        <h1>Recomendaciones Stylus</h1>
+      </div>
+    </section>
+
+    <!-- <div class="main-container"> -->
+    <section class="general-course-container">
+      <aside class="general-content-menu">
+        <nav class="general-course-menu">
+          <ol>
+            <li class="link-course"><a href="stylus.html">Ver teoría</a></li>
+            <li class="link-course"><a href="#web-content-organize">Organizar proyecto</a></li>
+            <li class="link-course"><a href="#web-content-render">Optimizar render </a></li>
+          </ol>
+        </nav>
+      </aside>
+      <div class="general-content">
+        <article id="web-content-organize">
+          <h3>Organizar carpetas de proyectos Stylus</h3>
+          <p>Tener un archivo principal (<span class="n-bold">styles.styl</span>) donde se importaran todos los
+            parciales del proyecto, este
+            archivo sera el único que se compile para generar el css del proyecto. <br />
+            Recomendado imporar de la siguiente manera:
+          </p>
+          <p class="n-bold">Archivo principal Styles.styl</p>
+          <pre class="code-space">
+            <span class="code-style-blue">@import</span> "lib/_variables.styl"
+            <span class="code-style-blue">@import</span> "lib/_mixins.styl"
+            <span class="code-style-blue">@import</span> "lib/_functions.styl"
+
+            <span class="code-style-blue">@import</span> "layout/_site.styl"
+            <span class="code-style-blue">@import</span> "layout/_blocks.styl"
+
+            <span class="code-style-blue">@import</span> "base/_links.styl"
+            <span class="code-style-blue">@import</span> "base/_buttons.styl"
+            <span class="code-style-blue">@import</span> "base/_typography.styl"
+            <span class="code-style-blue">@import</span> "base/_tables.styl"
+
+            <span class="code-style-blue">@import</span> "components/_grid.styl"
+            <span class="code-style-blue">@import</span> "components/_utilities.styl"
+          </pre>
+          <p class="n-bold">Carpetas</p>
+          <ul class="binder-content">
+            <li class="item-1 item-binder">
+              <div id="binder-base" class="binder-title">
+                <span class="i-binder"></span><span>base</span>
+              </div>
+              <div id="base-detail" class="binder-details">
+                <ul>
+                  <li>_buttons
+                    <pre class="code-space">
+                      <span class="code-style-green">.btn</span>
+                        <span class="code-style-blue">display</span> : inline-block
+                        <span class="code-style-blue">width</span> : auto
+                        <span class="code-style-blue">color</span> : buttoncolor
+                        <span class="code-style-blue">text-align</span> : center
+                        <span class="code-style-blue">background-color</span> : buttonbackground
+                        <span class="code-style-blue">cursor</span> : pointer
+                        <span class="code-style-blue">margin</span> :0
+                        <span class="code-style-blue">padding</span> :0
+                        <span class="code-style-blue">text-decoration</span>: none
+                        <span class="code-style-blue">font-size</span> : basefontsizen
+                        <span class="code-style-blue">border</span> : none
+                        &:<span class="code-style-green">hover</span> 
+                            <span class="code-style-blue">text-decoration</span> : none
+                            <span class="code-style-blue">color</span> : white
+                            <span class="code-style-blue">background-color</span> : color-brand
+                            <span class="code-style-blue">cursor</span> : pointer
+                            
+                        &:<span class="code-style-green">active</span>,
+                        &:<span class="code-style-green">focus</span>  
+                            <span class="code-style-blue">outline</span>:none 
+                        <span class="code-comment">/**
+                            * Secondary buttons
+                            */</span>
+      
+                        &.<span class="code-style-green">btn-secondary</span> 
+                          <span class="code-style-blue">background-color</span> : white;
+                          <span class="code-style-blue">color</span> : color-brand;
+                          &:<span class="code-style-green">hover</span> 
+                            <span class="code-style-blue">background-color</span> : color-brand;
+                            <span class="code-style-blue">color</span> : white;
+      
+                        <span class="code-comment">/**
+                            * Error button
+                            */</span>    
+                        <span class="code-style-green">.btn-error, .btn-error:visited </span>
+                          <span class="code-style-blue">color</span> : color-error;
+                          <span class="code-style-blue">border-color</span> : lightgrey;
+                          &:<span class="code-style-green">hover </span>
+                            <span class="code-style-blue">background-color</span> : color-error;
+                            <span class="code-style-blue">color</span>: white;
+                    </pre>
+                  </li>
+                  <li>_links</li>
+                  <li>_tables</li>
+                  <li>_typography</li>
+                </ul>
+              </div>
+            </li>
+            <li class="item-2 item-binder">
+              <div id="binder-components" class="binder-title">
+                <span class="i-binder"></span><span>components</span>
+              </div>
+              <div id="components-details" class="binder-details">
+                <ul>
+                  <li>_grid.styl</li>
+                  <li>_utilities.styl: los margins, padding</li>
+                </ul>
+              </div>
+            </li>
+            <li class="item-3 item-binder">
+              <div id="binder-layout" class="binder-title">
+                <span class="i-binder"></span><span>layout</span>
+              </div>
+              <div id="layout-details" class="binder-details">
+                <ul>
+                  <li>_sites: En este archivo van estilos que se le dan a los contenedores padres principales como
+                    <span class="n-bold">html</span> y <span class="n-bold">body</span>.
+                    <pre class="code-space">
+                        <span class="code-style">html </span>
+                          <span class="code-style-blue">background</span> : color-background
+                          <span class="code-style-blue">font-size</span> : 87.5%
+                          <span class="code-style-blue">margin</span> : 0
+                            
+                        <span class="code-style">body</span>
+                          <span class="code-style-blue">margin</span> : 0
+                          <span class="code-style-blue">padding</span> : 0
+                          <span class="code-style-blue">width</span> : 100%
+                          <span class="code-style-blue">background-color</span> : transparent
+                          <span class="code-style-blue">font-family</span> : basefont
+                          <span class="code-style-blue">line-height</span> : lineheight
+                          <span class="code-style-blue">color</span> : textcolor
+                    </pre>
+                  </li>
+                  <li>_blocks: tipos de bloques que solemos repetir
+                    <pre class="code-space">
+                        <span class="code-style-green">.block</span>
+                        <span class="code-style-blue">max-width</span> : 60%
+                        <span class="code-style-blue">margin-right</span> : auto
+                        <span class="code-style-blue">margin-left</span> : auto
+                        <span class="code-style-blue">margin-bottom</span> : padding
+                        <span class="code-style-blue">background-color</span> : color-white
+                        <span class="code-style-blue">position</span> : relative
+                        &<span class="code-style-green">_body</span> 
+                            <span class="code-style-blue">padding</span> : padding
+                            <span class="code-style-blue">background-color</span> : color-white
+                            <span class="code-style-blue">position</span> : relative
+                            
+                        &<span class="code-style-green">_title</span> 
+                            <span class="code-style-blue">background-color</span> : color-white
+                            <span class="code-style-blue">padding</span> : padding
+                            <span class="code-style-blue">font-size</span> : 28px
+                            <span class="code-style-blue">font-weight</span> : bold
+                            <span class="code-style-blue">color</span> : color-secondary
+                            <span class="code-style-blue">border-bottom</span> : 1px solid color-lightgrey
+                    </pre>
+                  </li>
+                </ul>
+              </div>
+            </li>
+            <li class="item-4 item-binder">
+              <div id="binder-lib" class="binder-title">
+                <span class="i-binder"></span><span>lib</span>
+              </div>
+              <div id="lib-details" class="binder-details">
+                <ul>
+                  <li>_functions</li>
+                  <li>_mixins
+                    <pre class="code-space">
+                          <span class="code-style-green">mixin-max-width</span>(width = page-max-width)<span class="code-comment">//page-max-width variable que esta en _variables.styl</span>
+                            <span class="code-style-blue">max-width</span>: width
+                            <span class="code-style-blue">margin-left</span>: auto
+                            <span class="code-style-blue">margin-right</span>: auto
+      
+                          <span class="code-comment">// Referencias de como usar el mixins.</span>
+                          <span class="code-style-green">.container </span>
+                            mixin-max-width(800px)
+      
+                          <span class="code-style-green">.section</span>
+                            <span class="code-style-blue">margin-bottom</span>: 24px
+                            mixin-max-width(90%)
+      
+                          <span class="code-style-green">.section-landing</span> 
+                            mixin-max-width()
+                        </pre>
+                  </li>
+                  <li>_variables
+                    <pre class="code-space">
+                          <span class="code-comment">//Colors</span>
+                          <span class="code-comment">//Branding colors</span>
+                          <span class="code-style">color-brand</span> = #ea83ee
+                          <span class="code-style">color-secondary</span> = rgb(219, 216, 121)
+                          <span class="code-style">color-black</span> = rgb(0,0,0)
+                          <span class="code-style">color-darkgrey</span> = #4d4d4d
+                          <span class="code-style">color-grey</span> = #737373
+                          <span class="code-style">color-lightgrey</span> = #bfbfbf
+                          <span class="code-style">color-white</span> = rgb(255, 255, 255)
+      
+                          <span class="code-style">color-border</span> = color-darkgrey
+                          <span class="code-comment">// Texturas</span>
+                          <span class="code-style">color-alert</span> = rgb(252,228,207) 
+                          <span class="code-style">color-error</span> = rgb(218,79,73)
+                          <span class="code-style">color-invert</span> = invert(color-error)
+                          <span class="code-style">color-info</span> = rgb(66, 184, 221)
+                          <span class="code-style">color-success</span> = rgb(91,183,91)
+      
+                          <span class="code-comment">/ Tipografía</span>
+      
+                          <span class="code-style">basefont</span> = 'Quicksand', sans-serif
+                          <span class="code-style">basefontsize</span> = 16px
+                          <span class="code-style">baseheadingfont</span> = basefont
+                          <span class="code-style">baseheadingfontweight</span> = bold
+                          <span class="code-style">altfont</span> = Georgia, Times, "Times New Roman"
+                          <span class="code-style">codefont</span> = "Courier New", monospace
+                          <span class="code-style">lineheight</span> = 1.5
+                          <span class="code-style">textcolor</span> = color-black
+      
+      
+                          <span class="code-style">buttoncolor</span> = color-white
+                          <span class="code-style">buttonbackground</span> = color-brand
+                          <span class="code-style">color-background</span> = color-white
+      
+                          <span class="code-comment">//Constantes</span>
+                          <span class="code-style">border-radius</span> = 3px
+                          <span class="code-style">padding</span> = 24px
+                          <span class="code-style">page-max-width</span> = 800px
+      
+                          <span class="code-style">img-dir</span> = "/img"
+                        </pre>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </article>
+        <article id="web-content-render">
+          <h3>Optimizar render con will-change y developer tools</h3>
+          <p>Inspeccionando desde la consola del navegador los elementos web podemos ver las propiedades de las
+            animaciones y el render y visualizar nuevas modificaciones.</p>
+          <pre class="code-space">
+            <span class="code-style">will-change</span>: opacity;
+          </pre>
+          <p class="note">
+            <span class="n-bold">Nota:</span><br /> Solo para opacidad y transformaciones es lo recomendado.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- </div> -->
+
+    <!-- <section class="contact" id="contacto">
+      Contacto
+      <div class="main-container">
+        <div class="contact-details">
+          <form action="" class="form-email">
+            <h2 class="form-title">¿Creamos algo junto?</h2>
+            <input class="form-txtEmail" type="email" placeholder="Deja tu email :)" required />
+            <input class="main-button form-button" type="submit" value="Enviar">
+          </form>
+
+          <div class="social-container">
+
+            <a href="#" target="_blank"><i class="social-icon icon-facebook"></i></a>
+            <a href="https://www.instagram.com/czabala16/" target="_blank"><i class="social-icon icon-instagram"></i></a>
+            <a href="https://github.com/czabala847" target="_blank"><i class="social-icon icon-github"></i></a>
+            <a href="https://platzi.com/@czabala847/" target="_blank"><i class="social-icon icon-platzi"></i></a>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <footer class="footer">
+      <div class="main-container">
+        <div class="footer-container">
+          <p>Carlos Zabala Roqueme - 2018</p>
+          <figure>
+            <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-white.png" alt="Logo Carlos Zabala" /></a>
+          </figure>
+        </div>
+      </div>
+    </footer>
+    <!--Pie de página-->
+  </div>
+</body>
+
+
+<script>
+
+  const ipad = window.matchMedia('screen and (max-width: 767px)');
+  const links = document.querySelectorAll('.link-course')
+
+  const menu = document.querySelector('.general-content-menu');
+  const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+  ipad.addListener(validation);
+
+  function validation(event) {
+
+    if (event.matches) {
+      // console.log('Hello');
+      burgerButton.addEventListener('click', showHideMenu);
+      //lineas agregadas para recorrer los objetos y agregar un listener
+      Array.from(links).forEach(link => {
+        link.addEventListener('click', showHideMenu)
+      })
+    }
+    else {
+      burgerButton.removeEventListener('click', showHideMenu);
+    }
+
+  }
+
+  validation(ipad);
+
+  function showHideMenu() {
+    // console.log('clicc');
+    if (menu.classList.contains('isActive')) {
+      menu.classList.remove('isActive');
+
+    }
+    else {
+      menu.classList.add('isActive');
+    }
+  }
+
+  const $binderComponents = document.getElementById('binder-components');
+  const $binderBase = document.getElementById('binder-base');
+  const $binderLayout = document.getElementById('binder-layout');
+  const $binderLib = document.getElementById('binder-lib');
+
+  const $componentsDetails = document.getElementById('components-details');
+  const $baseDetails = document.getElementById('base-detail');
+  const $layoutDetails = document.getElementById('layout-details');
+  const $libDetails = document.getElementById('lib-details');
+
+  $binderComponents.addEventListener('click', () => {
+    $componentsDetails.classList.toggle('isSelected');
+  });
+
+  $binderBase.addEventListener('click', () => {
+    $baseDetails.classList.toggle('isSelected');
+  });
+
+  $binderLayout.addEventListener('click', () => {
+    $layoutDetails.classList.toggle('isSelected');
+  });
+
+  $binderLib.addEventListener('click', () => {
+    $libDetails.classList.toggle('isSelected');
+  });
+
+
+  // console.log(menu, ' ' ,burgerButton);
+</script>
+
+</html>
