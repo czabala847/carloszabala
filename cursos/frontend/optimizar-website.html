@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Optimizar website - Carlos Zabala</title>
+  <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
+  <link rel="stylesheet" href="../../css/estilos.css" />
+  <!-- <link rel="stylesheet" href="../../css/ejemplos.css" /> -->
+</head>
+
+<body>
+  <!-- <i class="icon-menu burger-button" id="burgerMenu"></i> -->
+  <i class="icon-menu button-course-menu" id="burgerMenu"></i>
+  <div class="main">
+    <div class="main-container">
+      <header class="header main-container">
+        <!--Cabecera-->
+        <nav class="menu-gn-courses menu menu-left">
+          <ol>
+            <li class="menu-link"><a href="../../index.html">Inicio</a></li>
+            <li class="menu-link"><a href="../frontend.html">Carrera</a></li>
+          </ol>
+        </nav>
+        <figure class="logo-imageContainer">
+          <!--Logo-->
+          <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-black.png" alt="Logo Carlos Zabala" /></a>
+        </figure>
+        <nav class="menu-gn-courses menu menu-right">
+          <ol>
+            <li class="menu-link"><a href="">Recomendaciones</a></li>
+            <li class="menu-link"><a href="#">Codigos</a></li>
+          </ol>
+        </nav>
+      </header>
+    </div>
+
+    <section class="hero custom-hero-background">
+      <div class="main-container title-container">
+        <h1>Optimización de sitios web</h1>
+      </div>
+    </section>
+
+    <!-- <div class="main-container"> -->
+    <section class="general-course-container">
+      <aside class="general-content-menu">
+        <nav class="general-course-menu">
+          <ol>
+            <li class="link-course"><a href="#web-content-pagespeed">Google PageSpeed Insights</a></li>
+            <li class="link-course"><a href="#web-content-blocking">Bloqueo de visualización</a></li>
+            <li class="link-course"><a href="#web-content-stylesheet">Comprimiendo Hojas de estilo</a></li>
+            <li class="link-course"><a href="#web-content-criticalcss">Critical <span class="link-upper">css</span></a></li>
+            <li class="link-course"><a href="#web-content-images">Optimizando imagenes</a></li>
+            <li class="link-course"><a href="#web-content-pixel">Densidad de pixel</a></li>
+          </ol>
+        </nav>
+      </aside>
+      <div class="general-content">
+        <article id="web-content-pagespeed">
+          <h3>Google PageSpeed Insights</h3>
+          <p>
+            <a href="https://developers.google.com/speed/pagespeed/insights/" class="link-normal" target="_blank">Google
+              PageSpeed Insights</a> va a analizar el contenido de nuestra página web para darnos una evaluación
+            respecto al nivel de optimización del sitio. Podremos ver algunas recomendaciones para mejorar la
+            optimización y carga del sitio, además podemos ver una lista de las optimizaciones ya realizadas en el
+            sitio.
+          </p>
+        </article>
+        <article id="web-content-blocking">
+          <h3>Eliminando bloqueos de visualización, fuentes</h3>
+          <p>La primera optimización que vamos a realizar a nuestro sitio tiene que ver con eliminar cualquier carga
+            que afecte al renderizado de nuestro sitio. Específicamente tiene que encontrarse libre el Above the fold,
+            la primera parte visible para el usuario sin necesidad de hacer scroll.</p>
+          <p>La mejor manera de importar fuentes de google fonts es llamarlas de forma asincrona por medio de JS</p>
+          <pre class="code-space">
+            <span class="code-comment">html</span>
+            &lt<span class="code-style"> script</span> <span class="code-style-green">src</span> = "https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js" &gt &lt<span class="code-style">/script</span>&gt
+            
+            &lt<span class="code-style"> script&gt </span>
+                WebFont.load({
+                  google: {
+                    families: ['nombreDeLaFuente:PesoDeLaFuente,PesoDeLaFuente2']
+                  }
+                });
+              
+            &lt<span class="code-style">/script</span>&gt
+          </pre>
+          <p class="note"><span class="n-bold">Nota:</span><br /> Todos los link del head, es recomendado importarlo
+            desde javascript con la etiqueta script. <br />
+            Simular en el network de las herramientas de chrome una navegación lenta.</p>
+        </article>
+        <article id="web-content-stylesheet">
+          <h3>Comprimiendo Hojas de estilo</h3>
+          <p>Continuando con nuestra optimización vamos a comprimir nuestra hoja de estilos. Esto se puede hacer de
+            muchas maneras, ya sea utilizando preprocesadores como Sass, Less o Stylus, o también puedes utilizar
+            Webpack, para fines de este curso haremos uso del sitio <a target="_blank" href="https://csscompressor.com/"
+              class="link-normal">CSS Compressor</a>.</p>
+        </article>
+        <article id="web-content-criticalcss">
+          <h3>Critical CSS o Critical Path CSS</h3>
+          <p>Para eliminar el bloqueo de la visualización solamente nos queda hacer Critical Path CSS.
+            Al momento de cargar un sitio este se encontrará sin estilos hasta el momento de cargar el CSS por completo
+            generando que la visualización del sitio sea mala, para solucionar esto solamente debemos escribir el CSS
+            necesario para el Above the fold dentro de nuestro HTML. Haremos uso del sitio <a target="_blank" href="https://jonassebastianohlsson.com/criticalpathcssgenerator/"
+              class="link-normal">Critical Path CSS Generator</a>.
+          </p>
+        </article>
+        <article id="web-content-images">
+          <h3>Optimizando Imágenes</h3>
+          <p>Para tener nuestro sitio totalmente optimizado solamente nos queda optimizar nuestras imágenes.
+            Algunas veces estaremos renderizando una imagen con un tamaño mucho mayor del que tenemos en el sitio, por
+            ello es buena práctica redimensionar nuestras imágenes al tamaño que mostramos en nuestro sitio, usaremos
+            el servicio de <a target="_blank" href="https://resizeimage.net/" class="link-normal">ResizeImage</a>.
+            No basta solamente con redimensionar nuestras imágenes, también debemos comprimirlas y de preferencia
+            tenerlas en formato PNG para evitar pérdidas en la calidad de imagen, para esto usaremos el servicio <a
+              target="_blank" href="https://tinypng.com/" class="link-normal">Tiny
+              PNG</a>.
+          </p>
+        </article>
+        <article id="web-content-pixel">
+          <h3>Imágenes y densidad de pixel</h3>
+          <p>Existen pantallas con mayor densidad de pixeles, o también conocido como pantalla retina. Actualmente las
+            imágenes de nuestro sitio se ven con baja cantidad de pixeles en las pantallas con densidad de 2x o
+            superior, solucionaremos esto sencillamente con el atributo <span class="n-bold">srcset</span> y
+            redimensionando las imágenes para que
+            tengan el doble de tamaño, recuerda que también debemos comprimir estas imágenes para no afectar nuestra
+            optimización.</p>
+          <p>Como incluir varias imagenes dependiendo su resolución.</p>
+          <pre class="code-space">
+              &lt<span class="code-style">img</span> <span class="code-style-green">src</span>="img.png" <span class="code-style-green">srcset</span>="img.png, image@2x.png 2x"  /&gt
+            </pre>
+          <p>Densidad de píxeles = Es la cantidad de pixeles que hay en un espacio determinado y generalmente es medido
+            en píxeles por pulgada o PPI (Pixels per Inch).
+            Retina display es una marca comercial de Apple pero hace referencia a la cantidad justa de píxeles que
+            hacen falta en un dispositivo para que a la distancia normal de uso no se noten los píxeles en la pantalla,
+            porque la distancia a la que estemos es lo que nos va a dar esa sensación de HD. Por esta diferencia de
+            distancia es que los televisores pueden tener la misma cantidad de pixeles en un tamaño mayor de pantalla
+            sin perder la sensación de que estamos viendo una imagen nítida y por esto mismo es que los teléfonos
+            necesitan tener una resolución tan alta en dispositivos tan pequeños.
+          </p>
+        </article>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="main-container">
+        <div class="footer-container">
+          <p>Carlos Zabala Roqueme - 2018</p>
+          <figure>
+            <a href="../../index.html"><img class="logo-image" src="../../img/logos/logo-white.png" alt="Logo Carlos Zabala" /></a>
+          </figure>
+        </div>
+      </div>
+    </footer>
+    <!--Pie de página-->
+  </div>
+  <script>
+
+    const ipad = window.matchMedia('screen and (max-width: 767px)');
+    const links = document.querySelectorAll('.link-course')
+
+    const menu = document.querySelector('.general-content-menu');
+    const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+    ipad.addListener(validation);
+
+    function validation(event) {
+
+      if (event.matches) {
+        // console.log('Hello');
+        burgerButton.addEventListener('click', showHideMenu);
+        //lineas agregadas para recorrer los objetos y agregar un listener
+        Array.from(links).forEach(link => {
+          link.addEventListener('click', showHideMenu)
+        })
+      }
+      else {
+        burgerButton.removeEventListener('click', showHideMenu);
+      }
+
+    }
+
+    validation(ipad);
+
+    function showHideMenu() {
+      // console.log('clicc');
+      if (menu.classList.contains('isActive')) {
+        menu.classList.remove('isActive');
+
+      }
+      else {
+        menu.classList.add('isActive');
+      }
+    }
+
+      // console.log(menu, ' ' ,burgerButton);
+  </script>
+</body>
+
+</html>

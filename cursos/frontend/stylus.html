@@ -9,7 +9,7 @@
   <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
   <link rel="stylesheet" href="../../css/estilos.css" />
-  <link rel="stylesheet" href="../../css/ejemplos.css" />
+  <!-- <link rel="stylesheet" href="../../css/ejemplos.css" /> -->
 </head>
 
 <body>
@@ -55,10 +55,10 @@
             <li class="link-course"><a href="#web-content-nesting">Anidación</a></li>
             <li class="link-course"><a href="#web-content-variable">Variables</a></li>
             <li class="link-course"><a href="#web-content-structureCSS">Estructura css</a></li>
-            <li class="link-course"><a href="#web-content-skew">Sesgado</a></li>
-            <li class="link-course"><a href="#web-content-animation">Animaciones</a></li>
-            <li class="link-course"><a href="#web-content-bezier">Curva de bezier</a></li>
-            <li class="link-course"><a href="#web-content-javascript">Animaciones con Javascript</a></li>
+            <li class="link-course"><a href="#web-content-mixins">Mixins</a></li>
+            <li class="link-course"><a href="#web-content-function">Funciones internas</a></li>
+            <li class="link-course"><a href="#web-content-condicional">Condicionales</a></li>
+            <li class="link-course"><a href="#web-content-for">Directiva for</a></li>
           </ol>
         </nav>
       </aside>
@@ -264,186 +264,190 @@
             los demás archivos con esa extensión, y ese solo archivo es el que se compila y genera el css de nuestro
             sitio. Al importar todo se va a imprimir en el orden en que se esta importando, tener en cuenta la cascada.
           </p>
-          <a href="" class="link-refe">Organizar carpetas</a>
+          <a href="recomendaciones-stylus.html#web-content-organize" class="link-refe">Organizar carpetas</a>
         </article>
-        <article id="web-content-skew">
-          <h3>Transformaciones de sesgados</h3>
-          <p>Sesgar es esa inclinación que puede sufrir un elemento gracias a una transformación en CSS. <br />
-            Se puede sesgar un elemento tanto de un solo eje, como de ambos:
+        <article id="web-content-mixins">
+          <h3>Mixins</h3>
+          <p>Los mixins son declarados a través de nombres. Es importante que siempre añadamos el prefijo Mixin. Un
+            mixin nos permite reutilizar valores dentro del mismo CSS
+            Se declara facilmente con su nombre, y como buena práctica usamos minix- antes del nombre que queremos
+            darle.
           </p>
-          <ul>
-            <li><span class="n-bold">skew</span>: Sesgar en el <span class="n-bold">eje X</span>.
-              <pre class="code-space">
-                <span class="code-style">transform</span>: <span class="n-bold">skew</span>(20<span class="code-style">deg</span>);
-              </pre>
-            </li>
-            <li><span class="n-bold">skew</span>(valorX, valorY): Sesgar en el <span class="n-bold">eje X</span> e
-              <span class="n-bold">Y</span>.
-              <pre class="code-space">
-                <span class="code-style">transform</span>: <span class="n-bold">skew</span>(10<span class="code-style">deg</span>, 45<span class="code-style">deg</span>);
-              </pre>
-            </li>
-            <li>Sesgar en X e Y, de manera independiente:
-              <pre class="code-space">
-                <span class="code-style">transform</span>: <span class="n-bold">skewX</span>(10<span class="code-style">deg</span>);
-                <span class="code-style">transform</span>: <span class="n-bold">skewY</span>(45<span class="code-style">deg</span>);
-              </pre>
-            </li>
-          </ul>
-          <p class="note">
-            <span class="n-bold">Nota:</span><br /> Esta propiedad recibe valores en <span class="n-bold">grados</span>
-            (deg) y radianes (rad).
-          </p>
-          <h4>Punto de transformación</h4>
-          <p>El punto de transformación de un elemento está clavado en alguna parte de la interfaz, y por defecto se
-            encuentra en el centro.</p>
-          <p>Sin embargo, podemos jugar con la posición de este punto según el tipo de animación que queramos crear.</p>
           <pre class="code-space">
-            <span class="code-style">transform</span>: rotate(45<span class="code-style">deg</span>);
-            <span class="code-style n-bold">transform-origin</span>: bottom left;
+            <span class="code-style">mixin-max-width</span>()
+              <span class="code-style-blue">max-width</span>: 1024px
+              <span class="code-style-blue">margin-left</span>: auto
+              <span class="code-style-blue">margin-right</span>: auto
+
+            <span class="code-comment">/*Uso del mixin*/</span>
+            <span class="code-style-green">.container</span>
+              <span class="code-style">mixin-max-width</span>()
           </pre>
-          <div class="box-rotate"><img src="../../img/logos/rocket.png" alt="Cohete" width="100" /></div>
+          <p class="note">
+            <span class="n-bold">Nota</span>:<br />Un mixins no compila, no nombrar a los mixins con nombres ya
+            reservados de css.
+          </p>
         </article>
-        <article id="web-content-animation">
-          <h3>Animaciones</h3>
-          <p><span class="n-bold">Configurando animación:</span> Se utiliza la palabra clave <span class="n-bold">@keyframes</span>
-            seguido
-            del nombre que queramos darle a la animación, dentro de las llaves se especifica lo que hace dicha
-            animación y esto se hace con <span class="n-bold">estados</span>:</p>
+        <article id="web-content-mixinsPara">
+          <h3>Mixins Paramétricos</h3>
+          <p>¿Cómo solucionamos que un diseñador quiera meter más información dentro de un solo mixin?
+            No debemos hacer otro mixin, sino que podemos usar los mixin paramétricos. Aquí lo que debemos incluir son
+            parámetros para que podamos guardar cierta información que es nueva dentro del mixin.
+          </p>
+          <p>Para dar parámetros a un mixin lo usamos dentro del paréntesis:</p>
           <pre class="code-space">
-            <span class="code-comment">/* @keyframes nombreAnimación */</span>
-            <span class="code-style">@keyframes</span> <span class="code-style-green">cuadrado</span>{
-              <span class="code-comment">/* Estado inicial de animación */</span>
-              0%{
-                <span class="code-style">opacity</span>:1;
-              }
-              <span class="code-comment">/* Estado final de animación */</span>
-              100%{
-                <span class="code-style">opacity</span>:0;
-              }
+            <span class="code-style">mixin-max-width</span>(width)
+              <span class="code-style-blue">max-width</span>: width
+              <span class="code-style-blue">margin-left</span>: auto
+              <span class="code-style-blue">margin-right</span>: auto
+
+            <span class="code-comment">/*Uso del mixin*/</span>
+            <span class="code-style-green">.container</span>
+              <span class="code-style">mixin-max-width</span>(800px)
+          </pre>
+          <p>Para usar valores por defecto igualamos el parametro al valor que queremos:</p>
+          <pre class="code-space">
+            <span class="code-style">page-max-width</span>: 1024px <span class="code-comment">/*Variable*/</span>
+            <span class="code-style">mixin-max-width</span>(width = <span class="code-style">page-max-width</span>)
+              <span class="code-style-blue">max-width</span>: width
+              <span class="code-style-blue">margin-left</span>: auto
+              <span class="code-style-blue">margin-right</span>: auto
+
+            <span class="code-comment">/*Uso del mixin*/</span>
+            <span class="code-style-green">.container</span>
+              <span class="code-style">mixin-max-width</span>(800px)
+              <span class="code-comment">/*Si no se le agrega valor en el parametro toma por defecto el de la variable page-max-width*/</span>
+          </pre>
+          <p>Más ejemplos</p>
+          <pre class="code-space">
+            <span class="code-style">page-max-width</span>: 1024px <span class="code-comment">/*Declaramos una variable en nuestra sección de variables de proyecto*/</span>
+
+            <span class="code-comment">/*Luego agregamos esa variable como valor por defecto del mixins*/</span>
+            <span class="code-comment">/*El mixin debe estar declarado en nuestro archivo de mixins*/</span>
+            <span class="code-style">mixin-max-width</span>(width = <span class="code-style">page-max-width</span>)
+            <span class="code-style-blue">max-width</span>: width
+            <span class="code-style-blue">margin-left</span>: auto
+            <span class="code-style-blue">margin-right</span>: auto
+            
+            <span class="code-comment">/*Uso del mixin*/</span>
+            
+            <span class="code-comment">/*Aplicando el mixin con valor custom*/</span>
+            <span class="code-style-green">.container</span>
+            <span class="code-style">mixin-max-width</span>(800px)
+            
+            <span class="code-comment">/*Aplicando el mixin con valor custom*/</span>
+            <span class="code-style-green">.section</span>
+            <span class="code-style">mixin-max-width</span>(90%)
+            <span class="code-style-blue">margin-bottom</span> 1em
+            
+            <span class="code-comment">/*Aplicando el mixin con valor por defecto*/</span>
+            <span class="code-style-green">.section-landing</span>
+              <span class="code-style">mixin-max-width</span>()
+          </pre>
+          <p>Compilación en <span class="link-upper">css</span>:</p>
+          <pre class="code-space">
+            <span class="code-style-green">.container</span>{
+              <span class="code-style-blue">max-width</span>: 800px;
+              <span class="code-style-blue">margin-left</span>: auto;
+              <span class="code-style-blue">margin-right</span>: auto;
+            }
+
+            <span class="code-style-green">.section</span>{
+              <span class="code-style-blue">max-width</span>: 90%;
+              <span class="code-style-blue">margin-left</span>: auto;
+              <span class="code-style-blue">margin-right</span>: auto;
+              <span class="code-style-blue">margin-bottom</span> 1em;
+            }
+
+            <span class="code-style-green">.section-landing</span>{
+              <span class="code-style-blue">max-width</span>: 1024px;
+              <span class="code-style-blue">margin-left</span>: auto;
+              <span class="code-style-blue">margin-right</span>: auto;
             }
           </pre>
-          <p>Para crear una animación CSS usaremos la propiedad <span class="n-bold">animation</span> y sus <span class="n-bold">sub-propiedades</span>,
-            con las cuales podemos configurar el ritmo, la duración, etc.</p>
-          <p>Las <spa class="n-bold">propiedades de animation</spa> son:</p>
-          <ul>
-            <li><span class="n-bold">animation-name</span>: Especifica el nombre de la regla @keyframes que describe
-              los fotogramas de la animación.
-              <pre class="code-space">
-                <span class="code-style">animation-name</span>: rebote;
-              </pre>
-            </li>
-            <li><span class="n-bold">animation-duration</span>: Indica la cantidad de tiempo que la animación consume
-              en completar su ciclo (duración).
-              <pre class="code-space">
-                <span class="code-style">animation-duration</span>: 1s;
-              </pre>
-            </li>
-            <li><span class="n-bold">animation-delay</span>: Tiempo de retardo entre el momento en que el elemento se
-              carga y el comienzo de la secuencia de la animación.
-              <pre class="code-space">
-                <span class="code-style">animation-delay</span>: 1s;
-              </pre>
-            </li>
-            <li><span class="n-bold">animation-direction</span>: Indica si la animación debe retroceder hasta el
-              fotograma de inicio al finalizar la secuencia o si debe comenzar desde el principio al llegar al final.
-              <pre class="code-space">
-                <span class="code-style">animation-direction</span>: reverse;<span class="code-comment">/*Empieza desde el último estado 100%.*/</span>
-                <span class="code-style">animation-direction</span>: alternate; <span class="code-comment">/*La animación al terminar empieza nuevamente pero desde el último estado en vez del inicio.*/</span>
-              </pre>
-            </li>
-            <li><span class="n-bold">animation-iteration-count</span>: El número de veces que se repite. Podemos
-              indicar <span class="n-bold">infinite</span> para repetir la animación indefinidamente.
-              <pre class="code-space">
-                <span class="code-comment">/*Cuantas veces va a ocurrir la animación*/</span>
-                <span class="code-style">animation-iteration-count</span>: 1;
-                <span class="code-style">animation-iteration-count</span>: infinite;
-              </pre>
-            </li>
-            <li><span class="n-bold">animation-play-state</span>: Permite pausar y reanudar la secuencia de la
-              animación.
-              <pre class="code-space">
-                <span class="code-style">animation-play-state</span>: running; <span class="code-comment">/*Valor por defecto*/</span>
-                <span class="code-style">animation-play-state</span>: paused;
-              </pre>
-            </li>
-            <li><span class="n-bold">animation-timing-function</span>: Indica el ritmo de la animación, es decir, como
-              se muestran los fotogramas de la animación, estableciendo curvas de aceleración.
-              <pre class="code-space">
-                <span class="code-style">animation-timing-function</span>: ease; <span class="code-comment">/*Valor por defecto*/</span>
-                <span class="code-style">animation-timing-function</span>: ease-in; 
-                <span class="code-style">animation-timing-function</span>: ease-in-out; 
-                <span class="code-style">animation-timing-function</span>: linear; 
-                <span class="code-style">animation-timing-function</span>: <span class="code-style-green">cubic-bezier</span>(1, 1, 1, 1); 
-              </pre>
-            </li>
-            <li><span class="n-bold">animation-fill-mode</span>: Especifica qué valores tendrán las propiedades después
-              de finalizar la animación (los de antes de ejecutarla, los del último fotograma de la animación o ambos).
-              <pre class="code-space">
-                <span class="code-style">animation-fill-mode</span>: forwards;
-                </pre>
-            </li>
-          </ul>
         </article>
-        <article id="web-content-bezier">
-          <h3>Aceleración y curva de bezier</h3>
-          <p>Aceleración y movimientos curvos a los elementos web por medio de <span class="n-bold">animation-timing-function</span>.</p>
-          <p>Valores de animation-timing-function:</p>
-          <ul>
-            <li><span class="n-bold">ease</span>: Por defecto.</li>
-            <li><span class="n-bold">ease-in</span>: Se suaviza al entrar o al inicio.</li>
-            <li><span class="n-bold">ease-out</span>: Se suaviza al salir o al finalizar.</li>
-            <li><span class="n-bold">ease-in-out</span>: Se suaviza al entrar y salir, básicamente se acelera solo la
-              mitad de la animación.</li>
-            <li><span class="n-bold">steps</span>(frames por segundo): como el lag en los juegos en linea, mientras más
-              bajo será menos fluido, entre más fps más suave la animación.</li>
-          </ul>
-          <a class="link-refe" href="http://cubic-bezier.com/#.17,.67,.83,.67" target="_blank">Manipular cubic-bezier</a>
-        </article>
-        <article id="web-content-animationMul">
-          <h3>Múltiples animaciones</h3>
-          <p>Para nombrar más de una animación podemos nombrarlas en la misma línea de código:</p>
+        <article id="web-content-function">
+          <h3>Funciones internas</h3>
+          <p>En stylus podemos asignar variables dinámicas y asignarles funciones matemáticas que ejecutaras cada que
+            sean llamadas. <br />
+            Por ejemplo, podremos utilizar la declaracion:
+          </p>
           <pre class="code-space">
-            <span class="code-style">animation-name</span>: nombre1, nombre2;
+            <span class="code-style-blue">padding</span> : <span class="code-style">mixin-padding-small</span>(2px)
           </pre>
-          <div class="grid-pos-example animation">
-            <div class="animation-content">
-              <div class="animation-circle a"></div>
-            </div>
-          </div>
-        </article>
-        <article id="web-content-javascript">
-          <h3>Animaciones CSS desde JS</h3>
-          <p>Para detectar eventos de animaciones a través de Javascript se pueden usar los siguientes:</p>
-          <ul>
-            <li><span class="n-bold">animationstart</span>: Para ver si la animación inicio.</li>
-            <li><span class="n-bold">animationend</span>: Para ver si la animación termino.</li>
-          </ul>
-          <p>Tambien se puede crear animaciones desde Javascript, ejemplo:</p>
+          <p>Ubicada en la carpeta site.styl <br /> y pasarle la <span class="n-bold">función</span>:</p>
           <pre class="code-space">
-            $cuadrado.style.<span class="n-bold">animationName</span> = 'cuadrado';
-            $cuadrado.style.<span class="n-bold">animationDuration</span> = '1s';
+              <span class="code-style">mixin-padding-small</span>(a)
+                a <span class="code-style">+</span> minipadding
           </pre>
-          <p>Para crear animaciones desde JavaScript se utiliza <span class="n-bold">element.animate</span>, que es
-            parte de la especificación del API de animaciones de JavaScript.</p>
+          <p>Donde minipadding proviene de la carpeta _variables.styl y equivale a :</p>
           <pre class="code-space">
-            <span class="code-comment">// element.animate(keyframes = [], option = {})</span>
-            $pelota.animate([
-              <span class="code-comment">// from</span>
-              transform: 'translateX(0)'
-            },
-            <span class="code-comment">// to</span>
-            {
-              transform: 'translateX(500px)'
-            }  
-            ], {
-              duration: 1000,
-              delay: 1000,
-              direction: 'normal',
-              easing: 'linear',
-              iterations: Infinite,
-              fill: 'forwards'
-            })
+              <span class="code-style">minipadding</span> = padding / 2
+          </pre>
+        </article>
+        <article id="web-content-condicional">
+          <h3>Condicionales</h3>
+          <p>Stylus cuenta con condicionales if que vienen muy útiles a la hora de asegurarnos que algo tiene un valor
+            y que se ejecute algo si eso se cumple.</p>
+          <pre class="code-space">
+            <span class="code-style">tone</span>(dark = true)
+              <span class="code-style">if</span> dark
+                <span class="code-style-blue">text-color</span>: white
+                <span class="code-style-blue">background-color</span>: black
+              <span class="code-style">else</span>
+                <span class="code-style-blue">text-color</span>: black
+                <span class="code-style-blue">background-color</span>: white
+
+            <span class="code-comment">/*Aplicación*/</span>
+            <span class="code-style-green">.container</span>
+              <span class="code-style">tone</span>(dark)
+
+            <span class="code-comment">/*En CSS, si la condición se cumple*/</span>
+            <span class="code-style-green">.container</span>{
+              <span class="code-style-blue">text-color</span>: white;
+              <span class="code-style-blue">background-color</span>: black;
+            }
+          </pre>
+          <p>Para que la condición no se cumpla se coloca en el parametro <span class="n-bold">false</span>.</p>
+          <pre class="code-space">
+            <span class="code-style-green">.container</span>
+              <span class="code-style">tone</span>(false)
+
+            <span class="code-comment">/*En CSS, la condición no se cumple*/</span>
+            <span class="code-style-green">.container</span>{
+              <span class="code-style-blue">text-color</span>: black;
+              <span class="code-style-blue">background-color</span>: white;
+            }
+          </pre>
+        </article>
+        <article id="web-content-for">
+          <h3>Directiva for</h3>
+          <p>Ejemplo:</p>
+          <pre class="code-space">
+            <span class="code-style-green">.box</span>
+              <span class="code-comment">/*<span class="n-bold">for</span> x <span class="n-bold">in</span> (inicio(de donde)..fin(a donde))*/</span>
+              <span class="code-style">for</span> x <span class="code-style">in</span> (0..15)
+                <span class="code-style-blue">content</span>: x
+
+            <span class="code-comment">en CSS:</span>
+            <span class="code-style-green">.box</span>{
+              <span class="code-style-blue">content</span>: 0;
+              <span class="code-style-blue">content</span>: 1;
+              <span class="code-style-blue">content</span>: 2;
+              <span class="code-style-blue">content</span>: 3;
+              <span class="code-style-blue">content</span>: 4;
+              <span class="code-style-blue">content</span>: 5;
+              <span class="code-style-blue">content</span>: 6;
+              <span class="code-style-blue">content</span>: 7;
+              <span class="code-style-blue">content</span>: 8;
+              <span class="code-style-blue">content</span>: 9;
+              <span class="code-style-blue">content</span>: 10;
+              <span class="code-style-blue">content</span>: 11;
+              <span class="code-style-blue">content</span>: 12;
+              <span class="code-style-blue">content</span>: 13;
+              <span class="code-style-blue">content</span>: 14;
+              <span class="code-style-blue">content</span>: 15;
+            }
           </pre>
         </article>
       </div>
@@ -460,49 +464,49 @@
     </footer>
     <!--Pie de página-->
   </div>
+  <script>
+
+    const ipad = window.matchMedia('screen and (max-width: 767px)');
+    const links = document.querySelectorAll('.link-course')
+
+    const menu = document.querySelector('.general-content-menu');
+    const burgerButton = document.querySelector('#burgerMenu');
+
+
+
+    ipad.addListener(validation);
+
+    function validation(event) {
+
+      if (event.matches) {
+        // console.log('Hello');
+        burgerButton.addEventListener('click', showHideMenu);
+        //lineas agregadas para recorrer los objetos y agregar un listener
+        Array.from(links).forEach(link => {
+          link.addEventListener('click', showHideMenu)
+        })
+      }
+      else {
+        burgerButton.removeEventListener('click', showHideMenu);
+      }
+
+    }
+
+    validation(ipad);
+
+    function showHideMenu() {
+      // console.log('clicc');
+      if (menu.classList.contains('isActive')) {
+        menu.classList.remove('isActive');
+
+      }
+      else {
+        menu.classList.add('isActive');
+      }
+    }
+
+      // console.log(menu, ' ' ,burgerButton);
+  </script>
 </body>
-<script>
-
-  const ipad = window.matchMedia('screen and (max-width: 767px)');
-  const links = document.querySelectorAll('.link-course')
-
-  const menu = document.querySelector('.general-content-menu');
-  const burgerButton = document.querySelector('#burgerMenu');
-
-
-
-  ipad.addListener(validation);
-
-  function validation(event) {
-
-    if (event.matches) {
-      // console.log('Hello');
-      burgerButton.addEventListener('click', showHideMenu);
-      //lineas agregadas para recorrer los objetos y agregar un listener
-      Array.from(links).forEach(link => {
-        link.addEventListener('click', showHideMenu)
-      })
-    }
-    else {
-      burgerButton.removeEventListener('click', showHideMenu);
-    }
-
-  }
-
-  validation(ipad);
-
-  function showHideMenu() {
-    // console.log('clicc');
-    if (menu.classList.contains('isActive')) {
-      menu.classList.remove('isActive');
-
-    }
-    else {
-      menu.classList.add('isActive');
-    }
-  }
-
-  // console.log(menu, ' ' ,burgerButton);
-</script>
 
 </html>

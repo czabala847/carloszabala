@@ -151,6 +151,10 @@ figure {
   background-image: url('../img/hero-animacion.jpg');
 }
 
+.custom-hero-background {
+  background-image: url('../img/home-optimizacion.jpg');
+}
+
 .hero {
   height: 450px;
   color: white;
@@ -490,7 +494,7 @@ figure {
   top: .5em;
   width: 85%;
   overflow: auto;
-  height: 100vh;
+  /* height: 100vh; */
 }
 
 .general-course-container .general-content-menu .general-course-menu ol {
@@ -498,9 +502,9 @@ figure {
   list-style-type: none;
 }
 
-/* .general-course-container .general-content-menu .general-menu ol li{
+.general-course-container .general-content-menu .general-menu ol li{
   padding: .6em 0;
-} */
+} 
 
 .general-course-container .general-content-menu .general-course-menu ol li a {
   display: block;

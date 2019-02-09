@@ -10,7 +10,6 @@
   <link rel="icon" href="../../img/logos/favicon.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css?family=Pacifico|Source+Sans+Pro" rel="stylesheet">
   <link rel="stylesheet" href="../../css/estilos.css" />
-  <!-- <link rel="stylesheet" href="../../css/ejemplos.css" /> -->
 </head>
 
 <body>
@@ -52,7 +51,7 @@
           <ol>
             <li class="link-course"><a href="stylus.html">Ver teoría</a></li>
             <li class="link-course"><a href="#web-content-organize">Organizar proyecto</a></li>
-            <li class="link-course"><a href="#web-content-render">Optimizar render </a></li>
+            <li class="link-course"><a href="#web-content-scape">Escapar variables</a></li>
           </ol>
         </nav>
       </aside>
@@ -276,16 +275,11 @@
             </li>
           </ul>
         </article>
-        <article id="web-content-render">
-          <h3>Optimizar render con will-change y developer tools</h3>
-          <p>Inspeccionando desde la consola del navegador los elementos web podemos ver las propiedades de las
-            animaciones y el render y visualizar nuevas modificaciones.</p>
+        <article id="web-content-scape">
+          <h3>Escapar variables</h3>
           <pre class="code-space">
-            <span class="code-style">will-change</span>: opacity;
+            #{$variable}
           </pre>
-          <p class="note">
-            <span class="n-bold">Nota:</span><br /> Solo para opacidad y transformaciones es lo recomendado.
-          </p>
         </article>
       </div>
     </section>
@@ -325,78 +319,75 @@
     </footer>
     <!--Pie de página-->
   </div>
+  <script>
+
+    const ipad = window.matchMedia('screen and (max-width: 767px)');
+    const links = document.querySelectorAll('.link-course')
+  
+    const menu = document.querySelector('.general-content-menu');
+    const burgerButton = document.querySelector('#burgerMenu');
+  
+  
+  
+    ipad.addListener(validation);
+  
+    function validation(event) {
+  
+      if (event.matches) {
+        // console.log('Hello');
+        burgerButton.addEventListener('click', showHideMenu);
+        //lineas agregadas para recorrer los objetos y agregar un listener
+        Array.from(links).forEach(link => {
+          link.addEventListener('click', showHideMenu)
+        })
+      }
+      else {
+        burgerButton.removeEventListener('click', showHideMenu);
+      }
+  
+    }
+  
+    validation(ipad);
+  
+    function showHideMenu() {
+      // console.log('clicc');
+      if (menu.classList.contains('isActive')) {
+        menu.classList.remove('isActive');
+  
+      }
+      else {
+        menu.classList.add('isActive');
+      }
+    }
+  
+    const $binderComponents = document.getElementById('binder-components');
+    const $binderBase = document.getElementById('binder-base');
+    const $binderLayout = document.getElementById('binder-layout');
+    const $binderLib = document.getElementById('binder-lib');
+  
+    const $componentsDetails = document.getElementById('components-details');
+    const $baseDetails = document.getElementById('base-detail');
+    const $layoutDetails = document.getElementById('layout-details');
+    const $libDetails = document.getElementById('lib-details');
+  
+    $binderComponents.addEventListener('click', () => {
+      $componentsDetails.classList.toggle('isSelected');
+    });
+  
+    $binderBase.addEventListener('click', () => {
+      $baseDetails.classList.toggle('isSelected');
+    });
+  
+    $binderLayout.addEventListener('click', () => {
+      $layoutDetails.classList.toggle('isSelected');
+    });
+  
+    $binderLib.addEventListener('click', () => {
+      $libDetails.classList.toggle('isSelected');
+    });
+  
+  
+    // console.log(menu, ' ' ,burgerButton);
+  </script>
 </body>
-
-
-<script>
-
-  const ipad = window.matchMedia('screen and (max-width: 767px)');
-  const links = document.querySelectorAll('.link-course')
-
-  const menu = document.querySelector('.general-content-menu');
-  const burgerButton = document.querySelector('#burgerMenu');
-
-
-
-  ipad.addListener(validation);
-
-  function validation(event) {
-
-    if (event.matches) {
-      // console.log('Hello');
-      burgerButton.addEventListener('click', showHideMenu);
-      //lineas agregadas para recorrer los objetos y agregar un listener
-      Array.from(links).forEach(link => {
-        link.addEventListener('click', showHideMenu)
-      })
-    }
-    else {
-      burgerButton.removeEventListener('click', showHideMenu);
-    }
-
-  }
-
-  validation(ipad);
-
-  function showHideMenu() {
-    // console.log('clicc');
-    if (menu.classList.contains('isActive')) {
-      menu.classList.remove('isActive');
-
-    }
-    else {
-      menu.classList.add('isActive');
-    }
-  }
-
-  const $binderComponents = document.getElementById('binder-components');
-  const $binderBase = document.getElementById('binder-base');
-  const $binderLayout = document.getElementById('binder-layout');
-  const $binderLib = document.getElementById('binder-lib');
-
-  const $componentsDetails = document.getElementById('components-details');
-  const $baseDetails = document.getElementById('base-detail');
-  const $layoutDetails = document.getElementById('layout-details');
-  const $libDetails = document.getElementById('lib-details');
-
-  $binderComponents.addEventListener('click', () => {
-    $componentsDetails.classList.toggle('isSelected');
-  });
-
-  $binderBase.addEventListener('click', () => {
-    $baseDetails.classList.toggle('isSelected');
-  });
-
-  $binderLayout.addEventListener('click', () => {
-    $layoutDetails.classList.toggle('isSelected');
-  });
-
-  $binderLib.addEventListener('click', () => {
-    $libDetails.classList.toggle('isSelected');
-  });
-
-
-  // console.log(menu, ' ' ,burgerButton);
-</script>
-
 </html>
